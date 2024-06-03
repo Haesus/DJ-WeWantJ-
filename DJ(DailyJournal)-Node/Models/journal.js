@@ -4,13 +4,13 @@ class Journal extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
+        //일기제목
         journalTitle: {
-          //일기제목
           type: Sequelize.STRING(50),
           allowNull: false,
         },
+        //일기내용
         journalText: {
-          //일기내용
           type: Sequelize.TEXT,
           allowNull: false,
         },
