@@ -4,8 +4,8 @@ class JournalImage extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
+        // 이미지이름
         journalImageString: {
-          // 이미지이름
           type: Sequelize.STRING(200),
           allowNull: false,
         }
