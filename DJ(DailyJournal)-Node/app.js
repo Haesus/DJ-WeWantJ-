@@ -1,2 +1,2 @@
-const sync = require('./Models/sync');
-sync();
+// const sync = require('./Models/sync');
+// sync();
