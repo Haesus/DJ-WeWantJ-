@@ -12,6 +12,8 @@
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
 		FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */; };
+		FAC5CD7C2C0EE8B4001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */; };
+		FAC5CD7E2C0EE8D5001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		FA7CEB182C0C42F2008504F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +57,11 @@
 		FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */ = {
 			isa = PBXGroup;
 			children = (
+				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
 				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
 				FAC5CD792C0EE673001D5862 /* Models */,
 				FAC5CD782C0EE66C001D5862 /* ViewModels */,
 				FAC5CD712C0EE61C001D5862 /* Views */,
-				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
-				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
 				FAC5CD732C0EE626001D5862 /* NetworkServices */,
 				FAC5CD722C0EE623001D5862 /* TestModeling */,
 				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
@@ -78,6 +81,7 @@
 		FAC5CD712C0EE61C001D5862 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
 				FAC5CD772C0EE659001D5862 /* SignViews */,
 				FAC5CD762C0EE62D001D5862 /* DailyJournalViews */,
 				FAC5CD752C0EE62A001D5862 /* TodoListViews */,
@@ -110,6 +114,7 @@
 		FAC5CD752C0EE62A001D5862 /* TodoListViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */,
 			);
 			path = TodoListViews;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 		FAC5CD772C0EE659001D5862 /* SignViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */,
 			);
 			path = SignViews;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
+				FAC5CD7E2C0EE8D5001D5862 /* SignInView.swift in Sources */,
+				FAC5CD7C2C0EE8B4001D5862 /* TodoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
