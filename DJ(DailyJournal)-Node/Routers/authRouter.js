@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
     if (!(auth && auth.startsWith(`Bearer `))) {
         res.json({
             success: false,
-            message: `Auth Error`
+            message: `Bearer Error`
         });
     };
 
@@ -17,7 +17,7 @@ const auth = async (req, res, next) => {
         if (error) {
             res.json({
                 success: false,
-                message: `Auth Error`
+                message: `Token Error`
             });
         } else {
             req.id = decoded.id;
