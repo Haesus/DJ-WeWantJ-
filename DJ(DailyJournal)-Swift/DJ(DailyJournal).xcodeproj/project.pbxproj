@@ -51,8 +51,14 @@
 		FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
+				FAC5CD792C0EE673001D5862 /* Models */,
+				FAC5CD782C0EE66C001D5862 /* ViewModels */,
+				FAC5CD712C0EE61C001D5862 /* Views */,
 				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
 				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
+				FAC5CD732C0EE626001D5862 /* NetworkServices */,
+				FAC5CD722C0EE623001D5862 /* TestModeling */,
 				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
 				FA7CEB1C2C0C42F3008504F6 /* Preview Content */,
 			);
@@ -65,6 +71,80 @@
 				FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FAC5CD712C0EE61C001D5862 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD772C0EE659001D5862 /* SignViews */,
+				FAC5CD762C0EE62D001D5862 /* DailyJournalViews */,
+				FAC5CD752C0EE62A001D5862 /* TodoListViews */,
+				FAC5CD742C0EE628001D5862 /* DailyLogViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAC5CD722C0EE623001D5862 /* TestModeling */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestModeling;
+			sourceTree = "<group>";
+		};
+		FAC5CD732C0EE626001D5862 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		FAC5CD742C0EE628001D5862 /* DailyLogViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyLogViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD752C0EE62A001D5862 /* TodoListViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TodoListViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD762C0EE62D001D5862 /* DailyJournalViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyJournalViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD772C0EE659001D5862 /* SignViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD782C0EE66C001D5862 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAC5CD792C0EE673001D5862 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAC5CD7A2C0EE67C001D5862 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
