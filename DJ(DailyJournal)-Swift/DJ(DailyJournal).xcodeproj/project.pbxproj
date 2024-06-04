@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
 		FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */; };
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321EDA782C0EE84900BF39E4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = "DJ(DailyJournal)/ColorExtension.swift"; sourceTree = SOURCE_ROOT; };
 		FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DJ(DailyJournal).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJ_DailyJournal_App.swift; sourceTree = "<group>"; };
 		FA7CEB182C0C42F2008504F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		FAC5CD7A2C0EE67C001D5862 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 			);
