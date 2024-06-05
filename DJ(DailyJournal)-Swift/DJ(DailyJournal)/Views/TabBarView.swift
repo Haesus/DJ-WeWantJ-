@@ -22,11 +22,10 @@ struct TabBarView: View {
                         Image(systemName: "checkmark.seal")
                         Text("Todo")
                     }
-                // TODO: - DailyLogView로 수정
-                TabBarView2()
+                DailyLogView()
                     .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
+                        Image(systemName: "pencil.and.list.clipboard")
+                        Text("DailyLog")
                     }
             }
             .background(Color.backgroundColor)
