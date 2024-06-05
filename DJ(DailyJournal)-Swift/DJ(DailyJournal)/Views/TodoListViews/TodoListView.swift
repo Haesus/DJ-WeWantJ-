@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct TodoListView: View {
+    
+    init(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
+    }
+    
     var body: some View {
-        Group {
+        NavigationView {
             ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()
@@ -18,8 +23,8 @@ struct TodoListView: View {
                     Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 }
             }
+            .navigationTitle("TodoList")
         }
-        .navigationTitle("TodoList")
     }
 }
 
