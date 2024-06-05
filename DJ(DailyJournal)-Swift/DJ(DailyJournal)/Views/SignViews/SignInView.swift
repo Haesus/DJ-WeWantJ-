@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var userID: String
-    @State var password: String
+    @StateObject var signViewModel = SignViewModel()
     
     var body: some View {
         ZStack {
@@ -17,18 +16,22 @@ struct SignInView: View {
                 .ignoresSafeArea()
             
             VStack {
-                TextField(text: $userID) {
+                TextField(text: $signViewModel.userID) {
                     Text("아이디를 입력하세요.")
                         .foregroundStyle(Color.ivory)
                 }
                 
-                SecureField(text: $password) {
+                SecureField(text: $signViewModel.password) {
                     Text("비밀번호를 입력하세요.")
                         .foregroundStyle(Color.ivory)
                 }
                 
                 Button(action: {
-                    
+                    signViewModel.signIn { success in
+                        if success {
+                            signViewModel.isSignedIn = true
+                        }
+                    }
                 }, label: {
                     Text("SignIn")
                 })
@@ -38,5 +41,5 @@ struct SignInView: View {
 }
 
 #Preview {
-    SignInView(userID: "", password: "")
+    SignInView()
 }
