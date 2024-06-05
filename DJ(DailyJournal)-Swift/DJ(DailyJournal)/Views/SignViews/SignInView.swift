@@ -8,21 +8,35 @@
 import SwiftUI
 
 struct SignInView: View {
+    @State var userID: String
+    @State var password: String
+    
     var body: some View {
-        VStack {
-            Text("test")
-                .foregroundStyle(Color.ivory)
+        ZStack {
+            Color.backgroundColor
+                .ignoresSafeArea()
+            
+            VStack {
+                TextField(text: $userID) {
+                    Text("아이디를 입력하세요.")
+                        .foregroundStyle(Color.ivory)
+                }
+                
+                SecureField(text: $password) {
+                    Text("비밀번호를 입력하세요.")
+                        .foregroundStyle(Color.ivory)
+                }
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("SignIn")
+                })
+            }
         }
-        .padding()
-        
-            .background(
-                Color.backgroundColor
-                    .edgesIgnoringSafeArea(.all)
-            )
-//        .background(Color.backgroundColor.ignoresSafeArea())
     }
 }
 
 #Preview {
-    SignInView()
+    SignInView(userID: "", password: "")
 }
