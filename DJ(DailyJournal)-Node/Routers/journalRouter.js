@@ -5,8 +5,7 @@ const upload = require('./uploadImage');
 
 // 일기 생성
 router.post('/save', upload.array('journalImageString', 4), async (req, res) => {
-  console.log(req.files);
-  console.log(req.body);
+  console.log(`req.files: ${req.files}`);
   const newJournal = req.body;
   newJournal.userID = req.id;
 
@@ -16,7 +15,7 @@ router.post('/save', upload.array('journalImageString', 4), async (req, res) => 
     if (req.files && req.files.length > 0) {
       const images = req.files.map(file => ({
         journalID: result.id,
-        journalImageString: file.filename,
+        journalImageString: file.blobName,
       }));
       await JournalImage.bulkCreate(images);
     }

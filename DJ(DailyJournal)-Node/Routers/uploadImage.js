@@ -1,26 +1,28 @@
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
+const { MulterAzureStorage } = require(`multer-azure-blob-storage`);
+require(`dotenv`).config()
 
-// 'files' 디렉토리가 있는지 확인하고 없으면 생성
-try {
-  fs.readdirSync('files');
-} catch (error) {
-  console.log(error);
-  fs.mkdirSync('files');
-}
+const resolveBlobName = (req, file) => {
+  return new Promise((resolve, reject) => {
+      const ext = path.extname(file.originalname);
+      const blobName = path.basename(file.originalname, ext) + Date.now() + ext;
+      file.blobName = blobName;
+      resolve(blobName);
+  });
+};
+
+const azureStorage = new MulterAzureStorage({
+  connectionString: process.env.SA_CONNECTION_STRING,
+  accessKey: process.env.SA_KEY,
+  accountName: `storagedailyjournal`,
+  containerName: `journalimage`,
+  blobName: resolveBlobName,
+  containerAccessLevel: `blob`
+});
 
 const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, 'files/');
-    },
-    filename(req, file, done) {
-      const originalName = file.originalname; 
-      req.filename = originalName;
-      done(null, originalName);
-    },
-  }),
+  storage: azureStorage,
   limits: { fileSize: 1024 * 1024 * 100 },
 });
 
