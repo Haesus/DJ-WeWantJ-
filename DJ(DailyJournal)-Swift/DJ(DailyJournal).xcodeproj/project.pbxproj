@@ -15,9 +15,9 @@
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
 		FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */; };
-		FAC5CD7C2C0EE8B4001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */; };
-		FAC5CD7E2C0EE8D5001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */; };
 		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
+		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
+		FAC5CD872C103D2B001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,8 @@
 		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-
+		FAC5CD842C103D09001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		FAC5CD862C103D2B001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 			children = (
 				FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */,
 				FA7CEB142C0C42F2008504F6 /* Products */,
+				FAC5CD822C103C39001D5862 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +129,7 @@
 		FAC5CD752C0EE62A001D5862 /* TodoListViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD842C103D09001D5862 /* TodoListView.swift */,
 			);
 			path = TodoListViews;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 		FAC5CD772C0EE659001D5862 /* SignViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD862C103D2B001D5862 /* SignInView.swift */,
 			);
 			path = SignViews;
 			sourceTree = "<group>";
@@ -165,6 +169,15 @@
 				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAC5CD822C103C39001D5862 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */,
+				FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,15 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC5CD872C103D2B001D5862 /* SignInView.swift in Sources */,
+				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
-				FAC5CD7E2C0EE8D5001D5862 /* SignInView.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
-				FAC5CD7C2C0EE8B4001D5862 /* TodoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

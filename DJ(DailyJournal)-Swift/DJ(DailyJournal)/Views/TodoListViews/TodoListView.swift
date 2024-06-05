@@ -9,13 +9,17 @@ import SwiftUI
 
 struct TodoListView: View {
     var body: some View {
-        ZStack {
-            EmptyView()
-                .background(Color.backgroundColor)
-            
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            ZStack {
+                Color.backgroundColor
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                }
+            }
         }
-//        .background(Color.backgroundColor)
+        .navigationTitle("TodoList")
     }
 }
 
