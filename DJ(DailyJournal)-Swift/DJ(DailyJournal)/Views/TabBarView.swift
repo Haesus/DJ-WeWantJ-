@@ -33,11 +33,11 @@ struct TabBarView: View {
                         Text("Todo")
                     }
                     .tag(Tab.todolist)
-                
+              
                 DailyLogView()
                     .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
+                        Image(systemName: "pencil.and.list.clipboard")
+                        Text("DailyLog")
                     }
                     .tag(Tab.dailyLog)
             }
