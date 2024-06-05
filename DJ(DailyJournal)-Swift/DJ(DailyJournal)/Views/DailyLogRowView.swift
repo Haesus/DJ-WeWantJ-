@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DailyLogRowView: View {
     @Binding var logItem: LogItem
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -16,7 +17,7 @@ struct DailyLogRowView: View {
                 TextField("내용 입력", text: $logItem.text)
             }
             .foregroundStyle(Color.ivory)
-            .font(.title3)
+            .font(.title2)
         }
     }
 }

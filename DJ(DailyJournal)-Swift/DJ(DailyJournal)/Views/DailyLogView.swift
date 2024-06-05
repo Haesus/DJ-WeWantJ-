@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-struct LogItem: Identifiable {
-    var id: UUID = UUID()
-    var text: String = ""
-}
+
 
 struct DailyLogView: View {
     @State private var logItems: [LogItem] = []
@@ -22,13 +19,11 @@ struct DailyLogView: View {
                 ForEach($logItems) { $logItem in
                     DailyLogRowView(logItem: $logItem)
                         .listRowBackground(Color.clear)
-                    
                 }
                 .onDelete(perform: removeRows)
             }
             .background(Color.backgroundColor)
             .scrollContentBackground(.hidden)
-            
             
             VStack {
                 Spacer()
@@ -48,24 +43,18 @@ struct DailyLogView: View {
                     })
                     .padding(.bottom, 23)
                     .padding(.trailing, 23)
-                    
                 }
             }
         }
     }
-    
-    
-    
     private func addLogItem() {
         logItems.append(LogItem())
     }
-    
+
     private func removeRows(at offsets: IndexSet) {
         logItems.remove(atOffsets: offsets)
     }
 }
-
-
 
 #Preview {
     DailyLogView()
