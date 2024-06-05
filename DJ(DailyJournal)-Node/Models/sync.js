@@ -2,7 +2,7 @@ const { sequelize } = require('./index.js');
 
 const sync = () => {
   sequelize
-    .sync({ force: true, alter: true })
+    .sync({ force: false, alter: true })
     .then(() => console.log('데이터베이스 생성완료'))
     .catch((error) => {
       console.log(error);
