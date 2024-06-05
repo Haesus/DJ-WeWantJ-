@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct DailyLogView: View {
     @State private var logItems: [LogItem] = []
     

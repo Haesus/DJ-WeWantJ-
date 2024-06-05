@@ -22,7 +22,6 @@ struct DailyLogRowView: View {
     }
 }
 
-
 #Preview {
     DailyLogRowView(logItem: .constant(LogItem()))
 }
