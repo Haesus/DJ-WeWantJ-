@@ -19,6 +19,11 @@
 		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
 		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
 		FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
+		FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD8C2C106697001D5862 /* UserModel.swift */; };
+		FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD8E2C106720001D5862 /* SignService.swift */; };
+		FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD902C106730001D5862 /* SignViewModel.swift */; };
+		FAC5CD942C106866001D5862 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAC5CD932C106866001D5862 /* Alamofire */; };
+		FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD992C107A60001D5862 /* BundleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,12 @@
 		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		FAC5CD842C103D09001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		FAC5CD862C103D2B001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		FAC5CD8C2C106697001D5862 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FAC5CD8E2C106720001D5862 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		FAC5CD902C106730001D5862 /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		FAC5CD972C10796F001D5862 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DJ-DailyJournal--Info.plist"; sourceTree = SOURCE_ROOT; };
+		FAC5CD992C107A60001D5862 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC5CD942C106866001D5862 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +90,14 @@
 		FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD972C10796F001D5862 /* Config.xcconfig */,
+				FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */,
 				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
 				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
 				FAC5CD792C0EE673001D5862 /* Models */,
+				FAC5CD732C0EE626001D5862 /* NetworkServices */,
 				FAC5CD782C0EE66C001D5862 /* ViewModels */,
 				FAC5CD712C0EE61C001D5862 /* Views */,
-				FAC5CD732C0EE626001D5862 /* NetworkServices */,
 				FAC5CD722C0EE623001D5862 /* TestModeling */,
 				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
 				FA7CEB1C2C0C42F3008504F6 /* Preview Content */,
@@ -123,6 +137,7 @@
 		FAC5CD732C0EE626001D5862 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD8E2C106720001D5862 /* SignService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -162,6 +177,7 @@
 		FAC5CD782C0EE66C001D5862 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD902C106730001D5862 /* SignViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -169,6 +185,7 @@
 		FAC5CD792C0EE673001D5862 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5CD8C2C106697001D5862 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +195,7 @@
 			children = (
 				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 				329625EC2C104AF1005B68D3 /* TitleExtension.swift */,
+				FAC5CD992C107A60001D5862 /* BundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +225,9 @@
 			dependencies = (
 			);
 			name = "DJ(DailyJournal)";
+			packageProductDependencies = (
+				FAC5CD932C106866001D5862 /* Alamofire */,
+			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +256,9 @@
 				Base,
 			);
 			mainGroup = FA7CEB0A2C0C42F2008504F6;
+			packageReferences = (
+				FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FA7CEB142C0C42F2008504F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,15 +286,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
+				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
+				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
+				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
+				FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +426,7 @@
 		};
 		FA7CEB222C0C42F3008504F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC5CD972C10796F001D5862 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +435,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,6 +456,7 @@
 		};
 		FA7CEB232C0C42F3008504F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC5CD972C10796F001D5862 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +465,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAC5CD932C106866001D5862 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA7CEB0B2C0C42F2008504F6 /* Project object */;
 }
