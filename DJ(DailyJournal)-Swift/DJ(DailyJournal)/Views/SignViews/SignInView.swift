@@ -18,13 +18,29 @@ struct SignInView: View {
             VStack {
                 TextField(text: $signViewModel.userID) {
                     Text("아이디를 입력하세요.")
-                        .foregroundStyle(Color.ivory)
+                        .foregroundStyle(.gray)
                 }
+                .padding(.vertical)
+                .padding(.leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
                 
                 SecureField(text: $signViewModel.password) {
                     Text("비밀번호를 입력하세요.")
-                        .foregroundStyle(Color.ivory)
+                        .foregroundStyle(.gray)
                 }
+                .padding(.vertical)
+                .padding(.leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
                 
                 Button(action: {
                     signViewModel.signIn { success in
@@ -34,7 +50,15 @@ struct SignInView: View {
                     }
                 }, label: {
                     Text("SignIn")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
                 })
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
             }
         }
     }
