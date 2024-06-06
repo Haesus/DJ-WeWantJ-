@@ -11,5 +11,3 @@ struct LogItem: Identifiable {
     var id: UUID = UUID()
     var text: String = ""
 }
-
-
