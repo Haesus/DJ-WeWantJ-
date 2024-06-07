@@ -22,7 +22,6 @@ struct DetailView: View {
             Spacer()
         }
         .frame(width: screenWidth * 0.8)
-        .padding()
         .border(Color.gray)
     }
 }

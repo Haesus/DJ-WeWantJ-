@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ListView: View {
+    let journals: [DailyJournal]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List(journals) { journal in
+                NavigationLink(destination: DetailView(journal: journal)) {
+                    ListRowView(journal: journal)
+                }
+            }
+            .toolbar {
+                Button(action: {}) {
+                    Image(systemName: "plus")
+                }
+            }
+            .navigationTitle("Title")
+        }
     }
 }
 
 #Preview {
-    ListView()
+    ListView(journals: DailyJournal.sampleData)
 }
