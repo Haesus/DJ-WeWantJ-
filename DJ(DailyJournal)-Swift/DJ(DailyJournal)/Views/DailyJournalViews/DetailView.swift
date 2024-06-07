@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct DetailView: View {
+    let journal: DailyJournal
+    private let screenWidth = UIScreen.main.bounds.width
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            HStack {
+                Text(journal.title)
+                    .font(.title)
+                .fontWeight(.bold)
+                Spacer()
+            }
+            Text(journal.content)
+            Spacer()
+        }
+        .frame(width: screenWidth * 0.8)
+        .padding()
+        .border(Color.gray)
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(journal: DailyJournal.sampleData[0])
 }
