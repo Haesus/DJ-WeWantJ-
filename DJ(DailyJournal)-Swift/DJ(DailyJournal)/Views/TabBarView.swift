@@ -51,7 +51,6 @@ struct TabBarView1: View {
     }
 }
 
-
 #Preview {
     TabBarView()
         .environmentObject(SignViewModel())
