@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SignInView: View {
-    @StateObject var signViewModel = SignViewModel()
+    @EnvironmentObject var signViewModel: SignViewModel
+    @State private var showAlert = false
+    @State private var responseMessage = ""
     
     var body: some View {
         ZStack {
@@ -43,10 +45,12 @@ struct SignInView: View {
                 .foregroundStyle(Color.ivory)
                 
                 Button(action: {
-                    signViewModel.signIn { success in
-                        if success {
+                    signViewModel.signIn { signInResponse in
+                        if signInResponse.success {
                             signViewModel.isSignedIn = true
                         }
+                        responseMessage = signInResponse.message
+                        showAlert = true
                     }
                 }, label: {
                     Text("SignIn")
@@ -61,9 +65,13 @@ struct SignInView: View {
                 .foregroundStyle(Color.ivory)
             }
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("로그인 결과"), message: Text(responseMessage), dismissButton: .default(Text("확인")))
+        }
     }
 }
 
 #Preview {
     SignInView()
+        .environmentObject(SignViewModel())
 }

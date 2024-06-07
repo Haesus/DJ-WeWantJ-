@@ -35,7 +35,7 @@ class SignViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func signIn(completionHandler: @escaping (Bool) -> Void) {
+    func signIn(completionHandler: @escaping (SignInResponse) -> Void) {
         SignService.shared.sign(userID: userID, password: password)
             .sink { completion in
                 switch completion {
@@ -44,7 +44,6 @@ class SignViewModel: ObservableObject {
                     case .failure(let failure):
                         print(failure.localizedDescription)
                         print("SignViewModel sign method 실패")
-                        completionHandler(false)
                 }
             } receiveValue: { response in
                 print("""
@@ -54,7 +53,7 @@ class SignViewModel: ObservableObject {
                       ducoment: \(response.document)
                       message: \(response.message)
                       """)
-                completionHandler(response.success)
+                completionHandler(response)
                 if response.success {
                     SignService.shared.saveToken(response.token)
                 }
