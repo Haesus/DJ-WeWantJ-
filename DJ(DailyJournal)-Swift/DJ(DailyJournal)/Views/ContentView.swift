@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var signViewModel = SignViewModel()
+    var journalListViewModel = JournalListViewModel()
     
     var body: some View {
         MainView()
             .environmentObject(SignViewModel())
+            .environmentObject(journalListViewModel)
     }
 }
 
