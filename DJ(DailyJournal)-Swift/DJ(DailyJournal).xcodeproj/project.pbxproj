@@ -12,6 +12,9 @@
 		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
 		329625E52C1028C2005B68D3 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E42C1028C2005B68D3 /* TestModel.swift */; };
 		329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625EC2C104AF1005B68D3 /* TitleExtension.swift */; };
+		4E3CBACE2C128C7B007C6817 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* ListView.swift */; };
+		4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* ListRowView.swift */; };
+		4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* DetailView.swift */; };
 		FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */; };
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		329625E02C0F0E66005B68D3 /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogView.swift"; sourceTree = SOURCE_ROOT; };
 		329625E42C1028C2005B68D3 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = "DJ(DailyJournal)/TestModeling/TestModel.swift"; sourceTree = SOURCE_ROOT; };
 		329625EC2C104AF1005B68D3 /* TitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleExtension.swift; path = "DJ(DailyJournal)/Views/TodoListViews/TitleExtension.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBACD2C128C7B007C6817 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListView.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBACF2C128C83007C6817 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRowView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListRowView.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBAD12C128C98007C6817 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/DetailView.swift"; sourceTree = SOURCE_ROOT; };
 		4E9014FF2C1287F8007A84B7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DJ(DailyJournal).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJ_DailyJournal_App.swift; sourceTree = "<group>"; };
@@ -69,13 +75,6 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		4E3CBAC42C128915007C6817 /* DailyJournalViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DailyJournalViews;
-			sourceTree = "<group>";
-		};
 		4E3CBAC52C1289B8007C6817 /* DailyLogViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +90,16 @@
 				329625E42C1028C2005B68D3 /* TestModel.swift */,
 			);
 			path = TestModeling;
+			sourceTree = "<group>";
+		};
+		4E3CBAD32C128D28007C6817 /* DailyJournalViews */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CBACD2C128C7B007C6817 /* ListView.swift */,
+				4E3CBACF2C128C83007C6817 /* ListRowView.swift */,
+				4E3CBAD12C128C98007C6817 /* DetailView.swift */,
+			);
+			path = DailyJournalViews;
 			sourceTree = "<group>";
 		};
 		FA7CEB0A2C0C42F2008504F6 = {
@@ -143,8 +152,8 @@
 				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
 				FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */,
 				FAC5CD772C0EE659001D5862 /* SignViews */,
-				4E3CBAC42C128915007C6817 /* DailyJournalViews */,
 				4E3CBAC52C1289B8007C6817 /* DailyLogViews */,
+				4E3CBAD32C128D28007C6817 /* DailyJournalViews */,
 				FAC5CD752C0EE62A001D5862 /* TodoListViews */,
 			);
 			path = Views;
@@ -287,6 +296,8 @@
 			files = (
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
+				4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */,
+				4E3CBACE2C128C7B007C6817 /* ListView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
@@ -298,6 +309,7 @@
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
+				4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */,
 				FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
