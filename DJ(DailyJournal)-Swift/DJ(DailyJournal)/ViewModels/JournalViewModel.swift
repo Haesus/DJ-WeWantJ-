@@ -10,14 +10,15 @@ import UIKit
 import Combine
 
 class JournalViewModel: ObservableObject {
-    @Published var id: String = " "
-    @Published var journalTitle: String = " "
-    @Published var journalText: String = " "
+    @Published var id: String = ""
+    @Published var journalTitle: String = ""
+    @Published var journalText: String = ""
     @Published var journalImages: UIImage?
-    @Published var userID: String = " "
-    @Published var createdAt: String = " "
+    @Published var userID: String = ""
+    @Published var createdAt: String = ""
     
     private var cancellable = Set<AnyCancellable>()
+    
     func saveJournal(completioHandler: @escaping (Bool)->Void) {
         if journalImages == nil {
             self.journalImages = UIImage(systemName: "journalImages")
@@ -28,7 +29,6 @@ class JournalViewModel: ObservableObject {
         let journalImage = JournalImage(id: UUID().uuidString, journalImageString: imageString, journalID: id)
 
         let journal = Journal(id: id, journalTitle: journalTitle, journalText: journalText, createdAt: createdAt, journalImages: [journalImage], userID: userID)
-
         
         JournalService.shared.saveJournal(journal)
             .sink { completion in

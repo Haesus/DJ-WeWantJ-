@@ -17,12 +17,14 @@ class JournalService {
             print("API 키를 로드하지 못했습니다.")
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
+        
+        guard let token = SignService.shared.getToken() else {
+            return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
+        }
+        
         let url = "https://\(hostKey)/journal/save"
-        guard let token = SignService.shared.getToken()
-        else { return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher() }
-        
-        
         let header: HTTPHeaders = ["Authorization":"Bearer \(token)"]
+        
         return AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(journal.id.data(using: .utf8)!, withName: "id")
             multipartFormData.append(journal.userID.data(using: .utf8)!, withName: "userID")
@@ -44,17 +46,19 @@ class JournalService {
         .map { $0.documents[0] }
         .eraseToAnyPublisher()
     }
-    //JournalList
+    
+    // MARK: - JournalList
     func fetchJournals() -> AnyPublisher<[Journal], AFError> {
         guard let hostKey = Bundle.main.hostKey else {
             print("API 키를 로드하지 못했습니다.")
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
-        let url = "https://\(hostKey)/journal/load"
+        
         guard let token = SignService.shared.getToken() else {
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
         
+        let url = "https://\(hostKey)/journal/load"
         let header: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         return AF.request(url, method: .get, headers: header)
