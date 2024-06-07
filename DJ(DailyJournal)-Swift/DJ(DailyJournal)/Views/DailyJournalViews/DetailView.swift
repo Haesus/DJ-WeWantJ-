@@ -58,5 +58,7 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(journal: DailyJournal.sampleData[0])
+    NavigationView {
+        DetailView(journal: DailyJournal.sampleData[0])
+    }
 }
