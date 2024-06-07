@@ -11,19 +11,19 @@ struct DetailView: View {
     @State private var isEditing = false
     @State private var editedContent: String
     
-    let journal: DailyJournal
+    let journal: Journal
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
-    init(journal: DailyJournal) {
+    init(journal: Journal) {
         self.journal = journal
-        _editedContent = State(initialValue: journal.content)
+        _editedContent = State(initialValue: journal.journalText)
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(journal.title)
+                Text(journal.journalTitle)
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
@@ -83,13 +83,13 @@ struct DetailView: View {
     }
     
     private func cancelEditing() {
-        editedContent = journal.content
+        editedContent = journal.journalText
         isEditing = false
     }
 }
 
 #Preview {
     NavigationView {
-        DetailView(journal: DailyJournal.sampleData[0])
+        DetailView(journal: Journal(id: "1", journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
     }
 }
