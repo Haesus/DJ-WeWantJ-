@@ -32,7 +32,7 @@ extension DailyJournal {
     static let sampleData: [DailyJournal] =
     [
         DailyJournal(
-            content: "Schedule\n* 20:00-21:00 |\n\nTo-do\n\nDaily log\n수면 |\n아침 |\n점심 |\n저녁 |\n간식 | \n운동 |\n공부 |",
+            content: "Schedule\n* 20:00-21:00 |\n\nTo-do\n\nDaily log\n수면 |\n아침 |\n점심 |\n저녁 |\n간식 | \n운동 |\n공부 |\n* 20:00-21:00 |\n\nTo-do\n\nDaily log\n수면 |\n아침 |\n점심 |\n저녁 |\n간식 | \n운동 |\n공부 |\n* 20:00-21:00 |\n\nTo-do\n\nDaily log\n수면 |\n아침 |\n점심 |\n저녁 |\n간식 | \n운동 |\n공부 |",
             date: Date()
         ),
         DailyJournal(
