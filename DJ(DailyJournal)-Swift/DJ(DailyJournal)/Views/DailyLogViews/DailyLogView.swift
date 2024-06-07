@@ -11,8 +11,9 @@ import UIKit
 
 
 struct DailyLogView: View {
+    
     init(){
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
       }
     @State private var logItems: [LogItem] = []
     
@@ -54,8 +55,6 @@ struct DailyLogView: View {
                 }
             }
             .navigationBarTitle("Daily Log", displayMode: .large)
-            
-            
         }
     }
     

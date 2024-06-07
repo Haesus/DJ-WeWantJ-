@@ -16,6 +16,10 @@
 		4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* ListRowView.swift */; };
 		4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* DetailView.swift */; };
 		4E3CBAD52C129729007C6817 /* DailyJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD42C129729007C6817 /* DailyJournal.swift */; };
+		329625F02C10B204005B68D3 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625EF2C10B204005B68D3 /* JournalModel.swift */; };
+		329625F22C10B24A005B68D3 /* JournalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F12C10B24A005B68D3 /* JournalService.swift */; };
+		329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F42C118558005B68D3 /* JournalListViewModel.swift */; };
+		329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F62C11878C005B68D3 /* JournalViewModel.swift */; };
 		FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */; };
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
@@ -28,6 +32,7 @@
 		FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD902C106730001D5862 /* SignViewModel.swift */; };
 		FAC5CD942C106866001D5862 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAC5CD932C106866001D5862 /* Alamofire */; };
 		FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD992C107A60001D5862 /* BundleExtension.swift */; };
+		FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD9D2C128B76001D5862 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		4E3CBAD12C128C98007C6817 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/DetailView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBAD42C129729007C6817 /* DailyJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyJournal.swift; sourceTree = "<group>"; };
 		4E3CBAD92C12D139007C6817 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		329625EF2C10B204005B68D3 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		329625F12C10B24A005B68D3 /* JournalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalService.swift; sourceTree = "<group>"; };
+		329625F32C117ACF005B68D3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		329625F42C118558005B68D3 /* JournalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewModel.swift; sourceTree = "<group>"; };
+		329625F62C11878C005B68D3 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DJ(DailyJournal).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJ_DailyJournal_App.swift; sourceTree = "<group>"; };
 		FA7CEB182C0C42F2008504F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +66,7 @@
 		FAC5CD902C106730001D5862 /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
 		FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DJ-DailyJournal--Info.plist"; sourceTree = SOURCE_ROOT; };
 		FAC5CD992C107A60001D5862 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		FAC5CD9D2C128B76001D5862 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
+				FAC5CD9D2C128B76001D5862 /* MainView.swift */,
 				FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */,
 				FAC5CD772C0EE659001D5862 /* SignViews */,
 				4E3CBAC52C1289B8007C6817 /* DailyLogViews */,
@@ -165,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC5CD8E2C106720001D5862 /* SignService.swift */,
+				329625F12C10B24A005B68D3 /* JournalService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -189,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC5CD902C106730001D5862 /* SignViewModel.swift */,
+				329625F62C11878C005B68D3 /* JournalViewModel.swift */,
+				329625F42C118558005B68D3 /* JournalListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 			children = (
 				FAC5CD8C2C106697001D5862 /* UserModel.swift */,
 				4E3CBAD42C129729007C6817 /* DailyJournal.swift */,
+				329625EF2C10B204005B68D3 /* JournalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,23 +313,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */,
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
 				4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */,
 				4E3CBACE2C128C7B007C6817 /* ListView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
+				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
+				329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
+				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
 				4E3CBAD52C129729007C6817 /* DailyJournal.swift in Sources */,
 				4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */,
+				FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */,
 				FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +473,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -482,6 +504,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
