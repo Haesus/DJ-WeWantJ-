@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @EnvironmentObject var signViewModel: SignViewModel
+    
     var body: some View {
-        NavigationStack {
-            TabView() {
-                // TODO: - JournalListView로 수정
-                TabBarView1()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                
-                TodoListView()
-                    .tabItem {
-                        Image(systemName: "checkmark.seal")
-                        Text("Todo")
-                    }
-              
-                DailyLogView()
-                    .tabItem {
-                        Image(systemName: "pencil.and.list.clipboard")
-                        Text("DailyLog")
-                    }
-            }
-            .tint(Color.lightYellow)
-            .onAppear() {
-                UITabBar.appearance().unselectedItemTintColor = .gray
-            }
+        TabView() {
+            // TODO: - JournalListView로 수정
+            TabBarView1()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
+            TodoListView()
+                .tabItem {
+                    Image(systemName: "checkmark.seal")
+                    Text("Todo")
+                }
+            
+            DailyLogView()
+                .tabItem {
+                    Image(systemName: "pencil.and.list.clipboard")
+                    Text("DailyLog")
+                }
+        }
+        .tint(Color.lightYellow)
+        .onAppear() {
+            UITabBar.appearance().unselectedItemTintColor = .gray
         }
     }
 }
@@ -54,4 +54,5 @@ struct TabBarView1: View {
 
 #Preview {
     TabBarView()
+        .environmentObject(SignViewModel())
 }
