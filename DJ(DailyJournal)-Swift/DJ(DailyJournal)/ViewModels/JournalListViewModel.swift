@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class JournalListViewModel: ObservableObject {
-    @Published var sales:[Journal] = []
+    @Published var journals:[Journal] = []
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -23,8 +23,25 @@ class JournalListViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             } receiveValue: { documents in
-                self.sales = documents
+                self.journals = documents
                 print(documents[0])
+            }.store(in: &cancellables)
+    }
+    
+    func updateJournal(_ journal: Journal) {
+        JournalService.shared.updateJournal(journal)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Journal 업데이트 성공")
+                case .failure(let error):
+                    print("Journal 업데이트 실패\(error.localizedDescription)")
+                }
+            } receiveValue: { updatedJournal in
+                if let index = self.journals.firstIndex(where: { $0.id == updatedJournal.id }) {
+                    self.journals[index] = updatedJournal
+                }
+                print(updatedJournal)
             }.store(in: &cancellables)
     }
 }

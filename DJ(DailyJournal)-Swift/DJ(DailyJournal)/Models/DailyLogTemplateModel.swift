@@ -12,6 +12,6 @@ struct DailyTemplateModel: Codable, Hashable {
 }
 
 struct DailyLog: Codable, Hashable {
-    var isdaily: String
+    var isDaily: String
     var dailyText: String
 }

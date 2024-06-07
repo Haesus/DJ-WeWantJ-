@@ -8,20 +8,50 @@
 import SwiftUI
 
 struct DailyLogRowView: View {
-    @Binding var logItem: LogItem
-    
+    @StateObject var dailyTemplateViewModel: TemplateViewModel<DailyTemplateModel>
+    @Binding var dailyTemplate: DailyTemplateModel?
+   
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text(" | ")
-                TextField("내용 입력", text: $logItem.text)
+            if let dailyLogList = dailyTemplate?.dailyLogList {
+                List {
+                    ForEach(dailyLogList.indices, id: \.self) { index in
+                        HStack {
+                            TextField("Title", text: Binding(
+                                get: {
+                                    dailyLogList[index].isDaily
+                                },
+                                set: { newValue in
+                                    dailyTemplateViewModel.template?.dailyLogList[index].isDaily = newValue
+                                }))
+                            .foregroundColor(.ivory)
+                            .font(.title2)
+                          
+                            Spacer()
+                            
+                            Text(" | ")
+                            
+                            TextField("내용 입력", text: Binding(
+                                get: {
+                                    dailyLogList[index].dailyText
+                                },
+                                set: { newValue in
+                                    dailyTemplateViewModel.template?.dailyLogList[index].dailyText = newValue
+                                }))
+                            .foregroundColor(.ivory)
+                            .font(.title2)
+                            
+                            Spacer()
+                        }
+                    }
+                }
             }
-            .foregroundStyle(Color.ivory)
-            .font(.title2)
         }
     }
 }
 
+
+
 #Preview {
-    DailyLogRowView(logItem: .constant(LogItem()))
+    DailyLogRowView(dailyTemplateViewModel: TemplateViewModel(), dailyTemplate: .constant(DailyTemplateModel(dailyLogList: [DailyLog(isDaily: "", dailyText: "")])))
 }

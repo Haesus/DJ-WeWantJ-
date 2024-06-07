@@ -42,7 +42,5 @@ class JournalViewModel: ObservableObject {
                 completioHandler(true)
                 print(journal.journalImages as Any)
             }.store(in: &cancellable)
-
     }
 }
-

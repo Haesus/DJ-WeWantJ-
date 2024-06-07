@@ -6,16 +6,13 @@
 //
 
 import SwiftUI
-import UIKit
-
-
 
 struct DailyLogView: View {
+    @StateObject var dailyTemplateViewModel = TemplateViewModel<DailyTemplateModel>()
     
     init(){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
-      }
-    @State private var logItems: [LogItem] = []
+    }
     
     var body: some View {
         NavigationView {
@@ -24,21 +21,26 @@ struct DailyLogView: View {
                     .ignoresSafeArea()
                 
                 List {
-                    ForEach($logItems) { $logItem in
-                        DailyLogRowView(logItem: $logItem)
-                            .listRowBackground(Color.clear)
+                    // 수정된 부분: ForEach의 사용이 수정되었습니다.
+                    if let dailyLogList = dailyTemplateViewModel.template?.dailyLogList {
+                        ForEach(dailyLogList.indices, id: \.self) { index in
+                            
+                            DailyLogRowView(dailyTemplateViewModel: dailyTemplateViewModel, dailyTemplate: $dailyTemplateViewModel.template)
+                                .listRowBackground(Color.clear)
+                        }
                     }
-                    .onDelete(perform: removeRows)
                 }
                 .background(Color.backgroundColor)
                 .scrollContentBackground(.hidden)
                 
                 VStack {
                     Spacer()
+                    
                     HStack {
                         Spacer()
+                        
                         Button(action: {
-                            addLogItem()
+                            
                         }, label: {
                             ZStack {
                                 Circle()
@@ -54,19 +56,20 @@ struct DailyLogView: View {
                     }
                 }
             }
-            .navigationBarTitle("Daily Log", displayMode: .large)
+            .navigationTitle("Daily Log")
+            .toolbar {
+                Button(action: {
+                    dailyTemplateViewModel.saveToJSON(fileName: "DailyTemplate.json")
+                }, label: {
+                    Text("수정")
+                        .foregroundStyle(Color.lightYellow)
+                })
+            }
         }
-    }
-    
-    private func addLogItem() {
-        logItems.append(LogItem())
-    }
-    
-    private func removeRows(at offsets: IndexSet) {
-        logItems.remove(atOffsets: offsets)
+        .onAppear(perform: { dailyTemplateViewModel.loadTemplate(templateName: "DailyTemplate.json")
+        })
     }
 }
-
 
 #Preview {
     DailyLogView()
