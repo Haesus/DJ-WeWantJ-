@@ -1,0 +1,12 @@
+{
+    "todoList": [
+        {
+            "isTodo": true,
+            "todoText": "Swift 공부하기"
+        },
+        {
+            "isTodo": false,
+            "todoText": "운동하기"
+        }
+    ]
+}

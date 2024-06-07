@@ -28,6 +28,11 @@
 		FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD902C106730001D5862 /* SignViewModel.swift */; };
 		FAC5CD942C106866001D5862 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAC5CD932C106866001D5862 /* Alamofire */; };
 		FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD992C107A60001D5862 /* BundleExtension.swift */; };
+
+		FAC5CDA02C129731001D5862 /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */; };
+		FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */; };
+		FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CDA12C129A92001D5862 /* TodoTemplate.json */; };
+		FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */; };
 		FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD9D2C128B76001D5862 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +62,14 @@
 		FAC5CD902C106730001D5862 /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
 		FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DJ-DailyJournal--Info.plist"; sourceTree = SOURCE_ROOT; };
 		FAC5CD992C107A60001D5862 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+
+		FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
+		FAC5CDA12C129A92001D5862 /* TodoTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TodoTemplate.json; sourceTree = "<group>"; };
+		FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTemplateModel.swift; sourceTree = "<group>"; };
+		FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRowView.swift; sourceTree = "<group>"; };
+
 		FAC5CD9D2C128B76001D5862 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,7 @@
 			children = (
 				329625F32C117ACF005B68D3 /* Config.xcconfig */,
 				FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */,
+				FAC5CDA12C129A92001D5862 /* TodoTemplate.json */,
 				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
 				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
 				FAC5CD792C0EE673001D5862 /* Models */,
@@ -167,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC5CD842C103D09001D5862 /* TodoListView.swift */,
+				FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */,
 			);
 			path = TodoListViews;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				FAC5CD902C106730001D5862 /* SignViewModel.swift */,
 				329625F62C11878C005B68D3 /* JournalViewModel.swift */,
 				329625F42C118558005B68D3 /* JournalListViewModel.swift */,
+				FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,6 +216,7 @@
 			children = (
 				FAC5CD8C2C106697001D5862 /* UserModel.swift */,
 				329625EF2C10B204005B68D3 /* JournalModel.swift */,
+				FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */,
 				FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */,
 				FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */,
 			);
@@ -301,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */,
+				FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */,
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
@@ -309,11 +327,13 @@
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
 				329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
+				FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
+				FAC5CDA02C129731001D5862 /* TemplateViewModel.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
