@@ -19,6 +19,13 @@ struct SignInView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                    Text("로그인")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(Color.ivory)
+                    
+                    Spacer()
+                    
                     TextField(text: $signViewModel.userID) {
                         Text("아이디를 입력하세요.")
                             .foregroundStyle(.gray)
@@ -60,7 +67,7 @@ struct SignInView: View {
                     })
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(Color.ivory, lineWidth: 1)
                     )
                     .padding(.horizontal)
                     .foregroundStyle(Color.ivory)
@@ -72,10 +79,12 @@ struct SignInView: View {
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(Color.ivory, lineWidth: 1)
                     )
                     .padding(.horizontal)
                     .foregroundStyle(Color.ivory)
+                    
+                    Spacer()
                 }
                 .padding()
             }

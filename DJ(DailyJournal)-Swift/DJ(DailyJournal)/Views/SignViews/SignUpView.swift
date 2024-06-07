@@ -13,7 +13,7 @@ struct SignUpView: View {
     @State private var showAlert = false
     @State private var responseMessage = ""
     @State private var navigateToSignIn = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -21,6 +21,13 @@ struct SignUpView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                    Text("회원가입")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(Color.ivory)
+                        
+                    Spacer()
+                    
                     TextField(text: $signViewModel.userNickName) {
                         Text("사용자 이름")
                             .foregroundStyle(.gray)
@@ -78,11 +85,17 @@ struct SignUpView: View {
                     })
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(Color.ivory, lineWidth: 1)
                     )
                     .padding(.horizontal)
                     .foregroundStyle(Color.ivory)
                     
+                    Text("가입 시, DJ의 다음 사항에 동의하는 것으로 간주합니다. 서비스 이용약관 및 개인정보 정책")
+                        .padding()
+                        .foregroundStyle(Color.gray)
+                        .font(.subheadline)
+                    
+                    Spacer()
                 }
                 .padding()
             }
