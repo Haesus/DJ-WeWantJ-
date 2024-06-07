@@ -51,14 +51,6 @@ struct TabBarView1: View {
     }
 }
 
-struct TabBarView2: View {
-    var body: some View {
-        NavigationView {
-            Text("Profile View")
-                .navigationTitle("Profile")
-        }
-    }
-}
 
 #Preview {
     TabBarView()
