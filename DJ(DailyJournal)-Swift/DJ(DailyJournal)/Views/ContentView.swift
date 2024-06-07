@@ -11,8 +11,9 @@ struct ContentView: View {
     var signViewModel = SignViewModel()
     
     var body: some View {
-        MainView()
-            .environmentObject(SignViewModel())
+        ImageTestView()
+//        MainView()
+//            .environmentObject(SignViewModel())
     }
 }
 
