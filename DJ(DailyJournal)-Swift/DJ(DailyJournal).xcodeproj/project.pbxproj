@@ -20,7 +20,6 @@
 		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
 		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
 		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
-		4E3CBACE2C128C7B007C6817 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* ListView.swift */; };
 		4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* JournalListView.swift */; };
 		4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* ListRowView.swift */; };
 		4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* DetailView.swift */; };
@@ -55,7 +54,6 @@
 		32DDA11D2C13A57C0075335A /* DailyTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DailyTemplate.json; sourceTree = "<group>"; };
 		32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogTemplateModel.swift; sourceTree = "<group>"; };
 		32FCA5612C13586800E2CD39 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		4E3CBACD2C128C7B007C6817 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBACD2C128C7B007C6817 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalListView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBACF2C128C83007C6817 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRowView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListRowView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBAD12C128C98007C6817 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/DetailView.swift"; sourceTree = SOURCE_ROOT; };
@@ -349,7 +347,6 @@
 				32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
-				4E3CBAD52C129729007C6817 /* DailyJournal.swift in Sources */,
 				32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */,
 				4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */,
 				FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */,
