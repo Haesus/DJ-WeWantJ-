@@ -15,21 +15,20 @@ struct JournalListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.backgroundColor
-                    .ignoresSafeArea()
-                List(journalListViewModel.journals, id: \.id) { journal in
-                    NavigationLink(destination: DetailView(journal: journal)) {
-                        ListRowView(journal: journal)
-                    }
+        NavigationSplitView {
+            List(journalListViewModel.journals, id: \.id) { journal in
+                NavigationLink(destination: DetailView(journal: journal)) {
+                    ListRowView(journal: journal)
                 }
-                .navigationTitle("Journals")
-                .onAppear(perform: {
-                    journalListViewModel.fetchJournals()
-                    print(journalListViewModel.journals)
-            })
             }
+            .onAppear(perform: {
+                journalListViewModel.fetchJournals()
+            })
+            .navigationTitle("Journals")
+            .scrollContentBackground(.hidden)
+            .background(Color.backgroundColor)
+        } detail: {
+            Text("Navigation Split View")
         }
     }
 }
