@@ -90,6 +90,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(journal: Journal(id: "1", journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
+        DetailView(journal: Journal(id: 1, journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
     }
 }

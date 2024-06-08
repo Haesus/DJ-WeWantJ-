@@ -28,7 +28,8 @@ class JournalViewModel: ObservableObject {
         let imageString = journalImages?.jpegData(compressionQuality: 0.7)?.base64EncodedString() ?? ""
         let journalImage = JournalImage(id: UUID().uuidString, journalImageString: imageString, journalID: id)
 
-        let journal = Journal(id: id, journalTitle: journalTitle, journalText: journalText, createdAt: createdAt, journalImages: [journalImage], userID: userID)
+        // !!!: 6/7 let journal = Journal(...) --> CreatedJournal(...)
+        let journal = CreatedJournal(journalTitle: journalTitle, journalText: journalText, createdAt: createdAt, journalImages: [journalImage], userID: userID)
         
         JournalService.shared.saveJournal(journal)
             .sink { completion in

@@ -23,5 +23,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(journal: Journal(id: "1", journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
+    ListRowView(journal: Journal(id: 1, journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
 }
