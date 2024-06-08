@@ -1,0 +1,20 @@
+{
+    "dailyLogList": [
+        {
+            "isDaily": "아침",
+            "dailyText": "안먹는다"
+        },
+        {
+            "isDaily": "점심",
+            "dailyText": "뭐먹지"
+        },
+        {
+            "isDaily": "저녁",
+            "dailyText": "뭐먹지"
+        },
+        {
+            "isDaily": "운동",
+            "dailyText": "해야지"
+        }
+    ]
+}
