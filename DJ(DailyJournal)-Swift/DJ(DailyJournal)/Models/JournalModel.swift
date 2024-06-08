@@ -12,8 +12,8 @@ struct CreatedJournal: Codable {
     let journalTitle: String
     let journalText: String
     let createdAt: String
-    let journalImages: [JournalImage]?
-    let userID: String
+    let journalImages: [NewJournalImage]?
+    let userID: Int
 }
 
 struct JournalResponse: Codable {
@@ -29,11 +29,21 @@ struct Journal: Codable {
     let journalText: String
     let createdAt: String
     let journalImages: [JournalImage]?
-    let userID: String
+    let userID: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id, journalTitle, journalText, createdAt, userID
+        case journalImages = "JournalImages"
+    }
+}
+
+struct NewJournalImage: Codable {
+    let journalImageString: String
+    let journalID: Int
 }
 
 struct JournalImage: Codable {
-    let id: String
+    let id: Int
     let journalImageString: String
-    let journalID: String
+    let journalID: Int
 }
