@@ -29,7 +29,7 @@ class JournalService {
         return AF.upload(multipartFormData: { multipartFormData in
             // MARK: 코드 보수 - id field 삭제, Journal 모델 Identifiable 프로토콜 적용할까요? @haneujeen
             //multipartFormData.append(journal.id.data(using: .utf8)!, withName: "id")
-            multipartFormData.append(journal.userID.data(using: .utf8)!, withName: "userID")
+            multipartFormData.append(String(journal.userID).data(using: .utf8)!, withName: "userID")
             multipartFormData.append(journal.journalTitle.data(using: .utf8)!, withName: "journalTitle")
             multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
             multipartFormData.append(journal.createdAt.data(using: .utf8)!, withName: "createdAt")
@@ -64,6 +64,18 @@ class JournalService {
         let header: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         return AF.request(url, method: .get, headers: header)
+            .responseDecodable(of: JournalResponse.self) { response in
+                    switch response.result {
+                    case .success(let journalResponse):
+                        print("Decoding 성공")
+                    case .failure(let error):
+                        if let data = response.data {
+                            let json = String(data: data, encoding: .utf8) ?? "데이터 문자열 변환 에러"
+                            print("Response data: \(json)")
+                        }
+                        print("Decoding error: \(error)")
+                    }
+                }
             .publishDecodable(type: JournalResponse.self)
             .value()
             .map { $0.documents }
@@ -85,8 +97,8 @@ class JournalService {
             let header: HTTPHeaders = ["Authorization": "Bearer \(token)"]
             
             return AF.upload(multipartFormData: { multipartFormData in
-                multipartFormData.append(journal.id.data(using: .utf8)!, withName: "id")
-                multipartFormData.append(journal.userID.data(using: .utf8)!, withName: "userID")
+                //multipartFormData.append(journal.id.data(using: .utf8)!, withName: "id")
+                multipartFormData.append(String(journal.userID).data(using: .utf8)!, withName: "userID")
                 multipartFormData.append(journal.journalTitle.data(using: .utf8)!, withName: "journalTitle")
                 multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
                 multipartFormData.append(journal.createdAt.data(using: .utf8)!, withName: "createdAt")
