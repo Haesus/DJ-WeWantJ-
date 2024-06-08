@@ -31,7 +31,7 @@ struct DetailView: View {
             ScrollView {
                 if isEditing {
                     TextEditor(text: $editedContent)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.7, maxHeight: .infinity, alignment: .leading)
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
@@ -39,9 +39,9 @@ struct DetailView: View {
                         .lineSpacing(0)
                 } else {
                     Text(editedContent)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 5)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
@@ -49,7 +49,6 @@ struct DetailView: View {
                         .lineSpacing(0)
                 }
             }
-            .frame(maxHeight: .infinity)
             Spacer()
         }
         .frame(width: screenWidth * 0.9)
@@ -90,6 +89,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(journal: Journal(id: 1, journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
+        DetailView(journal: Journal(id: 1, journalTitle: "title", journalText: "text...", createdAt: "2024", journalImages: nil, userID: 3))
     }
 }

@@ -6,11 +6,25 @@
 //
 
 import SwiftUI
+let journal = Journal(id: 10, journalTitle: "일기 제목 수정", journalText: "오늘 사실 아주 많은 일이 있었습니다.", createdAt: "2024-06-05T02:18:35.000Z", journalImages: Optional([JournalImage(id: 9, journalImageString: "IMG_62451717553915588.JPG", journalID: 10)]), userID: 3)
 
 struct ListRowView: View {
     let journal: Journal
     var body: some View {
         VStack(alignment: .leading) {
+            if let hostKey = Bundle.main.hostKey,
+               let imageString = journal.journalImages?[0].journalImageString {
+                AsyncImage(url: URL(string: "\(hostKey)/images/\(imageString)")) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 100, height: 100)
+                .border(Color.gray)
+            }
+            
             HStack {
                 Text(journal.journalTitle)
                     .font(.headline)
@@ -23,5 +37,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(journal: Journal(id: 1, journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
+    ListRowView(journal: journal)
 }
