@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ListRowView: View {
-    let journal: DailyJournal
+    let journal: Journal
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(journal.title)
+                Text(journal.journalTitle)
                     .font(.headline)
                 Spacer()
             }
-            Text(journal.content)
+            Text(journal.journalText)
                 .lineLimit(1)
         }
     }
 }
 
 #Preview {
-    ListRowView(journal: DailyJournal.sampleData[0])
+    ListRowView(journal: Journal(id: "1", journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
 }

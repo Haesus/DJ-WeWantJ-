@@ -9,11 +9,10 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var signViewModel: SignViewModel
-    
+    @EnvironmentObject var journalListViewModel: JournalListViewModel
     var body: some View {
         TabView() {
-            // TODO: - JournalListView로 수정
-            TabBarView1()
+            JournalListView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -38,20 +37,8 @@ struct TabBarView: View {
     }
 }
 
-struct TabBarView1: View {
-    var body: some View {
-        ZStack {
-            Color.backgroundColor
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("Journal View")
-            }
-        }
-    }
-}
-
 #Preview {
     TabBarView()
         .environmentObject(SignViewModel())
+        .environmentObject(JournalListViewModel())
 }
