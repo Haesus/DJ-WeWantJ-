@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TodoListView: View {
+    @StateObject var todoListTemplateViewModel = TemplateViewModel<TodoTemplateModel>()
     
     init(){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
@@ -20,11 +21,44 @@ struct TodoListView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    TodoListRowView(todoListTemplateViewModel: todoListTemplateViewModel, todoTemplate: $todoListTemplateViewModel.template)
+                }
+                
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(.lightYellow)
+                                    .frame(width: 70, height: 70)
+                                Image(systemName: "plus")
+                                    .foregroundColor(.ivory)
+                                    .font(.system(size: 35, weight: .bold))
+                            }
+                        })
+                        .padding(.bottom, 23)
+                        .padding(.trailing, 23)
+                    }
                 }
             }
             .navigationTitle("TodoList")
+            .toolbar {
+                Button(action: {
+                    todoListTemplateViewModel.saveToJSON(fileName: "TodoTemplate.json")
+                }, label: {
+                    Text("수정")
+                        .foregroundStyle(Color.lightYellow)
+                })
+            }
         }
+        .onAppear(perform: { todoListTemplateViewModel.loadTemplate(templateName: "TodoTemplate.json")
+        })
     }
 }
 
