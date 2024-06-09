@@ -39,6 +39,7 @@
 		FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */; };
 		FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */; };
 		FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB892C12E94300B8CFDE /* ImageTestView.swift */; };
+		FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRowView.swift; sourceTree = "<group>"; };
 		FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageViewModel.swift; sourceTree = "<group>"; };
 		FADBCB892C12E94300B8CFDE /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
+		FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				FAC5CD992C107A60001D5862 /* BundleExtension.swift */,
 				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 				329625EC2C104AF1005B68D3 /* TitleExtension.swift */,
+				FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */,
 				FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */,
+				FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
@@ -485,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
@@ -517,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
