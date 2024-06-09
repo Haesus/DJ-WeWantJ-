@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
+		327510C02C15972400926A9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 327510BF2C15972400926A9A /* Alamofire */; };
 		329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */; };
 		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
 		329625E52C1028C2005B68D3 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E42C1028C2005B68D3 /* TestModel.swift */; };
@@ -16,7 +17,6 @@
 		329625F22C10B24A005B68D3 /* JournalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F12C10B24A005B68D3 /* JournalService.swift */; };
 		329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F42C118558005B68D3 /* JournalListViewModel.swift */; };
 		329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F62C11878C005B68D3 /* JournalViewModel.swift */; };
-		32DDA11C2C1377E20075335A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32DDA11B2C1377E20075335A /* Alamofire */; };
 		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
 		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
 		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDA11C2C1377E20075335A /* Alamofire in Frameworks */,
+				327510C02C15972400926A9A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 			);
 			name = "DJ(DailyJournal)";
 			packageProductDependencies = (
-				32DDA11B2C1377E20075335A /* Alamofire */,
+				327510BF2C15972400926A9A /* Alamofire */,
 			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
@@ -589,7 +589,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		32DDA11B2C1377E20075335A /* Alamofire */ = {
+		327510BF2C15972400926A9A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
