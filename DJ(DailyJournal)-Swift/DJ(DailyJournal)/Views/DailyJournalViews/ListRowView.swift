@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-let journal = Journal(id: 10, journalTitle: "일기 제목 수정", journalText: "오늘 사실 아주 많은 일이 있었습니다.", createdAt: "2024-06-05T02:18:35.000Z", journalImages: Optional([JournalImage(id: 9, journalImageString: "IMG_62451717553915588.JPG", journalID: 10)]), userID: 3)
+let journal = Journal(id: 10, journalTitle: "일기 제목 수정", journalText: "오늘 사실 아주 많은 일이 있었습니다.", createdAt: "2024-06-05T02:18:35.000Z", journalImages: Optional([JournalImage(id: 9, journalImageString: "IMG_62451717514657152.JPG", journalID: 10)]), userID: 3)
 
 struct ListRowView: View {
     let journal: Journal
@@ -14,7 +14,7 @@ struct ListRowView: View {
         VStack(alignment: .leading) {
             if let hostKey = Bundle.main.hostKey,
                let imageString = journal.journalImages?[0].journalImageString {
-                AsyncImage(url: URL(string: "\(hostKey)/images/\(imageString)")) { image in
+                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
                     image
                         .resizable()
                         .scaledToFit()

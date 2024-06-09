@@ -28,10 +28,24 @@ struct DetailView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
+            
             ScrollView {
+                if let hostKey = Bundle.main.hostKey,
+                   let imageString = journal.journalImages?[0].journalImageString {
+                    AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 100, height: 100)
+                    .border(Color.gray)
+                }
+                
                 if isEditing {
                     TextEditor(text: $editedContent)
-                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.7, maxHeight: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.6, maxHeight: .infinity, alignment: .leading)
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
@@ -89,6 +103,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(journal: Journal(id: 1, journalTitle: "title", journalText: "text...", createdAt: "2024", journalImages: nil, userID: 3))
+        DetailView(journal: journal)
     }
 }
