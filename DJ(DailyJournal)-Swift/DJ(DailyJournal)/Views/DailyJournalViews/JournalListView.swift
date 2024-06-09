@@ -17,8 +17,8 @@ struct JournalListView: View {
     var body: some View {
         NavigationSplitView {
             List(journalListViewModel.journals, id: \.id) { journal in
-                NavigationLink(destination: DetailView(journal: journal)) {
-                    ListRowView(journal: journal)
+                NavigationLink(destination: JournalDetailView(journal: journal)) {
+                    JournalListRowView(journal: journal)
                 }
             }
             .onAppear(perform: {

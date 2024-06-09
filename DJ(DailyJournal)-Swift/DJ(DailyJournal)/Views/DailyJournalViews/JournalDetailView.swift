@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct JournalDetailView: View {
     @State private var isEditing = false
     @State private var editedContent: String
     
@@ -100,6 +100,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(journal: journal)
+        JournalDetailView(journal: journal)
     }
 }

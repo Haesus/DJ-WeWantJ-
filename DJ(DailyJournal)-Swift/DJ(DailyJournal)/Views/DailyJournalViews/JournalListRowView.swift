@@ -8,7 +8,7 @@
 import SwiftUI
 let journal = Journal(id: 10, journalTitle: "일기 제목 수정", journalText: "오늘 사실 아주 많은 일이 있었습니다.", createdAt: "2024-06-05T02:18:35.000Z", journalImages: Optional([JournalImage(id: 9, journalImageString: "IMG_62451717514657152.JPG", journalID: 10)]), userID: 3)
 
-struct ListRowView: View {
+struct JournalListRowView: View {
     let journal: Journal
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,5 +37,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(journal: journal)
+    JournalListRowView(journal: journal)
 }
