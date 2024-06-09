@@ -21,16 +21,13 @@ struct DailyLogView: View {
                     .ignoresSafeArea()
                 
                 List {
-                    // 수정된 부분: ForEach의 사용이 수정되었습니다.
                     if let dailyLogList = dailyTemplateViewModel.template?.dailyLogList {
                         ForEach(dailyLogList.indices, id: \.self) { index in
-                            
-                            DailyLogRowView(dailyTemplateViewModel: dailyTemplateViewModel, dailyTemplate: $dailyTemplateViewModel.template)
+                            DailyLogRowView(dailyTemplateViewModel: dailyTemplateViewModel, dailyTemplate: $dailyTemplateViewModel.template, index: index)
                                 .listRowBackground(Color.clear)
                         }
                     }
                 }
-                .background(Color.backgroundColor)
                 .scrollContentBackground(.hidden)
                 
                 VStack {

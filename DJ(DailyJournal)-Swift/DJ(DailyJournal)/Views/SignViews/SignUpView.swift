@@ -90,6 +90,7 @@ struct SignUpView: View {
                     .padding(.horizontal)
                     .foregroundStyle(Color.ivory)
                     
+                    //서비스 이용약관이랑 개인정보 정책을 작성한 Url필요! 누르면 넘어가도록 해야함!
                     Text("가입 시, DJ의 다음 사항에 동의하는 것으로 간주합니다. 서비스 이용약관 및 개인정보 정책")
                         .padding()
                         .foregroundStyle(Color.gray)
