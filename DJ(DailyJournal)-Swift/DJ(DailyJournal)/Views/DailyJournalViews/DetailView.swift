@@ -29,41 +29,38 @@ struct DetailView: View {
                 Spacer()
             }
             
-            ScrollView {
-                if let hostKey = Bundle.main.hostKey,
-                   let imageString = journal.journalImages?[0].journalImageString {
-                    AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 100, height: 100)
-                    .border(Color.gray)
+            if let hostKey = Bundle.main.hostKey,
+               let imageString = journal.journalImages?[0].journalImageString {
+                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
                 }
-                
-                if isEditing {
-                    TextEditor(text: $editedContent)
-                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.6, maxHeight: .infinity, alignment: .leading)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                        .lineSpacing(0)
-                } else {
-                    Text(editedContent)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 5)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                        .lineSpacing(0)
-                }
+                .frame(width: 100, height: 100)
+                .border(Color.gray)
             }
-            Spacer()
+            
+            if isEditing {
+                TextEditor(text: $editedContent)
+                    .frame(maxWidth: .infinity, minHeight: screenHeight * 0.6, maxHeight: .infinity, alignment: .leading)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .lineSpacing(0)
+            } else {
+                Text(editedContent)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .lineSpacing(0)
+            }
         }
         .frame(width: screenWidth * 0.9)
         .border(Color.gray)
