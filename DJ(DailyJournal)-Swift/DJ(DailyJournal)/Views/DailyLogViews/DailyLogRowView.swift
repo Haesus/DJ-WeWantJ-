@@ -67,7 +67,7 @@ struct DailyLogRowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let dailyLogList = dailyTemplate?.dailyLogList {
+            if let dailyLogList = dailyTemplate?.dailyLogList, index < dailyLogList.count {
                 HStack {
                     TextField("Title", text: Binding(
                         get: {
@@ -80,7 +80,7 @@ struct DailyLogRowView: View {
                     .font(.title2)
                     
                     Text(" | ")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .foregroundStyle(Color.ivory)
                     
                     TextField("내용 입력", text: Binding(
@@ -103,3 +103,4 @@ struct DailyLogRowView: View {
 #Preview {
     DailyLogRowView(dailyTemplateViewModel: TemplateViewModel(), dailyTemplate: .constant(DailyTemplateModel(dailyLogList: [DailyLog(isDaily: "", dailyText: "")])), index: 0)
 }
+

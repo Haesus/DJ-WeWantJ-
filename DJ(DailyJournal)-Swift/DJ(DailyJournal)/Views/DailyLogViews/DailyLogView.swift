@@ -10,7 +10,7 @@ import SwiftUI
 struct DailyLogView: View {
     @StateObject var dailyTemplateViewModel = TemplateViewModel<DailyTemplateModel>()
     
-    init(){
+    init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
     }
     
@@ -26,6 +26,7 @@ struct DailyLogView: View {
                             DailyLogRowView(dailyTemplateViewModel: dailyTemplateViewModel, dailyTemplate: $dailyTemplateViewModel.template, index: index)
                                 .listRowBackground(Color.clear)
                         }
+                        .onDelete(perform: removeRows)
                     }
                 }
                 .scrollContentBackground(.hidden)
@@ -36,9 +37,7 @@ struct DailyLogView: View {
                     HStack {
                         Spacer()
                         
-                        Button(action: {
-                            
-                        }, label: {
+                        Button(action: addDailyLogTemplate, label: {
                             ZStack {
                                 Circle()
                                     .foregroundColor(.lightYellow)
@@ -63,8 +62,15 @@ struct DailyLogView: View {
                 })
             }
         }
-        .onAppear(perform: { dailyTemplateViewModel.loadTemplate(templateName: "DailyTemplate.json")
-        })
+        .onAppear(perform: { dailyTemplateViewModel.loadTemplate(templateName: "DailyTemplate.json") })
+    }
+    
+    private func addDailyLogTemplate() {
+        dailyTemplateViewModel.template?.dailyLogList.append(DailyLog(isDaily: "", dailyText: ""))
+    }
+    
+    private func removeRows(at offsets: IndexSet) {
+        dailyTemplateViewModel.template?.dailyLogList.remove(atOffsets: offsets)
     }
 }
 
