@@ -20,11 +20,9 @@
 		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
 		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
 		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
-		4E3CBACE2C128C7B007C6817 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* ListView.swift */; };
 		4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* JournalListView.swift */; };
-		4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* ListRowView.swift */; };
-		4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* DetailView.swift */; };
-		4E3CBAD52C129729007C6817 /* DailyJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD42C129729007C6817 /* DailyJournal.swift */; };
+		4E3CBAD02C128C83007C6817 /* JournalListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */; };
+		4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */; };
 		FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */; };
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
@@ -56,11 +54,9 @@
 		32DDA11D2C13A57C0075335A /* DailyTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DailyTemplate.json; sourceTree = "<group>"; };
 		32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogTemplateModel.swift; sourceTree = "<group>"; };
 		32FCA5612C13586800E2CD39 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		4E3CBACD2C128C7B007C6817 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBACD2C128C7B007C6817 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalListView.swift"; sourceTree = SOURCE_ROOT; };
-		4E3CBACF2C128C83007C6817 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRowView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/ListRowView.swift"; sourceTree = SOURCE_ROOT; };
-		4E3CBAD12C128C98007C6817 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/DetailView.swift"; sourceTree = SOURCE_ROOT; };
-		4E3CBAD42C129729007C6817 /* DailyJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyJournal.swift; sourceTree = "<group>"; };
+		4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalListRowView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalListRowView.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalDetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalDetailView.swift"; sourceTree = SOURCE_ROOT; };
 		4E3CBAD92C12D139007C6817 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DJ(DailyJournal).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJ_DailyJournal_App.swift; sourceTree = "<group>"; };
@@ -117,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				4E3CBACD2C128C7B007C6817 /* JournalListView.swift */,
-				4E3CBACF2C128C83007C6817 /* ListRowView.swift */,
-				4E3CBAD12C128C98007C6817 /* DetailView.swift */,
+				4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */,
+				4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */,
 			);
 			path = DailyJournalViews;
 			sourceTree = "<group>";
@@ -224,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				FAC5CD8C2C106697001D5862 /* UserModel.swift */,
-				4E3CBAD42C129729007C6817 /* DailyJournal.swift */,
 				329625EF2C10B204005B68D3 /* JournalModel.swift */,
 				FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */,
 				32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */,
@@ -333,7 +328,7 @@
 				FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */,
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
-				4E3CBAD22C128C98007C6817 /* DetailView.swift in Sources */,
+				4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */,
 				4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
@@ -352,9 +347,8 @@
 				32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
-				4E3CBAD52C129729007C6817 /* DailyJournal.swift in Sources */,
 				32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */,
-				4E3CBAD02C128C83007C6817 /* ListRowView.swift in Sources */,
+				4E3CBAD02C128C83007C6817 /* JournalListRowView.swift in Sources */,
 				FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */,
 				FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */,
 			);

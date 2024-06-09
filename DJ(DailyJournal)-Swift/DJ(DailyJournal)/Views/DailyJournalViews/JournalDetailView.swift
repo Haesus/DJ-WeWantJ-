@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct JournalDetailView: View {
     @State private var isEditing = false
     @State private var editedContent: String
     
@@ -28,29 +28,39 @@ struct DetailView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-            ScrollView {
-                if isEditing {
-                    TextEditor(text: $editedContent)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                        .lineSpacing(0)
-                } else {
-                    Text(editedContent)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 5)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                        .lineSpacing(0)
+            
+            if let hostKey = Bundle.main.hostKey,
+               let imageString = journal.journalImages?[0].journalImageString {
+                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
                 }
+                .frame(width: 100, height: 100)
+                .border(Color.gray)
             }
-            .frame(maxHeight: .infinity)
-            Spacer()
+            
+            if isEditing {
+                TextEditor(text: $editedContent)
+                    .frame(maxWidth: .infinity, minHeight: screenHeight * 0.6, maxHeight: .infinity, alignment: .leading)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .lineSpacing(0)
+            } else {
+                Text(editedContent)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                    .lineSpacing(0)
+            }
         }
         .frame(width: screenWidth * 0.9)
         .border(Color.gray)
@@ -90,6 +100,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationView {
-        DetailView(journal: Journal(id: "1", journalTitle: "title", journalText: "text", createdAt: "2024", journalImages: nil, userID: "user"))
+        JournalDetailView(journal: journal)
     }
 }

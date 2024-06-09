@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class JournalListViewModel: ObservableObject {
-    @Published var journals:[Journal] = []
+    @Published var journals: [Journal] = []
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -19,7 +19,7 @@ class JournalListViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     break
-                case.failure(let error):
+                case .failure(let error):
                     print(error.localizedDescription)
                 }
             } receiveValue: { documents in
