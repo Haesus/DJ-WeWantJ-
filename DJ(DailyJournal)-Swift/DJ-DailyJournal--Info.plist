@@ -4,5 +4,7 @@
 <dict>
 	<key>HOST_KEY</key>
 	<string>${HOST_KEY}</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>캘린더를 확인하겠습니다.</string>
 </dict>
 </plist>

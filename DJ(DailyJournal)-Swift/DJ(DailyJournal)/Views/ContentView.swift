@@ -12,9 +12,10 @@ struct ContentView: View {
     var journalListViewModel = JournalListViewModel()
     
     var body: some View {
-        MainView()
-            .environmentObject(SignViewModel())
-            .environmentObject(journalListViewModel)
+        CalendarsTestView()
+//        MainView()
+//            .environmentObject(SignViewModel())
+//            .environmentObject(journalListViewModel)
     }
 }
 
