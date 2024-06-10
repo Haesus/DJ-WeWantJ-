@@ -44,8 +44,8 @@
 		FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */; };
 		FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB892C12E94300B8CFDE /* ImageTestView.swift */; };
 		FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */; };
-		FADBCB8E2C15C9BA00B8CFDE /* CalendarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8D2C15C9BA00B8CFDE /* CalendarsViewModel.swift */; };
 		FADBCB902C15CA8E00B8CFDE /* CalendarsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */; };
+		FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,8 +90,8 @@
 		FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageViewModel.swift; sourceTree = "<group>"; };
 		FADBCB892C12E94300B8CFDE /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
 		FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		FADBCB8D2C15C9BA00B8CFDE /* CalendarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarsViewModel.swift; path = ../../../../../../../CalendarsViewModel.swift; sourceTree = "<group>"; };
 		FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsTestView.swift; sourceTree = "<group>"; };
+		FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +231,7 @@
 				FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */,
 				4E6D0DDC2C167CDF0024576E /* UpdateJournalViewModel.swift */,
 				FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */,
-				FADBCB8D2C15C9BA00B8CFDE /* CalendarsViewModel.swift */,
+				FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -353,6 +353,7 @@
 				4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
+				FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */,
 				FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
@@ -364,7 +365,6 @@
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
-				FADBCB8E2C15C9BA00B8CFDE /* CalendarsViewModel.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				4E6D0DDB2C167B6D0024576E /* ImagePicker.swift in Sources */,
 				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
