@@ -10,6 +10,7 @@ import UIKit
 import Combine
 
 class UpdateJournalViewModel: ObservableObject {
+    @Published var id: Int = 0
     @Published var journalTitle: String = ""
     @Published var journalText: String = ""
     @Published var journalImage: UIImage?
@@ -23,7 +24,7 @@ class UpdateJournalViewModel: ObservableObject {
             imageData = journalImage.jpegData(compressionQuality: 0.7)
         }
         
-        let journal = UpdatedJournal(journalTitle: journalTitle, journalText: journalText, imageData: imageData)
+        let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData)
         
         JournalService.shared.updateJournal(journal)
             .sink { completion in
@@ -31,7 +32,7 @@ class UpdateJournalViewModel: ObservableObject {
                 case .finished:
                     print("Journal 업데이트 성공")
                 case .failure(let error):
-                    print("Journal 업데이트 실패\(error.localizedDescription)")
+                    print("Journal 업데이트 실패\n\(error.localizedDescription)")
                 }
             } receiveValue: { updatedJournal in
                 print(updatedJournal)

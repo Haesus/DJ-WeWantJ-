@@ -28,7 +28,7 @@ class JournalListViewModel: ObservableObject {
             }.store(in: &cancellables)
     }
     
-    func updateJournal(_ journal: Journal) {
+    func updateJournal(_ journal: UpdatedJournal) {
         JournalService.shared.updateJournal(journal)
             .sink { completion in
                 switch completion {
