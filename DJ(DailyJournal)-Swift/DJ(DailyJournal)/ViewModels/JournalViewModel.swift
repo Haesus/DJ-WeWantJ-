@@ -16,30 +16,38 @@ class JournalViewModel: ObservableObject {
     @Published var journalImages: UIImage?
     @Published var userID: Int = 0
     @Published var createdAt: String = ""
+    @Published var albumImageViewModel = AlbumImageViewModel()
+    
+    @Published var journalImage: [String] = []
     
     private var cancellable = Set<AnyCancellable>()
     
     func saveJournal(completioHandler: @escaping (Bool)->Void) {
-        if journalImages == nil {
-            self.journalImages = UIImage(systemName: "journalImages")
-        }
-        
-        // UIImage를 JournalImage로 변환
-        let imageString = journalImages?.jpegData(compressionQuality: 0.7)?.base64EncodedString() ?? ""
-        let journalImage = NewJournalImage(journalImageString: imageString, journalID: id)
-        let journal = CreatedJournal(journalTitle: journalTitle, journalText: journalText, createdAt: createdAt, journalImages: [journalImage], userID: userID)
-        
-        JournalService.shared.saveJournal(journal)
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
-                case.failure(let error):
-                    print(error.localizedDescription)
+        Task {
+            await albumImageViewModel.setPhotoLibraryImage()
+            
+            if !albumImageViewModel.imageArray.isEmpty {
+                for uiImage in albumImageViewModel.imageArray {
+                    if let uiImageString = uiImage.jpegData(compressionQuality: 1)?.base64EncodedString() {
+                        journalImage.append(uiImageString)
+                    }
                 }
-            } receiveValue: { journal in
-                completioHandler(true)
-                print(journal.journalImages as Any)
-            }.store(in: &cancellable)
+            }
+            
+            let journal = JournalRequest(journalTitle: journalTitle, journalText: journalText, journalImageStringArray: journalImage)
+            
+            JournalService.shared.saveJournal(journal)
+                .sink { completion in
+                    print(completion)
+                    switch completion {
+                        case .finished:
+                            break
+                        case.failure(let error):
+                            print(error.localizedDescription)
+                    }
+                } receiveValue: { journal in
+                    completioHandler(true)
+                }.store(in: &cancellable)
+        }
     }
 }

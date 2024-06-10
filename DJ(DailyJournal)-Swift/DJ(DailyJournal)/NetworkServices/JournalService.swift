@@ -12,7 +12,7 @@ import Alamofire
 class JournalService {
     static let shared = JournalService()
     
-    func saveJournal(_ journal: CreatedJournal) -> AnyPublisher<Journal, AFError>{
+    func saveJournal(_ journal: JournalRequest) -> AnyPublisher<JournalResponse, AFError>{
         guard let hostKey = Bundle.main.hostKey else {
             print("API 키를 로드하지 못했습니다.")
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
@@ -26,15 +26,14 @@ class JournalService {
         let header: HTTPHeaders = ["Authorization":"Bearer \(token)"]
         
         return AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(String(journal.userID).data(using: .utf8)!, withName: "userID")
-            multipartFormData.append(journal.journalTitle.data(using: .utf8)!, withName: "journalTitle")
-            multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
-            //multipartFormData.append(journal.createdAt.data(using: .utf8)!, withName: "createdAt")
-            //Data타입으로 변환
-            if let images = journal.journalImages {
-                for image in images {
-                    if let imageData = Data(base64Encoded: image.journalImageString) {
-                        multipartFormData.append(imageData, withName: "journalImages", fileName: "journalImage.jpg", mimeType: "image/jpeg")
+            if let journalTitle = journal.journalTitle, let journalText = journal.journalText {
+                multipartFormData.append(journalTitle.data(using: .utf8)!, withName: "journalTitle")
+                multipartFormData.append(journalText.data(using: .utf8)!, withName: "journalText")
+            }
+            if let journalImageString = journal.journalImageStringArray {
+                for image in journalImageString {
+                    if let imageData = Data(base64Encoded: image) {
+                        multipartFormData.append(imageData, withName: "journalImageString", fileName: "journalImage.jpg", mimeType: "image/jpeg")
                     }
                 }
             }
@@ -42,7 +41,6 @@ class JournalService {
         .validate()
         .publishDecodable(type: JournalResponse.self)
         .value()
-        .map { $0.documents[0] }
         .eraseToAnyPublisher()
     }
     
@@ -63,14 +61,14 @@ class JournalService {
         return AF.request(url, method: .get, headers: header)
             .responseDecodable(of: JournalResponse.self) { response in
                 switch response.result {
-                case .success(let journalResponse):
-                    print("Decoding 성공")
-                case .failure(let error):
-                    if let data = response.data {
-                        let json = String(data: data, encoding: .utf8) ?? "데이터 문자열 변환 에러"
-                        print("Response data: \(json)")
-                    }
-                    print("Decoding error: \(error)")
+                    case .success(let journalResponse):
+                        print("Decoding 성공")
+                    case .failure(let error):
+                        if let data = response.data {
+                            let json = String(data: data, encoding: .utf8) ?? "데이터 문자열 변환 에러"
+                            print("Response data: \(json)")
+                        }
+                        print("Decoding error: \(error)")
                 }
             }
             .publishDecodable(type: JournalResponse.self)
@@ -98,9 +96,9 @@ class JournalService {
         
         return AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
-//            if let imageData = journal.imageData {
-//                multipartFormData.append(imageData, withName: "journalImage", fileName: "journalImage.jpg", mimeType: "image/jpeg")
-//            }
+            //            if let imageData = journal.imageData {
+            //                multipartFormData.append(imageData, withName: "journalImage", fileName: "journalImage.jpg", mimeType: "image/jpeg")
+            //            }
         }, to: url, method: .patch, headers: headers)
         .validate()
         .publishDecodable(type: JournalResponse.self)
