@@ -27,8 +27,6 @@ class JournalViewModel: ObservableObject {
         // UIImage를 JournalImage로 변환
         let imageString = journalImages?.jpegData(compressionQuality: 0.7)?.base64EncodedString() ?? ""
         let journalImage = NewJournalImage(journalImageString: imageString, journalID: id)
-
-        // !!!: 6/7 let journal = Journal(...) --> CreatedJournal(...)
         let journal = CreatedJournal(journalTitle: journalTitle, journalText: journalText, createdAt: createdAt, journalImages: [journalImage], userID: userID)
         
         JournalService.shared.saveJournal(journal)

@@ -12,7 +12,6 @@ import Alamofire
 class JournalService {
     static let shared = JournalService()
     
-    // !!!: 6/7 func saveJournal(_ journal: Journal) --> func saveJournal(_ journal: CreatedJournal)
     func saveJournal(_ journal: CreatedJournal) -> AnyPublisher<Journal, AFError>{
         guard let hostKey = Bundle.main.hostKey else {
             print("API 키를 로드하지 못했습니다.")
@@ -27,8 +26,6 @@ class JournalService {
         let header: HTTPHeaders = ["Authorization":"Bearer \(token)"]
         
         return AF.upload(multipartFormData: { multipartFormData in
-            // MARK: 코드 보수 - id field 삭제, Journal 모델 Identifiable 프로토콜 적용할까요? @haneujeen
-            //multipartFormData.append(journal.id.data(using: .utf8)!, withName: "id")
             multipartFormData.append(String(journal.userID).data(using: .utf8)!, withName: "userID")
             multipartFormData.append(journal.journalTitle.data(using: .utf8)!, withName: "journalTitle")
             multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
@@ -42,7 +39,7 @@ class JournalService {
                 }
             }
         }, to: url, headers: header)
-        .validate() // 유효성 검사
+        .validate()
         .publishDecodable(type: JournalResponse.self)
         .value()
         .map { $0.documents[0] }
