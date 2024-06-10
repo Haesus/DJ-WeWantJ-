@@ -144,6 +144,7 @@
 		FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */ = {
 			isa = PBXGroup;
 			children = (
+				4E6D0DD92C167B260024576E /* Config.xcconfig */,
 				FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */,
 				FAC5CDA12C129A92001D5862 /* TodoTemplate.json */,
 				32DDA11D2C13A57C0075335A /* DailyTemplate.json */,
@@ -156,7 +157,6 @@
 				4E3CBAC62C128A66007C6817 /* TestModeling */,
 				FA7CEB1C2C0C42F3008504F6 /* Preview Content */,
 				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
-				4E6D0DD92C167B260024576E /* Config.xcconfig */,
 			);
 			path = "DJ(DailyJournal)";
 			sourceTree = "<group>";
@@ -486,6 +486,7 @@
 		};
 		FA7CEB222C0C42F3008504F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E6D0DD92C167B260024576E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -516,6 +517,7 @@
 		};
 		FA7CEB232C0C42F3008504F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E6D0DD92C167B260024576E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
