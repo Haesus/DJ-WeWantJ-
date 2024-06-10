@@ -24,7 +24,11 @@ class JournalListViewModel: ObservableObject {
                 }
             } receiveValue: { documents in
                 self.journals = documents
-                print(documents[0])
+                if !documents.isEmpty {
+                               print(documents[0])
+                           } else {
+                               print("journals 없음.")
+                           }
             }.store(in: &cancellables)
     }
     

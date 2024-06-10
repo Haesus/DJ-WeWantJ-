@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
+		327510C02C15972400926A9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 327510BF2C15972400926A9A /* Alamofire */; };
 		329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */; };
 		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
 		329625E52C1028C2005B68D3 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E42C1028C2005B68D3 /* TestModel.swift */; };
@@ -16,7 +17,6 @@
 		329625F22C10B24A005B68D3 /* JournalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F12C10B24A005B68D3 /* JournalService.swift */; };
 		329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F42C118558005B68D3 /* JournalListViewModel.swift */; };
 		329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F62C11878C005B68D3 /* JournalViewModel.swift */; };
-		32DDA11C2C1377E20075335A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32DDA11B2C1377E20075335A /* Alamofire */; };
 		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
 		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
 		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
@@ -41,6 +41,9 @@
 		FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */; };
 		FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CDA12C129A92001D5862 /* TodoTemplate.json */; };
 		FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */; };
+		FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */; };
+		FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB892C12E94300B8CFDE /* ImageTestView.swift */; };
+		FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		FAC5CDA12C129A92001D5862 /* TodoTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TodoTemplate.json; sourceTree = "<group>"; };
 		FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTemplateModel.swift; sourceTree = "<group>"; };
 		FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRowView.swift; sourceTree = "<group>"; };
+		FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageViewModel.swift; sourceTree = "<group>"; };
+		FADBCB892C12E94300B8CFDE /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
+		FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDA11C2C1377E20075335A /* Alamofire in Frameworks */,
+				327510C02C15972400926A9A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				329625E42C1028C2005B68D3 /* TestModel.swift */,
+				FADBCB892C12E94300B8CFDE /* ImageTestView.swift */,
 			);
 			path = TestModeling;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 				329625F42C118558005B68D3 /* JournalListViewModel.swift */,
 				FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */,
 				4E6D0DDC2C167CDF0024576E /* UpdateJournalViewModel.swift */,
+				FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				FAC5CD992C107A60001D5862 /* BundleExtension.swift */,
 				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 				329625EC2C104AF1005B68D3 /* TitleExtension.swift */,
+				FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,7 +278,7 @@
 			);
 			name = "DJ(DailyJournal)";
 			packageProductDependencies = (
-				32DDA11B2C1377E20075335A /* Alamofire */,
+				327510BF2C15972400926A9A /* Alamofire */,
 			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
@@ -338,11 +347,14 @@
 				4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
 				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
+				FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
 				329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
 				FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */,
+				FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */,
+				FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */,
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
@@ -493,10 +505,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "당신의 앨범을 확인할게요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,10 +538,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "당신의 앨범을 확인할게요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -581,7 +597,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		32DDA11B2C1377E20075335A /* Alamofire */ = {
+		327510BF2C15972400926A9A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
