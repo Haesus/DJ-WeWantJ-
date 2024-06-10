@@ -32,23 +32,7 @@ struct JournalDetailView: View {
                 Spacer()
             }
             
-            if let hostKey = Bundle.main.hostKey,
-               let imageString = journal.journalImages?[0].journalImageString {
-                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(imageString)")) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 100, height: 100)
-                .border(Color.gray)
-                .onTapGesture {
-                    if isEditing {
-                        isPickerPresented = true
-                    }
-                }
-            }
+            AsyncImagesView(journal: journal, isEditing: isEditing, isPickerPresented: $isPickerPresented)
             
             if isEditing {
                 TextEditor(text: $updateJournalViewModel.journalText)
