@@ -16,6 +16,13 @@ struct CreatedJournal: Codable {
     let userID: Int
 }
 
+struct UpdatedJournal: Codable {
+    let id: Int
+    let journalTitle: String
+    let journalText: String
+    let imageData: Data?
+}
+
 struct JournalResponse: Codable {
     let success: Bool
     let documents: [Journal]
