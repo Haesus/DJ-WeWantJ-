@@ -2,9 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>myapprefresh</string>
+	</array>
 	<key>HOST_KEY</key>
 	<string>${HOST_KEY}</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>캘린더를 확인하겠습니다.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
 </dict>
 </plist>
