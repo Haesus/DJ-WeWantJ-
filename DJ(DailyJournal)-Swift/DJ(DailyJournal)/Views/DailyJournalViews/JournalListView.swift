@@ -30,6 +30,7 @@ struct JournalListView: View {
         } detail: {
             Text("Navigation Split View")
         }
+        
     }
 }
 
