@@ -81,7 +81,7 @@ router.patch('/:id', upload.array('journalImageString', 4), async (req, res) => 
         await JournalImage.destroy({ where: { journalID } });
         const images = req.files.map(file => ({
           journalID: journalID,
-          journalImageString: file.filename,
+          journalImageString: file.blobName,
         }));
         await JournalImage.bulkCreate(images);
       }
