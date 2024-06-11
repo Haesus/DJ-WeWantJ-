@@ -7,20 +7,10 @@
 
 import Foundation
 
-// 보내는 용도
-struct CreatedJournal: Codable {
-    let journalTitle: String
-    let journalText: String
-    let createdAt: String
-    let journalImages: [NewJournalImage]?
-    let userID: Int
-}
-
-struct UpdatedJournal: Codable {
-    let id: Int
-    let journalTitle: String
-    let journalText: String
-    let imageData: [Data]?
+struct JournalRequest: Codable {
+    let journalTitle: String?
+    let journalText: String?
+    let journalImageStringArray: [String]?
 }
 
 struct JournalResponse: Codable {
@@ -29,7 +19,6 @@ struct JournalResponse: Codable {
     let message: String
 }
 
-// 받은 용도
 struct Journal: Codable {
     let id: Int
     let journalTitle: String
@@ -44,13 +33,28 @@ struct Journal: Codable {
     }
 }
 
+struct JournalImage: Codable {
+    let id: Int
+    let journalImageString: String
+    let journalID: Int
+}
+
 struct NewJournalImage: Codable {
     let journalImageString: String
     let journalID: Int
 }
 
-struct JournalImage: Codable {
+struct CreatedJournal: Codable {
+    let journalTitle: String
+    let journalText: String
+    let createdAt: String
+    let journalImages: [NewJournalImage]?
+    let userID: Int
+}
+
+struct UpdatedJournal: Codable {
     let id: Int
-    let journalImageString: String
-    let journalID: Int
+    let journalTitle: String
+    let journalText: String
+    let imageData: Data?
 }

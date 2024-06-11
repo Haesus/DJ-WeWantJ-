@@ -29,6 +29,9 @@
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
 		FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */; };
+		FAB2C4712C1810250022388C /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4702C1810250022388C /* NotificationDelegate.swift */; };
+		FAB2C4722C1849780022388C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 89FF35452C181E610033243C /* Config.xcconfig */; };
+		FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */; };
 		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
 		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
 		FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
@@ -74,6 +77,7 @@
 		FA7CEB182C0C42F2008504F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAB2C4702C1810250022388C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = "DJ(DailyJournal)/NotificationDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				FAC5CDA12C129A92001D5862 /* TodoTemplate.json */,
 				32DDA11D2C13A57C0075335A /* DailyTemplate.json */,
 				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
+				FAB2C4702C1810250022388C /* NotificationDelegate.swift */,
 				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
 				FAC5CD792C0EE673001D5862 /* Models */,
 				FAC5CD732C0EE626001D5862 /* NetworkServices */,
@@ -337,6 +342,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */,
+				FAB2C4722C1849780022388C /* Config.xcconfig in Resources */,
 				FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */,
 				32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */,
 				FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */,
@@ -373,6 +380,7 @@
 				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
 				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
 				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
+				FAB2C4712C1810250022388C /* NotificationDelegate.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
 				4E6D0DDB2C167B6D0024576E /* ImagePicker.swift in Sources */,
 				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
@@ -514,13 +522,14 @@
 		};
 		FA7CEB222C0C42F3008504F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FF35452C181E610033243C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TGR3P459K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
@@ -546,13 +555,14 @@
 		};
 		FA7CEB232C0C42F3008504F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FF35452C181E610033243C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TGR3P459K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";

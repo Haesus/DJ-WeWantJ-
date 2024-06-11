@@ -11,24 +11,23 @@ class TemplateViewModel<T: Codable>: ObservableObject {
     @Published var template: T?
     private var isLoaded = false
     
-    func load(filename: String) -> Result<T, Error> {
-        let data: Data
-        
-        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
-            return .failure(NSError(domain: "FileError", code: 0, userInfo: [NSLocalizedDescriptionKey: "\(filename) 파일을 찾을 수 없습니다."]))
-        }
+    func saveToJSON(fileName: String) {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
         
         do {
-            data = try Data(contentsOf: file)
+            if let template = template {
+                let data = try encoder.encode(template)
+                if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                    let fileURL = documentDirectory.appendingPathComponent(fileName)
+                    try data.write(to: fileURL, options: .atomic)
+                    print("JSON 파일 저장 성공: \(fileURL)")
+                }
+            } else {
+                print("저장할 데이터가 없습니다.")
+            }
         } catch {
-            return .failure(error)
-        }
-        
-        do {
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
-            return .success(decodedData)
-        } catch {
-            return .failure(error)
+            print("JSON 파일 저장 실패: \(error.localizedDescription)")
         }
     }
     
@@ -51,7 +50,7 @@ class TemplateViewModel<T: Codable>: ObservableObject {
         isLoaded = true
     }
     
-    func loadFromLocal(_ filename: String) -> T? {
+    private func loadFromLocal(_ filename: String) -> T? {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = path.appendingPathComponent(filename)
         do {
@@ -64,23 +63,24 @@ class TemplateViewModel<T: Codable>: ObservableObject {
         }
     }
     
-    func saveToJSON(fileName: String) {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+    private func load(filename: String) -> Result<T, Error> {
+        let data: Data
+        
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
+            return .failure(NSError(domain: "FileError", code: 0, userInfo: [NSLocalizedDescriptionKey: "\(filename) 파일을 찾을 수 없습니다."]))
+        }
         
         do {
-            if let template = template {
-                let data = try encoder.encode(template)
-                if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                    let fileURL = documentDirectory.appendingPathComponent(fileName)
-                    try data.write(to: fileURL, options: .atomic)
-                    print("JSON 파일 저장 성공: \(fileURL)")
-                }
-            } else {
-                print("저장할 데이터가 없습니다.")
-            }
+            data = try Data(contentsOf: file)
         } catch {
-            print("JSON 파일 저장 실패: \(error.localizedDescription)")
+            return .failure(error)
+        }
+        
+        do {
+            let decodedData = try JSONDecoder().decode(T.self, from: data)
+            return .success(decodedData)
+        } catch {
+            return .failure(error)
         }
     }
 }

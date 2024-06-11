@@ -27,102 +27,110 @@ struct JournalDetailView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(journal.journalTitle)
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }
-            
-            HStack {
-                if let hostKey = Bundle.main.hostKey,
-                   let journalImages = journal.journalImages {
-                    ForEach(0..<4) { index in
-                        if let seletedImage = selectedImages[index] {
-                            Image(uiImage: seletedImage)
-                                .resizable()
-                                .scaledToFit()
-                        } else {
-                            AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
-                                image
+        ZStack {
+            Color.backgroundColor.ignoresSafeArea()
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(journal.journalTitle)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                }
+                
+                HStack {
+                    if let hostKey = Bundle.main.hostKey,
+                       let journalImages = journal.journalImages {
+                        ForEach(0..<4) { index in
+                            if let seletedImage = selectedImages[index] {
+                                Image(uiImage: seletedImage)
                                     .resizable()
-                                    .scaledToFit()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .border(Color.black)
-                            .onTapGesture {
-                                if isEditing {
-                                    isPickerPresented = true
-                                    isPhotoChanged = true
-                                    photoIndex = index
+                                    .aspectRatio(1, contentMode: .fit)
+                                    .clipped()
+                                    .onTapGesture {
+                                        if isEditing {
+                                            isPickerPresented = true
+                                            isPhotoChanged = true
+                                            photoIndex = index
+                                        }
+                                    }
+                            } else {
+                                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .clipped()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .onTapGesture {
+                                    if isEditing {
+                                        isPickerPresented = true
+                                        isPhotoChanged = true
+                                        photoIndex = index
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            
-            if isEditing {
-                TextEditor(text: $updateJournalViewModel.journalText)
-                    .frame(maxWidth: .infinity, minHeight: screenHeight * 0.6, maxHeight: .infinity, alignment: .leading)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .lineSpacing(0)
                 
-            } else {
-                Text(editedContent)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .lineSpacing(0)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
                 if isEditing {
-                    Button("Save") {
-                        saveChanges()
-                    }
+                    TextEditor(text: $updateJournalViewModel.journalText)
+                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
+                        .lineSpacing(0)
+                        .scrollContentBackground(.hidden)
+                    
                 } else {
-                    Button("Edit") {
-                        isEditing.toggle()
+                    Text(editedContent)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 5)
+                        .lineSpacing(0)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if isEditing {
+                        Button("Save") {
+                            saveChanges()
+                        }
+                    } else {
+                        Button("Edit") {
+                            isEditing.toggle()
+                        }
+                    }
+                }
+                if isEditing {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel") {
+                            cancelEditing()
+                        }
                     }
                 }
             }
-            if isEditing {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        cancelEditing()
-                    }
-                }
+            .frame(width: screenWidth * 0.9)
+            .foregroundStyle(Color.ivory)
+            .navigationTitle("Journal Detail")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                self.updateJournalViewModel.id = journal.id
+                self.updateJournalViewModel.journalText = journal.journalText
             }
-        }
-        .frame(width: screenWidth * 0.9)
-        .border(Color.gray)
-        .navigationTitle("Journal Detail")
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            self.updateJournalViewModel.id = journal.id
-            self.updateJournalViewModel.journalText = journal.journalText
-        }
-        .sheet(isPresented: $isPickerPresented, content: {
-            ImagePicker(image: $selectedImages[photoIndex])
+            .sheet(isPresented: $isPickerPresented, content: {
+                ImagePicker(image: $selectedImages[photoIndex])
         })
+        }
     }
     
     private func saveChanges() {
         if isPhotoChanged {
+            let dispatchGroup = DispatchGroup()
+
             for index in 0..<4 {
+                dispatchGroup.enter()
                 if let selectedImage = selectedImages[index] {
                     updateJournalViewModel.journalImages[index] = selectedImage
+                    dispatchGroup.leave()
                 } else if let hostKey = Bundle.main.hostKey,
                           let journalImages = journal.journalImages {
                     let imageURLString = "https://\(hostKey)/images/\(journalImages[index].journalImageString)"
@@ -134,25 +142,34 @@ struct JournalDetailView: View {
                                 } else {
                                     print("Failed to load image from URL: \(imageURLString)")
                                 }
+                                dispatchGroup.leave()
                             }
                         }
+                    } else {
+                        dispatchGroup.leave()
                     }
+                } else {
+                    dispatchGroup.leave()
                 }
             }
+
+            dispatchGroup.notify(queue: .main) {
+                updateJournalViewModel.updateJournal()
+            }
+        } else {
+            updateJournalViewModel.updateJournal()
         }
-        
-        updateJournalViewModel.updateJournal {
-            if $0 { }
-        }
-        
+
         editedContent = updateJournalViewModel.journalText
         isEditing = false
     }
+
     
     private func cancelEditing() {
         editedContent = journal.journalText
         isEditing = false
-        //selectedImage = nil
+        isPhotoChanged = false
+        selectedImages = Array(repeating: nil, count: 4)
     }
     
     private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {

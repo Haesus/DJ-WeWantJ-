@@ -12,4 +12,10 @@ extension Date {
         let calendar = Calendar.current
         return calendar.isDate(self, inSameDayAs: otherDate)
     }
+    
+    func todyaDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년-MM월-dd일"
+        return dateFormatter.string(from: Date())
+    }
 }
