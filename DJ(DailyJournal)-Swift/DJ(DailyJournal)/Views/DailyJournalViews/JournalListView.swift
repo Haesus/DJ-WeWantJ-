@@ -10,8 +10,9 @@ import SwiftUI
 struct JournalListView: View {
     @EnvironmentObject var journalListViewModel: JournalListViewModel
     
-    init(){
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.ivory]
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
     }
     
     var body: some View {
