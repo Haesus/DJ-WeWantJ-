@@ -29,11 +29,12 @@ class SignService {
         UserDefaults.standard.removeObject(forKey: tokenKey)
     }
     
-    func sign(userID: String, password: String) -> AnyPublisher<SignInResponse, AFError> {
+    func signIn(userID: String, password: String) -> AnyPublisher<SignInResponse, AFError> {
         guard let hostKey = Bundle.main.hostKey else {
             print("API 키를 로드하지 못했습니다.")
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
+        
         let url = "https://\(hostKey)/sign/signIn"
         let parameters: Parameters = ["userID": userID, "password": password]
         
@@ -61,6 +62,7 @@ class SignService {
         let parameters: [String: Any] = ["userID": userID, "userNickName": userNickName, "password": password]
         
         return AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate()
             .publishDecodable(type: SignUpResponse.self)
             .value()
             .eraseToAnyPublisher()

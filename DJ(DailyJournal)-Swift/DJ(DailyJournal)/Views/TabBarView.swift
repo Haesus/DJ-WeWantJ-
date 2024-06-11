@@ -9,8 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var signViewModel: SignViewModel
-    @StateObject var journalListViewModel = JournalListViewModel()
-        
+
     var body: some View {
         TabView() {
             JournalListView()

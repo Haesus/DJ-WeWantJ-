@@ -95,7 +95,7 @@ class JournalService {
             if let imageData = journal.imageData {
                 for (index, data) in imageData.enumerated() {
                     let imageName = "journalImage\(index)"
-                    multipartFormData.append(data, withName: "journalImageString", fileName: "\(imageName).jpg", mimeType: "image/jpeg")
+//                    multipartFormData.append(data, withName: "journalImageString", fileName: "\(imageName).jpg", mimeType: "image/jpeg")
                 }
             }
         }, to: url, method: .patch, headers: headers)

@@ -27,17 +27,20 @@ class SignViewModel: ObservableObject {
                     case .finished:
                         break
                     case .failure(let error):
+                        print("여기용")
                         print(error.localizedDescription)
                 }
             } receiveValue: { signUpResponse in
+                print("아니요기용")
                 completionHandler(signUpResponse)
             }
             .store(in: &cancellables)
     }
     
     func signIn(completionHandler: @escaping (SignInResponse) -> Void) {
-        SignService.shared.sign(userID: userID, password: password)
+        SignService.shared.signIn(userID: userID, password: password)
             .sink { completion in
+                print(completion)
                 switch completion {
                     case .finished:
                         break
