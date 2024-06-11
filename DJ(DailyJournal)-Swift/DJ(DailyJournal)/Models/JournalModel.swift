@@ -54,7 +54,6 @@ struct CreatedJournal: Codable {
 
 struct UpdatedJournal: Codable {
     let id: Int
-    let journalTitle: String
     let journalText: String
     let imageDataArray: [Data]?
 }

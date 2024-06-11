@@ -12,17 +12,21 @@ struct JournalDetailView: View {
     @State private var isEditing = false
     @State private var editedContent: String
     @State private var isPickerPresented = false
-    @State private var selectedImages: [UIImage?] = Array(repeating: nil, count: 4)
+    @State private var selectedImages: [UIImage?]
     @Environment(\.dismiss) var dismiss
     @State var photoIndex: Int = 0
     @State var isPhotoChanged = false
     
     let journal: Journal
+    let photoCount: Int
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
+    // TODO: - 고려할 수 있는 사항: init() 과 .onAppear life cycle 에 맞춰서
     init(journal: Journal) {
         self.journal = journal
+        self.photoCount = journal.journalImages?.count ?? 0
+        _selectedImages = State(initialValue: Array(repeating: nil, count: self.photoCount))
         _editedContent = State(initialValue: journal.journalText)
     }
     
@@ -40,7 +44,7 @@ struct JournalDetailView: View {
                 HStack {
                     if let hostKey = Bundle.main.hostKey,
                        let journalImages = journal.journalImages {
-                        ForEach(0..<4) { index in
+                        ForEach(0..<photoCount) { index in
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
@@ -115,6 +119,7 @@ struct JournalDetailView: View {
             .onAppear {
                 self.updateJournalViewModel.id = journal.id
                 self.updateJournalViewModel.journalText = journal.journalText
+                self.updateJournalViewModel.journalImages = Array(repeating: nil, count: photoCount)
             }
             .sheet(isPresented: $isPickerPresented, content: {
                 ImagePicker(image: $selectedImages[photoIndex])
@@ -126,10 +131,10 @@ struct JournalDetailView: View {
         if isPhotoChanged {
             let dispatchGroup = DispatchGroup()
 
-            for index in 0..<4 {
+            for index in 0..<photoCount {
                 dispatchGroup.enter()
                 if let selectedImage = selectedImages[index] {
-                    updateJournalViewModel.journalImages[index] = selectedImage
+                    updateJournalViewModel.journalImages?[index] = selectedImage
                     dispatchGroup.leave()
                 } else if let hostKey = Bundle.main.hostKey,
                           let journalImages = journal.journalImages {
@@ -138,7 +143,7 @@ struct JournalDetailView: View {
                         fetchImage(from: imageURL) { image in
                             DispatchQueue.main.async {
                                 if let image = image {
-                                    updateJournalViewModel.journalImages[index] = image
+                                    updateJournalViewModel.journalImages?[index] = image
                                 } else {
                                     print("Failed to load image from URL: \(imageURLString)")
                                 }
