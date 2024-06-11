@@ -11,12 +11,10 @@ struct ContentView: View {
     @State private var notificationGranted = false
 
     var signViewModel = SignViewModel()
-    @StateObject var journalListViewModel = JournalListViewModel()
     
     var body: some View {
         MainView()
             .environmentObject(SignViewModel())
-            .environmentObject(journalListViewModel)
             .onAppear {
                 requestNotificationPermission()
             }

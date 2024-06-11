@@ -9,10 +9,12 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var signViewModel: SignViewModel
-    @EnvironmentObject var journalListViewModel: JournalListViewModel
+    @StateObject var journalListViewModel = JournalListViewModel()
+        
     var body: some View {
         TabView() {
             JournalListView()
+                .environmentObject(journalListViewModel)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -40,5 +42,4 @@ struct TabBarView: View {
 #Preview {
     TabBarView()
         .environmentObject(SignViewModel())
-        .environmentObject(JournalListViewModel())
 }
