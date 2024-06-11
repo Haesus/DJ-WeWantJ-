@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JournalListView: View {
-    @EnvironmentObject var journalListViewModel: JournalListViewModel
+    @StateObject var journalListViewModel = JournalListViewModel()
     @StateObject var journalViewModel = JournalViewModel()
     @StateObject var albumViewModel = AlbumImageViewModel()
     
@@ -58,5 +58,4 @@ struct JournalListView: View {
 
 #Preview {
     JournalListView()
-        .environmentObject(JournalListViewModel())
 }

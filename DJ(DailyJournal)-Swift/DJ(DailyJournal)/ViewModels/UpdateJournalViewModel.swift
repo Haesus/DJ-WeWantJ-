@@ -21,7 +21,7 @@ class UpdateJournalViewModel: ObservableObject {
     func updateJournal(completionHandler: @escaping (Bool) -> Void) {
         imageData = journalImages.compactMap { $0!.jpegData(compressionQuality: 0.7) }
         
-        let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData)
+        let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData?[0])
         
         JournalService.shared.updateJournal(journal)
             .sink { completion in
