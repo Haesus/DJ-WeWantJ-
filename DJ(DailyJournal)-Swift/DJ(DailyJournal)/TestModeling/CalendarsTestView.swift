@@ -22,7 +22,7 @@ struct CalendarsTestView: View {
             }
             .navigationTitle("Calendar Events")
             .onAppear {
-                eventStoreManager.requestAccess()
+//                eventStoreManager.requestAccess()
             }
         }
     }

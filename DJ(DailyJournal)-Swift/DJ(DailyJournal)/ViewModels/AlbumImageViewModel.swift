@@ -23,7 +23,7 @@ class AlbumImageViewModel: ObservableObject {
                     let todayDate = Date()
                     if creationDate.isSameDay(as: todayDate) {
                         group.enter()
-                        self.requestImage(from: asset, thumnailSize: CGSize(width: 100.0, height: 100.0)) { image in
+                        self.requestImage(from: asset, thumnailSize: CGSize()) { image in
                             if let image = image {
                                 fetchedImages.append(image)
                             }
@@ -32,7 +32,6 @@ class AlbumImageViewModel: ObservableObject {
                     }
                 }
             }
-            
             group.notify(queue: .main) {
                 self.imageArray = fetchedImages
                 continuation.resume()
