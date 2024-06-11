@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var journalViewModel = JournalViewModel()
-
-    var signViewModel = SignViewModel()
-    
     var body: some View {
         MainView()
-            .environmentObject(SignViewModel())
     }
 }
 
 #Preview {
     ContentView()
-        .environmentObject(SignViewModel())
 }

@@ -13,84 +13,82 @@ struct SignInView: View {
     @State private var responseMessage = ""
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.backgroundColor
-                    .ignoresSafeArea()
+        ZStack {
+            Color.backgroundColor
+                .ignoresSafeArea()
+            
+            VStack {
+                Text("로그인")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundStyle(Color.ivory)
                 
-                VStack {
-                    Text("로그인")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(Color.ivory)
-                    
-                    Spacer()
-                    
-                    TextField(text: $signViewModel.userID) {
-                        Text("아이디를 입력하세요.")
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.vertical)
-                    .padding(.leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .padding(.horizontal)
-                    .foregroundStyle(Color.ivory)
-                    
-                    SecureField(text: $signViewModel.password) {
-                        Text("비밀번호를 입력하세요.")
-                            .foregroundStyle(.gray)
-                    }
-                    .padding(.vertical)
-                    .padding(.leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .padding(.horizontal)
-                    .foregroundStyle(Color.ivory)
-                    
-                    Button(action: {
-                        signViewModel.signIn { signInResponse in
-                            if signInResponse.success {
-                                signViewModel.isSignedIn = true
-                            }
-                            responseMessage = signInResponse.message
-                            showAlert = true
-                        }
-                    }, label: {
-                        Text("Sign In")
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical)
-                    })
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.ivory, lineWidth: 1)
-                    )
-                    .padding(.horizontal)
-                    .foregroundStyle(Color.ivory)
-                    
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign Up")
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical)
-                    }
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.ivory, lineWidth: 1)
-                    )
-                    .padding(.horizontal)
-                    .foregroundStyle(Color.ivory)
-                    
-                    Spacer()
+                Spacer()
+                
+                TextField(text: $signViewModel.userID) {
+                    Text("아이디를 입력하세요.")
+                        .foregroundStyle(.gray)
                 }
-                .padding()
+                .padding(.vertical)
+                .padding(.leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
+                
+                SecureField(text: $signViewModel.password) {
+                    Text("비밀번호를 입력하세요.")
+                        .foregroundStyle(.gray)
+                }
+                .padding(.vertical)
+                .padding(.leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
+                
+                Button(action: {
+                    signViewModel.signIn { signInResponse in
+                        if signInResponse.success {
+                            signViewModel.isSignedIn = true
+                        }
+                        responseMessage = signInResponse.message
+                        showAlert = true
+                    }
+                }, label: {
+                    Text("Sign In")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
+                })
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.ivory, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
+                
+                NavigationLink(destination: SignUpView()) {
+                    Text("Sign Up")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.ivory, lineWidth: 1)
+                )
+                .padding(.horizontal)
+                .foregroundStyle(Color.ivory)
+                
+                Spacer()
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("로그인 결과"), message: Text(responseMessage), dismissButton: .default(Text("확인")))
-            }
+            .padding()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("로그인 결과"), message: Text(responseMessage), dismissButton: .default(Text("확인")))
         }
     }
 }

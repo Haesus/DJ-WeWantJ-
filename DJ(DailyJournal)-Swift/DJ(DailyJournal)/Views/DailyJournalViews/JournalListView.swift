@@ -59,5 +59,4 @@ struct JournalListView: View {
 
 #Preview {
     JournalListView()
-        .environmentObject(JournalListViewModel())
 }

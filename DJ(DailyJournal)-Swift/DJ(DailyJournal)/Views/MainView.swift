@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var signViewModel: SignViewModel
+    @StateObject var signViewModel = SignViewModel()
     
     var body: some View {
         NavigationStack {
             if signViewModel.isSignedIn {
                 TabBarView()
+                    .environmentObject(signViewModel)
             } else {
                 SignInView()
+                    .environmentObject(signViewModel)
             }
         }
     }
@@ -23,5 +25,4 @@ struct MainView: View {
 
 #Preview {
     MainView()
-        .environmentObject(SignViewModel())
 }
