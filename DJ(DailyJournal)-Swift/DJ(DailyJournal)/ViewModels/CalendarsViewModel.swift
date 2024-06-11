@@ -9,24 +9,39 @@ import SwiftUI
 import EventKit
 
 class EventStoreManager: ObservableObject {
-    private let eventStore = EKEventStore()
     @Published var events: [EKEvent] = []
     
-    func requestAccess() {
-        eventStore.requestFullAccessToEvents { granted, error in
-            if granted {
-                self.fetchEvents()
-            } else {
-                print("Access denied or error: \(String(describing: error))")
+    private let eventStore = EKEventStore()
+    
+    func requestAccess() async {
+        let granted = await withCheckedContinuation { continuation in
+            eventStore.requestFullAccessToEvents { granted, error in
+                if let error = error {
+                    print("Access denied or error: \(String(describing: error))")
+                    continuation.resume(returning: false)
+                } else {
+                    continuation.resume(returning: granted)
+                }
             }
+        }
+        
+        if granted {
+            await fetchEvents()
         }
     }
     
-    func fetchEvents() {
+    private func fetchEvents() async {
         let calendars = eventStore.calendars(for: .event)
         let startOfDay = Calendar.current.startOfDay(for: Date())
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
         let predicate = eventStore.predicateForEvents(withStart: startOfDay, end: endOfDay, calendars: calendars)
-        self.events = eventStore.events(matching: predicate)
+        
+        await withCheckedContinuation { continuation in
+            let events = self.eventStore.events(matching: predicate)
+            DispatchQueue.main.async {
+                self.events = events
+                continuation.resume(returning: ())
+            }
+        }
     }
 }

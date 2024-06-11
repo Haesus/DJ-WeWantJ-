@@ -31,7 +31,7 @@ struct TodoListView: View {
                         Spacer()
                         
                         Button(action: {
-                            
+                            addTodoListTemplate()
                         }, label: {
                             ZStack {
                                 Circle()
@@ -59,6 +59,14 @@ struct TodoListView: View {
         }
         .onAppear(perform: { todoListTemplateViewModel.loadTemplate(templateName: "TodoTemplate.json")
         })
+    }
+    
+    private func addTodoListTemplate() {
+        todoListTemplateViewModel.template?.todoList.append(Todo(isTodo: false, todoText: ""))
+    }
+    
+    private func removeRows(at offsets: IndexSet) {
+        todoListTemplateViewModel.template?.todoList.remove(atOffsets: offsets)
     }
 }
 
