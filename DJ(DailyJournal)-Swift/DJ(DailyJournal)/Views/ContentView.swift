@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var notificationGranted = false
 
     var signViewModel = SignViewModel()
-    var journalListViewModel = JournalListViewModel()
+    @StateObject var journalListViewModel = JournalListViewModel()
     
     var body: some View {
         MainView()
