@@ -44,12 +44,14 @@ struct JournalDetailView: View {
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
-                                    .scaledToFit()
+                                    .aspectRatio(1, contentMode: .fit)
+                                    .clipped()
                             } else {
                                 AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
                                     image
                                         .resizable()
-                                        .scaledToFit()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .clipped()
                                 } placeholder: {
                                     ProgressView()
                                 }
