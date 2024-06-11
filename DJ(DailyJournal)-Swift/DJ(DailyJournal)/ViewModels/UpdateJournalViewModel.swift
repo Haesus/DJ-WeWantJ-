@@ -18,7 +18,8 @@ class UpdateJournalViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func updateJournal(completionHandler: @escaping (Bool) -> Void) {
+    func updateJournal() {
+        // TODO: - Nil 사진 값 처리
         imageData = journalImages.compactMap { $0!.jpegData(compressionQuality: 0.7) }
         
         let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData)
@@ -33,7 +34,6 @@ class UpdateJournalViewModel: ObservableObject {
                 }
             } receiveValue: { updatedJournal in
                 print(updatedJournal)
-                completionHandler(true)
             }.store(in: &cancellables)
     }
 }
