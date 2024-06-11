@@ -4,7 +4,7 @@ const router = express.Router();
 const upload = require('./uploadImage');
 
 // 일기 생성
-router.post('/save', upload.array('journalImageString', 4), async (req, res) => {
+router.get('/save/:journalID', upload.array('journalImageString', 4), async (req, res) => {
   console.log(`req.files: ${req.files}`);
   const newJournal = req.body;
   newJournal.userID = req.id;
@@ -31,7 +31,7 @@ router.post('/save', upload.array('journalImageString', 4), async (req, res) => 
 });
 
 // 일기 조회
-router.get('/load', async (req, res) => {
+router.get('/load/:journalID', async (req, res) => {
   const userID = req.id;
 
   if (!userID) {
