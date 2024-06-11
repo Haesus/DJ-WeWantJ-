@@ -24,7 +24,8 @@ struct JournalListView: View {
                         JournalListRowView(journal: journal)
                     }
                 }
-                
+                .listRowBackground(Color.clear)
+              
                 Button(action: {
                     journalViewModel.saveJournal { result in
                         if result {
