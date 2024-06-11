@@ -46,6 +46,13 @@ struct JournalDetailView: View {
                                     .resizable()
                                     .aspectRatio(1, contentMode: .fit)
                                     .clipped()
+                                    .onTapGesture {
+                                        if isEditing {
+                                            isPickerPresented = true
+                                            isPhotoChanged = true
+                                            photoIndex = index
+                                        }
+                                    }
                             } else {
                                 AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
                                     image
@@ -55,7 +62,6 @@ struct JournalDetailView: View {
                                 } placeholder: {
                                     ProgressView()
                                 }
-                                .border(Color.black)
                                 .onTapGesture {
                                     if isEditing {
                                         isPickerPresented = true
@@ -118,9 +124,13 @@ struct JournalDetailView: View {
     
     private func saveChanges() {
         if isPhotoChanged {
+            let dispatchGroup = DispatchGroup()
+
             for index in 0..<4 {
+                dispatchGroup.enter()
                 if let selectedImage = selectedImages[index] {
                     updateJournalViewModel.journalImages[index] = selectedImage
+                    dispatchGroup.leave()
                 } else if let hostKey = Bundle.main.hostKey,
                           let journalImages = journal.journalImages {
                     let imageURLString = "https://\(hostKey)/images/\(journalImages[index].journalImageString)"
@@ -132,25 +142,34 @@ struct JournalDetailView: View {
                                 } else {
                                     print("Failed to load image from URL: \(imageURLString)")
                                 }
+                                dispatchGroup.leave()
                             }
                         }
+                    } else {
+                        dispatchGroup.leave()
                     }
+                } else {
+                    dispatchGroup.leave()
                 }
             }
+
+            dispatchGroup.notify(queue: .main) {
+                updateJournalViewModel.updateJournal()
+            }
+        } else {
+            updateJournalViewModel.updateJournal()
         }
-        
-        updateJournalViewModel.updateJournal {
-            if $0 { }
-        }
-        
+
         editedContent = updateJournalViewModel.journalText
         isEditing = false
     }
+
     
     private func cancelEditing() {
         editedContent = journal.journalText
         isEditing = false
-        //selectedImage = nil
+        isPhotoChanged = false
+        selectedImages = Array(repeating: nil, count: 4)
     }
     
     private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
