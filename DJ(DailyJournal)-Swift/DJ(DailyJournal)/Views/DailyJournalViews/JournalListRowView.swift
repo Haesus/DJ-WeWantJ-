@@ -18,14 +18,12 @@ struct JournalListRowView: View {
     let journal: Journal
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text(journal.journalTitle)
-                    .font(.headline)
-                Spacer()
-            }
+            Text(journal.journalTitle)
+                .font(.headline)
             Text(journal.journalText)
                 .lineLimit(1)
         }
+        .foregroundStyle(Color.ivory)
     }
 }
 

@@ -82,7 +82,6 @@ class JournalService {
     // MARK: - JournalUpdate
     func updateJournal(_ journal: UpdatedJournal) -> AnyPublisher<Journal, AFError> {
         guard let hostKey = Bundle.main.hostKey else {
-            print("API 키를 로드하지 못했습니다.")
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
         
@@ -93,14 +92,15 @@ class JournalService {
         let url = "https://\(hostKey)/journal/\(journal.id)"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
-        print("Request URL: \(url)")
-        print("Authorization Token: \(token)")
-        
         return AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
-//            if let imageData = journal.imageData {
-//                multipartFormData.append(imageData, withName: "journalImage", fileName: "journalImage.jpg", mimeType: "image/jpeg")
-//            }
+            if let imageData = journal.imageData {
+                for (index, data) in imageData.enumerated() {
+                    let imageName = "journalImage\(index)"
+                    multipartFormData.append(data, withName: "journalImageString", fileName: "\(imageName).jpg", mimeType: "image/jpeg")
+                }
+            }
+            
         }, to: url, method: .patch, headers: headers)
         .validate()
         .publishDecodable(type: JournalResponse.self)

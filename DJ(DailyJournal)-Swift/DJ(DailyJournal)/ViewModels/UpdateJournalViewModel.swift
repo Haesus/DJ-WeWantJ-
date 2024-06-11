@@ -13,16 +13,13 @@ class UpdateJournalViewModel: ObservableObject {
     @Published var id: Int = 0
     @Published var journalTitle: String = ""
     @Published var journalText: String = ""
-    @Published var journalImage: UIImage?
-    //@Published var userID: Int = 0
-    private var imageData: Data?
+    @Published var journalImages: [UIImage?] = Array(repeating: nil, count: 4)
+    private var imageData: [Data]?
     
     private var cancellables = Set<AnyCancellable>()
     
     func updateJournal(completionHandler: @escaping (Bool) -> Void) {
-        if let journalImage {
-            imageData = journalImage.jpegData(compressionQuality: 0.7)
-        }
+        imageData = journalImages.compactMap { $0!.jpegData(compressionQuality: 0.7) }
         
         let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData)
         

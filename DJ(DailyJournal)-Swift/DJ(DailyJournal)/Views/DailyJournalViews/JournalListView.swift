@@ -20,6 +20,7 @@ struct JournalListView: View {
                 NavigationLink(destination: JournalDetailView(journal: journal)) {
                     JournalListRowView(journal: journal)
                 }
+                .listRowBackground(Color.clear)
             }
             .onAppear(perform: {
                 journalListViewModel.fetchJournals()
@@ -30,7 +31,6 @@ struct JournalListView: View {
         } detail: {
             Text("Navigation Split View")
         }
-        
     }
 }
 
