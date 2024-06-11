@@ -92,10 +92,10 @@ class JournalService {
         
         return AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(journal.journalText.data(using: .utf8)!, withName: "journalText")
-            if let imageData = journal.imageData {
-                for (index, data) in imageData.enumerated() {
+            if let imageDataArray = journal.imageDataArray {
+                for (index, data) in imageDataArray.enumerated() {
                     let imageName = "journalImage\(index)"
-//                    multipartFormData.append(data, withName: "journalImageString", fileName: "\(imageName).jpg", mimeType: "image/jpeg")
+                    multipartFormData.append(data, withName: "journalImageString", fileName: "\(imageName).jpg", mimeType: "image/jpeg")
                 }
             }
         }, to: url, method: .patch, headers: headers)
