@@ -36,6 +36,7 @@ struct TodoListRowView: View {
                                 }))
                         }
                     }
+                    .listRowBackground(Color.clear)
                 }
                 .listRowBackground(Color.clear)
                 .scrollContentBackground(.hidden)

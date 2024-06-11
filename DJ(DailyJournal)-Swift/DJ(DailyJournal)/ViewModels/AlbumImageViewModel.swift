@@ -11,28 +11,31 @@ import Photos
 class AlbumImageViewModel: ObservableObject {
     @Published var imageArray: [UIImage] = []
     
-    func setPhotoLibraryImage() {
+    func setPhotoLibraryImage() async {
         let fetchPhotos = fetchOptionsAssets(limit: 4, sortAscending: false)
         var fetchedImages: [UIImage] = []
-        let group = DispatchGroup()
         
-        fetchPhotos.enumerateObjects { asset, _, _ in
-            if let creationDate = asset.creationDate {
-                let todayDate = Date()
-                if creationDate.isSameDay(as: todayDate) {
-                    group.enter()
-                    self.requestImage(from: asset, thumnailSize: CGSize(width: 100.0, height: 100.0)) { image in
-                        if let image = image {
-                            fetchedImages.append(image)
+        await withCheckedContinuation { continuation in
+            let group = DispatchGroup()
+            
+            fetchPhotos.enumerateObjects { asset, _, _ in
+                if let creationDate = asset.creationDate {
+                    let todayDate = Date()
+                    if creationDate.isSameDay(as: todayDate) {
+                        group.enter()
+                        self.requestImage(from: asset, thumnailSize: CGSize()) { image in
+                            if let image = image {
+                                fetchedImages.append(image)
+                            }
                         }
+                        group.leave()
                     }
-                    group.leave()
                 }
             }
-        }
-        
-        group.notify(queue: .main) {
-            self.imageArray = fetchedImages
+            group.notify(queue: .main) {
+                self.imageArray = fetchedImages
+                continuation.resume()
+            }
         }
     }
     

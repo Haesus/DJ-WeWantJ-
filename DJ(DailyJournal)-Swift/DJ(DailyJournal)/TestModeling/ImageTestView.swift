@@ -20,7 +20,7 @@ struct ImageTestView: View {
             }
             
             Button("앨범에서 이미지 선택") {
-                albumImageViewModel.setPhotoLibraryImage()
+//                albumImageViewModel.setPhotoLibraryImage()
             }
             .padding()
         }

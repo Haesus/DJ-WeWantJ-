@@ -7,7 +7,7 @@ router.get('/:filename', async (req, res) => {
     const blobname = req.params.filename;
     try {
         const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.SA_CONNECTION_STRING);
-        const containerClient = blobServiceClient.getContainerClient(`files`);
+        const containerClient = blobServiceClient.getContainerClient(`journalimage`);
         const blobClient = containerClient.getBlobClient(blobname);
         const downloadBlockBlobResponse = await blobClient.download(0);
 
