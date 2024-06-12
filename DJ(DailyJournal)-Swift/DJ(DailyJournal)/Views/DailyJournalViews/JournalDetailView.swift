@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct JournalDetailView: View {
+    @EnvironmentObject var journalListViewModel: JournalListViewModel
     @StateObject var updateJournalViewModel = UpdateJournalViewModel()
     @State private var isEditing = false
     @State private var editedContent: String
@@ -19,6 +20,7 @@ struct JournalDetailView: View {
     
     let journal: Journal
     let photoCount: Int
+    @State private var summary: String = ""
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
@@ -78,6 +80,13 @@ struct JournalDetailView: View {
                     }
                 }
                 
+                Text(summary)
+                    .padding()
+                    .onAppear {
+                        journalListViewModel.fetchSummary(journal.id)
+                        self.summary = journalListViewModel.summary
+                    }
+                
                 if isEditing {
                     TextEditor(text: $updateJournalViewModel.journalText)
                         .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
@@ -95,18 +104,18 @@ struct JournalDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if isEditing {
-                        Button("Save") {
+                        Button("저장") {
                             saveChanges()
                         }
                     } else {
-                        Button("Edit") {
+                        Button("수정") {
                             isEditing.toggle()
                         }
                     }
                 }
                 if isEditing {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel") {
+                        Button("취소") {
                             cancelEditing()
                         }
                     }
@@ -114,7 +123,7 @@ struct JournalDetailView: View {
             }
             .frame(width: screenWidth * 0.9)
             .foregroundStyle(Color.ivory)
-            .navigationTitle("Journal Detail")
+            .navigationTitle("내 일기")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 self.updateJournalViewModel.id = journal.id
@@ -123,14 +132,13 @@ struct JournalDetailView: View {
             }
             .sheet(isPresented: $isPickerPresented, content: {
                 ImagePicker(image: $selectedImages[photoIndex])
-        })
+            })
         }
     }
     
     private func saveChanges() {
         if isPhotoChanged {
             let dispatchGroup = DispatchGroup()
-
             for index in 0..<photoCount {
                 dispatchGroup.enter()
                 if let selectedImage = selectedImages[index] {
@@ -157,18 +165,18 @@ struct JournalDetailView: View {
                     dispatchGroup.leave()
                 }
             }
-
+            
             dispatchGroup.notify(queue: .main) {
                 updateJournalViewModel.updateJournal()
             }
         } else {
             updateJournalViewModel.updateJournal()
         }
-
+        
         editedContent = updateJournalViewModel.journalText
         isEditing = false
     }
-
+    
     
     private func cancelEditing() {
         editedContent = journal.journalText
@@ -189,10 +197,13 @@ struct JournalDetailView: View {
         }.resume()
     }
     
+    
+    
 }
 
 #Preview {
     NavigationView {
         JournalDetailView(journal: journal)
+            .environmentObject(JournalViewModel())
     }
 }
