@@ -27,11 +27,9 @@ class SignViewModel: ObservableObject {
                     case .finished:
                         break
                     case .failure(let error):
-                        print("여기용")
                         print(error.localizedDescription)
                 }
             } receiveValue: { signUpResponse in
-                print("아니요기용")
                 completionHandler(signUpResponse)
             }
             .store(in: &cancellables)

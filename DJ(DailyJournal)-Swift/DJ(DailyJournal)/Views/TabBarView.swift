@@ -20,7 +20,7 @@ struct TabBarView: View {
             
             TodoListView()
                 .tabItem {
-                    Image(systemName: "checkmark.seal")
+                    Image(systemName: "list.dash")
                     Text("Todo")
                 }
             

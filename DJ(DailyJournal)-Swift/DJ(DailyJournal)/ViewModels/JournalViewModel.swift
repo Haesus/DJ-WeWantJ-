@@ -71,7 +71,6 @@ class JournalViewModel: ObservableObject {
             
             JournalService.shared.saveJournal(journal)
                 .sink { completion in
-                    print(completion)
                     switch completion {
                         case .finished:
                             break

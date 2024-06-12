@@ -36,6 +36,12 @@ struct JournalListView: View {
             .scrollContentBackground(.hidden)
             .background(Color.backgroundColor)
             .toolbar {
+                NavigationLink {
+                    SettingView()
+                } label: {
+                    Image(systemName: "gear")
+                }
+
                 Button(action: {
                     LocalNotificationHelper.shared.pushNotification(title: "알림", body: "알리미", seconds: 2, identifier: "PUSH_TEST")
                 }, label: {

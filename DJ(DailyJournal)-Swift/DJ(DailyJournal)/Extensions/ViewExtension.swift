@@ -8,8 +8,11 @@
 import SwiftUI
 
 extension View {
-    // 어이가 없네
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    func navigationBarModifier( foregroundColor: UIColor = .label, tintColor: UIColor?, withSeparator: Bool) -> some View {
+        self.modifier(NavigationBarModifier( foregroundColor: foregroundColor, tintColor: tintColor, withSeparator: withSeparator))
     }
 }
