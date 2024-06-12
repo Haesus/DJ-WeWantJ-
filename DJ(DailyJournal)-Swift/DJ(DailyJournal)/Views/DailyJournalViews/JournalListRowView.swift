@@ -19,8 +19,10 @@ struct JournalListRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(journal.journalTitle)
-                .font(.headline)
+                .font(.title3)
+                .fontWeight(.bold)
             Text(journal.journalText)
+                .opacity(0.8)
                 .lineLimit(1)
         }
         .foregroundStyle(Color.ivory)

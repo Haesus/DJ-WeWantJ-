@@ -21,7 +21,6 @@ struct JournalDetailView: View {
     
     let journal: Journal
     let photoCount: Int
-    
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
@@ -43,6 +42,7 @@ struct JournalDetailView: View {
                         .fontWeight(.bold)
                     Spacer()
                 }
+                .padding(.top, 10)
                 
                 HStack {
                     if let hostKey = Bundle.main.hostKey,
@@ -51,7 +51,8 @@ struct JournalDetailView: View {
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
-                                    .aspectRatio(1, contentMode: .fit)
+                                    .aspectRatio(1.0, contentMode: .fit)
+                                    .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
                                     .clipped()
                                     .onTapGesture {
                                         if isEditing {
@@ -65,6 +66,7 @@ struct JournalDetailView: View {
                                     image
                                         .resizable()
                                         .aspectRatio(1, contentMode: .fit)
+                                        .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
                                         .clipped()
                                 } placeholder: {
                                     ProgressView()
@@ -81,21 +83,31 @@ struct JournalDetailView: View {
                     }
                 }
                 
-                Text(journalListViewModel.summary)
-                    .padding()
+                VStack(alignment: .leading) {
+                    Image(systemName: "lightbulb.max.fill")
+                        .padding(.vertical, 5)
+                    Text(journalListViewModel.summary)
+                        .onAppear {
+                            journalListViewModel.fetchSummary(journal.id)
+                        }
+                }
                 
-                if isEditing {
-                    TextEditor(text: $updateJournalViewModel.journalText)
-                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
-                        .lineSpacing(0)
-                        .scrollContentBackground(.hidden)
-                    
-                } else {
-                    Text(editedContent)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 5)
-                        .lineSpacing(0)
+                VStack(alignment: .leading) {
+                    Image(systemName: "note.text")
+                        .padding(.top, 5)
+                    if isEditing {
+                        TextEditor(text: $updateJournalViewModel.journalText)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            .lineSpacing(0)
+                            .scrollContentBackground(.hidden)
+                        
+                    } else {
+                        Text(editedContent)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 5)
+                            .lineSpacing(0)
+                    }
                 }
             }
             .toolbar {
@@ -117,13 +129,6 @@ struct JournalDetailView: View {
                         HStack {
                             Image(systemName: "chevron.left")
                             Text("뒤로가기")
-                        }
-                    }
-                }
-                if isEditing {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("취소") {
-                            cancelEditing()
                         }
                     }
                 }
