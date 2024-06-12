@@ -18,14 +18,14 @@ struct JournalListView: View {
     }
     
     var body: some View {
-        NavigationSplitView {
+        NavigationView {
             VStack {
                 List(journalListViewModel.journals, id: \.id) { journal in
                     NavigationLink(destination: JournalDetailView(journal: journal)) {
                         JournalListRowView(journal: journal)
                     }
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(Color.clear)
               
                 Button(action: {
                     journalViewModel.saveJournal { result in
@@ -51,8 +51,6 @@ struct JournalListView: View {
                     Text("알림")
                 })
             }
-        } detail: {
-            Text("Navigation Split View")
         }
     }
 }
