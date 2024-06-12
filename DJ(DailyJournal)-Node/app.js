@@ -1,5 +1,5 @@
-const sync = require('./Models/sync');
-sync();
+// const sync = require('./Models/sync');
+// sync();
 
 const express = require(`express`);
 const morgan = require(`morgan`);
@@ -12,6 +12,7 @@ const signRouter = require(`./Routers/signRouter`);
 const journalRouter = require(`./Routers/journalRouter`);
 const imageRouter = require('./Routers/imageRouter');
 const checkAuth = require(`./Routers/authRouter`);
+const openaiRouter = require('./Routers/openaiRouter');
 
 app.use(morgan(`dev`));
 app.use(express.json());
@@ -20,7 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(`/sign`, signRouter);
 app.use('/journal', checkAuth);
 app.use(`/journal`, journalRouter);
-app.use('/images', imageRouter);
+app.use('/images', imageRouter); 
+app.use('/ai', openaiRouter);
 
 app.use((_, res) => {
     res.status(404).json({ success: false, token: '', message: '요청이 잘못됨' });
