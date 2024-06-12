@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct JournalDetailView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var journalListViewModel: JournalListViewModel
-    @StateObject var updateJournalViewModel = UpdateJournalViewModel()
     @State private var isEditing = false
     @State private var editedContent: String
     @State private var isPickerPresented = false
     @State private var selectedImages: [UIImage?]
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.presentationMode) var presentationMode
     @State var photoIndex: Int = 0
     @State var isPhotoChanged = false
+    @StateObject var updateJournalViewModel = UpdateJournalViewModel()
     
     let journal: Journal
     let photoCount: Int
-    @State private var summary: String = ""
+    
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
@@ -81,12 +81,8 @@ struct JournalDetailView: View {
                     }
                 }
                 
-                Text(summary)
+                Text(journalListViewModel.summary)
                     .padding()
-                    .onAppear {
-                        journalListViewModel.fetchSummary(journal.id)
-                        self.summary = journalListViewModel.summary
-                    }
                 
                 if isEditing {
                     TextEditor(text: $updateJournalViewModel.journalText)
@@ -141,6 +137,7 @@ struct JournalDetailView: View {
                 self.updateJournalViewModel.id = journal.id
                 self.updateJournalViewModel.journalText = journal.journalText
                 self.updateJournalViewModel.journalImages = Array(repeating: nil, count: photoCount)
+                journalListViewModel.fetchSummary(journal.id)
             }
             .sheet(isPresented: $isPickerPresented, content: {
                 ImagePicker(image: $selectedImages[photoIndex])
@@ -217,5 +214,6 @@ struct JournalDetailView: View {
     NavigationView {
         JournalDetailView(journal: journal)
             .environmentObject(JournalViewModel())
+            .environmentObject(JournalListViewModel())
     }
 }
