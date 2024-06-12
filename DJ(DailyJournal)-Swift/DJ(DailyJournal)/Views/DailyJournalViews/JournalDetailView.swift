@@ -95,7 +95,7 @@ struct JournalDetailView: View {
                         .padding(.top, 5)
                     if isEditing {
                         TextEditor(text: $updateJournalViewModel.journalText)
-                            .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             .lineSpacing(0)
                             .scrollContentBackground(.hidden)
                         
