@@ -38,6 +38,7 @@ class JournalViewModel: ObservableObject {
                 }
             }
             
+            journalText += "오늘의 일정\n"
             if !eventStoreManager.events.isEmpty {
                 for event in eventStoreManager.events {
                     journalText += event.title + "\n"
@@ -47,6 +48,7 @@ class JournalViewModel: ObservableObject {
                 journalTitle = Date().todyaDate()
             }
             
+            journalText += "Todo\n"
             if let todoArray = todoListViewModel.template {
                 for todoList in todoArray.todoList {
                     if todoList.isTodo {
@@ -58,6 +60,7 @@ class JournalViewModel: ObservableObject {
                 }
             }
             
+            journalText += "DailyLog\n"
             if let dailyArray = dailyLogViewModel.template {
                 for dailyLogList in dailyArray.dailyLogList {
                     journalText += dailyLogList.isDaily + " " + dailyLogList.dailyText + "\n"

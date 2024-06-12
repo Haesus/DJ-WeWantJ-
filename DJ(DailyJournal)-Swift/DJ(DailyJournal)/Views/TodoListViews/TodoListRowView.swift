@@ -36,6 +36,7 @@ struct TodoListRowView: View {
                                 }))
                         }
                     }
+                    .onDelete(perform: removeRows)
                     .listRowBackground(Color.clear)
                 }
                 .listRowBackground(Color.clear)
@@ -45,6 +46,10 @@ struct TodoListRowView: View {
             }
         }
         .background(Color.clear)
+    }
+    
+    private func removeRows(at offsets: IndexSet) {
+        todoListTemplateViewModel.template?.todoList.remove(atOffsets: offsets)
     }
 }
 

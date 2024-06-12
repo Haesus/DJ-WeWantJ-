@@ -32,21 +32,10 @@ struct JournalListView: View {
                     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
                     UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
                 }
-                
-                Button(action: {
-                    journalViewModel.saveJournal { result in
-                        if result {
-                            print("성공")
-                            journalListViewModel.fetchJournals()
-                        }
-                    }
-                }, label: {
-                    Text("Button")
-                })
             }
             .onAppear(perform: {
                 journalListViewModel.fetchJournals()
-                LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 11, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
+                LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 23, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
             })
             .navigationTitle("Journals")
             .scrollContentBackground(.hidden)

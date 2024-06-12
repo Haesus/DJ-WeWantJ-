@@ -36,6 +36,7 @@
 		FAB2C4712C1810250022388C /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4702C1810250022388C /* NotificationDelegate.swift */; };
 		FAB2C4722C1849780022388C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 89FF35452C181E610033243C /* Config.xcconfig */; };
 		FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */; };
+		FAB2C4772C1943470022388C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4762C1943460022388C /* ViewExtension.swift */; };
 		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
 		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
 		FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
@@ -86,6 +87,7 @@
 		FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAB2C4702C1810250022388C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = "DJ(DailyJournal)/NotificationDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		FAB2C4762C1943460022388C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtension.swift; path = ../../../../../../../../Documents/ViewExtension.swift; sourceTree = "<group>"; };
 		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
 				329625EC2C104AF1005B68D3 /* TitleExtension.swift */,
 				FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */,
+				FAB2C4762C1943460022388C /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */,
 				FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */,
 				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
+				FAB2C4772C1943470022388C /* ViewExtension.swift in Sources */,
 				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
 				329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */,
 				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
