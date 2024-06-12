@@ -18,7 +18,9 @@ class UpdateJournalViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func updateJournal() {
-        imageDataArray = journalImages?.compactMap { $0!.jpegData(compressionQuality: 0.3) }
+        if let journalImages {
+            imageDataArray = journalImages.compactMap { $0?.jpegData(compressionQuality: 0.3) }
+        }
         
         let journal = UpdatedJournal(id: id, journalText: journalText, imageDataArray: imageDataArray)
         
