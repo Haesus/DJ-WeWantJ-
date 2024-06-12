@@ -59,18 +59,18 @@ class JournalService {
         let header: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         return AF.request(url, method: .get, headers: header)
-            .responseDecodable(of: JournalResponse.self) { response in
-                switch response.result {
-                    case .success(let journalResponse):
-                        print("Decoding 성공")
-                    case .failure(let error):
-                        if let data = response.data {
-                            let json = String(data: data, encoding: .utf8) ?? "데이터 문자열 변환 에러"
-                            print("Response data: \(json)")
-                        }
-                        print("Decoding error: \(error)")
-                }
-            }
+        //            .responseDecodable(of: JournalResponse.self) { response in
+        //                switch response.result {
+        //                    case .success(let journalResponse):
+        //                        print("Decoding 성공")
+        //                    case .failure(let error):
+        //                        if let data = response.data {
+        //                            let json = String(data: data, encoding: .utf8) ?? "데이터 문자열 변환 에러"
+        //                            print("Response data: \(json)")
+        //                        }
+        //                        print("Decoding error: \(error)")
+        //                }
+        //            }
             .publishDecodable(type: JournalResponse.self)
             .value()
             .map { $0.documents }
@@ -104,5 +104,28 @@ class JournalService {
         .value()
         .map { $0.documents[0] }
         .eraseToAnyPublisher()
+    }
+    
+    func fetchSummary(_ id: Int) -> AnyPublisher<Summary, AFError> {
+        guard let hostKey = Bundle.main.hostKey else {
+            return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
+        }
+        
+        guard let token = SignService.shared.getToken() else {
+            return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
+        }
+        
+        let url = "https://\(hostKey)/ai/load/\(id)"
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        return AF.request(url, method: .get, headers: headers)
+            .publishDecodable(type: SummaryResponse.self)
+            .value()
+            .map {
+                print(id)
+                print($0)
+                return $0.summaries[0]
+            }
+            .eraseToAnyPublisher()
     }
 }

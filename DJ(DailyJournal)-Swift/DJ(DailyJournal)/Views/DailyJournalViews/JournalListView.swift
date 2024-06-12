@@ -21,10 +21,16 @@ struct JournalListView: View {
         NavigationView {
             VStack {
                 List(journalListViewModel.journals, id: \.id) { journal in
-                    NavigationLink(destination: JournalDetailView(journal: journal)) {
-                        JournalListRowView(journal: journal)
-                    }
-                    .listRowBackground(Color.clear)
+                    NavigationLink(destination: JournalDetailView(journal: journal)
+                        .environmentObject(journalListViewModel)) {
+                            JournalListRowView(journal: journal)
+                        }
+                        .listRowBackground(Color.clear)
+                }
+                .navigationBarTitle("Journals", displayMode: .large)
+                .onAppear {
+                    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
+                    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
                 }
             }
             .onAppear(perform: {
