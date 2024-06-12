@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct JournalDetailView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var journalListViewModel: JournalListViewModel
-    @StateObject var updateJournalViewModel = UpdateJournalViewModel()
     @State private var isEditing = false
     @State private var editedContent: String
     @State private var isPickerPresented = false
     @State private var selectedImages: [UIImage?]
-    @Environment(\.dismiss) var dismiss
     @State var photoIndex: Int = 0
     @State var isPhotoChanged = false
+    @StateObject var updateJournalViewModel = UpdateJournalViewModel()
     
     let journal: Journal
     let photoCount: Int
@@ -120,15 +121,27 @@ struct JournalDetailView: View {
                         }
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                            Text("뒤로가기")
+                        }
+                    }
+                }
             }
             .frame(width: screenWidth * 0.9)
             .foregroundStyle(Color.ivory)
             .navigationTitle("내 일기")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
             .onAppear {
                 self.updateJournalViewModel.id = journal.id
                 self.updateJournalViewModel.journalText = journal.journalText
                 self.updateJournalViewModel.journalImages = Array(repeating: nil, count: photoCount)
+                journalListViewModel.fetchSummary(journal.id)
             }
             .sheet(isPresented: $isPickerPresented, content: {
                 ImagePicker(image: $selectedImages[photoIndex])
@@ -205,5 +218,6 @@ struct JournalDetailView: View {
     NavigationView {
         JournalDetailView(journal: journal)
             .environmentObject(JournalViewModel())
+            .environmentObject(JournalListViewModel())
     }
 }

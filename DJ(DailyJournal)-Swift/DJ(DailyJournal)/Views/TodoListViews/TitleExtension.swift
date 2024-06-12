@@ -26,9 +26,3 @@ struct NavigationBarModifier: ViewModifier {
         content
     }
 }
-
-extension View {
-    func navigationBarModifier( foregroundColor: UIColor = .label, tintColor: UIColor?, withSeparator: Bool) -> some View {
-        self.modifier(NavigationBarModifier( foregroundColor: foregroundColor, tintColor: tintColor, withSeparator: withSeparator))
-    }
-}

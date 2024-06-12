@@ -1,20 +1,32 @@
 {
     "dailyLogList": [
         {
-            "isDaily": "아침",
-            "dailyText": "안먹는다"
+            "isDaily": "🛏️ 수면",
+            "dailyText": "00:00 - 07:00"
         },
         {
-            "isDaily": "점심",
-            "dailyText": "뭐먹지"
+            "isDaily": "🍽️ 아침",
+            "dailyText": ""
         },
         {
-            "isDaily": "저녁",
-            "dailyText": "뭐먹지"
+            "isDaily": "🍽️ 점심",
+            "dailyText": ""
         },
         {
-            "isDaily": "운동",
-            "dailyText": "해야지"
+            "isDaily": "🍽️ 저녁",
+            "dailyText": ""
+        },
+        {
+            "isDaily": "🥤 음료",
+            "dailyText": ""
+        },
+        {
+            "isDaily": "🥐 간식",
+            "dailyText": ""
+        },
+        {
+            "isDaily": "👟 운동",
+            "dailyText": ""
         }
     ]
 }

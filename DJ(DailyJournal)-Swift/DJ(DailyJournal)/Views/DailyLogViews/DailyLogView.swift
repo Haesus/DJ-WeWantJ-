@@ -56,6 +56,7 @@ struct DailyLogView: View {
             .toolbar {
                 Button(action: {
                     dailyTemplateViewModel.saveToJSON(fileName: "DailyTemplate.json")
+                    hideKeyboard()
                 }, label: {
                     Text("수정")
                         .foregroundStyle(Color.lightYellow)
