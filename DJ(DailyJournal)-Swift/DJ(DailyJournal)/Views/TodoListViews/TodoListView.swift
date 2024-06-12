@@ -51,6 +51,7 @@ struct TodoListView: View {
             .toolbar {
                 Button(action: {
                     todoListTemplateViewModel.saveToJSON(fileName: "TodoTemplate.json")
+                    hideKeyboard()
                 }, label: {
                     Text("수정")
                         .foregroundStyle(Color.lightYellow)
@@ -63,10 +64,6 @@ struct TodoListView: View {
     
     private func addTodoListTemplate() {
         todoListTemplateViewModel.template?.todoList.append(Todo(isTodo: false, todoText: ""))
-    }
-    
-    private func removeRows(at offsets: IndexSet) {
-        todoListTemplateViewModel.template?.todoList.remove(atOffsets: offsets)
     }
 }
 

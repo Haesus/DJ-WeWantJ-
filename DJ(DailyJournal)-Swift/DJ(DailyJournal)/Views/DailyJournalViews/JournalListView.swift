@@ -29,7 +29,7 @@ struct JournalListView: View {
             }
             .onAppear(perform: {
                 journalListViewModel.fetchJournals()
-                LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 11, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
+                LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 23, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
             })
             .navigationTitle("Journals")
             .scrollContentBackground(.hidden)
