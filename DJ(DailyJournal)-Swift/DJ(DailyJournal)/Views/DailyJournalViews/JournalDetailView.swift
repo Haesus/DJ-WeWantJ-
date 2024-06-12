@@ -20,7 +20,6 @@ struct JournalDetailView: View {
     
     let journal: Journal
     let photoCount: Int
-    @State private var summary: String = ""
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
@@ -50,8 +49,8 @@ struct JournalDetailView: View {
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
-                                    .frame(maxWidth: 150, maxHeight: 150)
-                                    .aspectRatio(1, contentMode: .fill)
+                                    .scaledToFit()
+                                    .frame(maxWidth: screenWidth * 0.9 / CGFloat(photoCount))
                                     .clipped()
                                     .onTapGesture {
                                         if isEditing {
@@ -64,8 +63,8 @@ struct JournalDetailView: View {
                                 AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
                                     image
                                         .resizable()
-                                        .frame(maxWidth: 150, maxHeight: 150)
-                                        .aspectRatio(1, contentMode: .fill)
+                                        .scaledToFit()
+                                        .frame(maxWidth: screenWidth * 0.9 / CGFloat(photoCount))
                                         .clipped()
                                 } placeholder: {
                                     ProgressView()
@@ -82,40 +81,34 @@ struct JournalDetailView: View {
                     }
                 }
                 
-                Text(summary)
-                    .padding()
-                    .onAppear {
-                        journalListViewModel.fetchSummary(journal.id)
-                        self.summary = journalListViewModel.summary
-                    }
+                VStack(alignment: .leading) {
+                    Image(systemName: "lightbulb.max.fill")
+                        .padding(.vertical, 5)
+                    Text(journalListViewModel.summary)
+                        .onAppear {
+                            journalListViewModel.fetchSummary(journal.id)
+                        }
+                }
                 
-                if isEditing {
-                    TextEditor(text: $updateJournalViewModel.journalText)
-                        .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
-                        .lineSpacing(0)
-                        .scrollContentBackground(.hidden)
-                    
-                } else {
-                    Text(editedContent)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 5)
-                        .lineSpacing(0)
+                VStack(alignment: .leading) {
+                    Image(systemName: "note.text")
+                        .padding(.top, 5)
+                    if isEditing {
+                        TextEditor(text: $updateJournalViewModel.journalText)
+                            .frame(maxWidth: .infinity, minHeight: screenHeight * 0.5, maxHeight: .infinity, alignment: .leading)
+                            .lineSpacing(0)
+                            .scrollContentBackground(.hidden)
+                        
+                    } else {
+                        Text(editedContent)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 5)
+                            .lineSpacing(0)
+                    }
                 }
             }
             .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    if isEditing {
-//                        Button(action: {
-//                            cancelEditing()
-//                        }) {
-//                            Image(systemName: "x.circle.fill")
-//                                .resizable()
-//                                .foregroundColor(Color.ivory.opacity(0.5))
-//                                .frame(width: 15, height: 15)
-//                        }
-//                    }
-//                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if isEditing {
                         Button("저장") {
