@@ -16,8 +16,10 @@ router.post('/save/:journalID', async (req, res) => {
 });
 
 router.get('/load/:journalID', async (req, res) => {
+  const { journalID } = req.params;
     try {
-      const summaries = await Summary.findAll();
+      const summaries = await Summary.findAll({
+        where: { journalID }});
       res.status(200).json({ success: true, summaries });
     } catch (err) {
       res.status(500).json({ success: false, message: 'AI 응답 조회 중 오류 발생.', error: err.message });
