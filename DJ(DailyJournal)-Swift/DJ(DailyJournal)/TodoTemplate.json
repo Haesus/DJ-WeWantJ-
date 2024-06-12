@@ -1,12 +1,16 @@
 {
     "todoList": [
         {
-            "isTodo": true,
-            "todoText": "Swift 공부하기"
+            "isTodo": false,
+            "todoText": "당신의 Todo를"
         },
         {
             "isTodo": false,
-            "todoText": "운동하기"
+            "todoText": "작성해보세요."
+        },
+        {
+            "isTodo": false,
+            "todoText": "응원합니다."
         }
     ]
 }

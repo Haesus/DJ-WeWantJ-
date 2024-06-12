@@ -15,6 +15,7 @@ struct JournalDetailView: View {
     @State private var isPickerPresented = false
     @State private var selectedImages: [UIImage?]
     @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     @State var photoIndex: Int = 0
     @State var isPhotoChanged = false
     
@@ -113,6 +114,16 @@ struct JournalDetailView: View {
                         }
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                            Text("뒤로가기")
+                        }
+                    }
+                }
                 if isEditing {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button("취소") {
@@ -125,6 +136,7 @@ struct JournalDetailView: View {
             .foregroundStyle(Color.ivory)
             .navigationTitle("내 일기")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
             .onAppear {
                 self.updateJournalViewModel.id = journal.id
                 self.updateJournalViewModel.journalText = journal.journalText
