@@ -12,8 +12,8 @@ class AlbumImageViewModel: ObservableObject {
     @Published var imageArray: [UIImage] = []
     
     func setPhotoLibraryImage() async {
-        let fetchPhotos = fetchOptionsAssets(limit: 4, sortAscending: false)
-        var fetchedImages: [UIImage] = []
+        let fetchPhotos = fetchOptionsAssets(limit: 50, sortAscending: false)
+        var fetchedImagesArray: [UIImage] = []
         
         await withCheckedContinuation { continuation in
             let group = DispatchGroup()
@@ -25,16 +25,32 @@ class AlbumImageViewModel: ObservableObject {
                         group.enter()
                         self.requestImage(from: asset, thumnailSize: CGSize()) { image in
                             if let image = image {
-                                fetchedImages.append(image)
+                                fetchedImagesArray.append(image)
                             }
                         }
                         group.leave()
                     }
                 }
             }
-            group.notify(queue: .main) {
-                self.imageArray = fetchedImages
-                continuation.resume()
+            if fetchedImagesArray.count > 4 {
+                var randomNumberSet: Set<Int> = []
+                while randomNumberSet.count != 4 {
+                    randomNumberSet.insert(Int.random(in: 0...fetchedImagesArray.count-1))
+                }
+                let randomNumbersArray = Array(randomNumberSet)
+                var randomFetchedImagesArray: [UIImage] = []
+                for randomNumber in randomNumbersArray {
+                    randomFetchedImagesArray.append(fetchedImagesArray[randomNumber])
+                }
+                group.notify(queue: .main) {
+                    self.imageArray = randomFetchedImagesArray
+                    continuation.resume()
+                }
+            } else {
+                group.notify(queue: .main) {
+                    self.imageArray = fetchedImagesArray
+                    continuation.resume()
+                }
             }
         }
     }

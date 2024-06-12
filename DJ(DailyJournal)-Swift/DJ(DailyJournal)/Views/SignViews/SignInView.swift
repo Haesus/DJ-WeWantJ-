@@ -71,7 +71,7 @@ struct SignInView: View {
                 .padding(.horizontal)
                 .foregroundStyle(Color.ivory)
                 
-                NavigationLink(destination: SignUpView()) {
+                NavigationLink(destination: SignUpView().environmentObject(signViewModel)) {
                     Text("Sign Up")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
