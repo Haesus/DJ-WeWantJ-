@@ -9,11 +9,9 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var signViewModel: SignViewModel
-
     var body: some View {
         TabView() {
             JournalListView()
-                .environmentObject(journalListViewModel)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
