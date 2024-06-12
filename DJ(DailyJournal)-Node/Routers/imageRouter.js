@@ -14,7 +14,7 @@ router.get('/:filename', async (req, res) => {
         downloadBlockBlobResponse.readableStreamBody.pipe(res);
     } catch {
         console.error(error);
-        res.status(500).send("Error fetching file from A B S");
+        res.status(500).send("Error fetching file from Azure Blob Storage");
     }
 });
 
