@@ -6,7 +6,7 @@ class Summary extends Sequelize.Model {
       {
         //3줄 요약 내용
         summary: {
-          type: Sequelize.STRING(200),
+          type: Sequelize.TEXT,
           allowNull: false,
         }
       },

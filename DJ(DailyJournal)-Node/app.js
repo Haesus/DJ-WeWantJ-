@@ -1,5 +1,5 @@
-// const sync = require('./Models/sync');
-// sync();
+const sync = require('./Models/sync');
+sync();
 
 const express = require(`express`);
 const morgan = require(`morgan`);
