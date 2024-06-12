@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct JournalListView: View {
+    @EnvironmentObject var signViewModel : SignViewModel
     @StateObject var journalListViewModel = JournalListViewModel()
     @StateObject var journalViewModel = JournalViewModel()
     @StateObject var albumViewModel = AlbumImageViewModel()
@@ -38,6 +39,7 @@ struct JournalListView: View {
             .toolbar {
                 NavigationLink {
                     SettingView()
+                        .environmentObject(signViewModel)
                 } label: {
                     Image(systemName: "gear")
                 }
