@@ -42,6 +42,7 @@ struct JournalDetailView: View {
                         .fontWeight(.bold)
                     Spacer()
                 }
+                .padding(.top, 10)
                 
                 HStack {
                     if let hostKey = Bundle.main.hostKey,
