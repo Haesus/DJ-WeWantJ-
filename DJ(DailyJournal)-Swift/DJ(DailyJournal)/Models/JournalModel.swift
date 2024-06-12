@@ -39,19 +39,6 @@ struct JournalImage: Codable {
     let journalID: Int
 }
 
-struct NewJournalImage: Codable {
-    let journalImageString: String
-    let journalID: Int
-}
-
-struct CreatedJournal: Codable {
-    let journalTitle: String
-    let journalText: String
-    let createdAt: String
-    let journalImages: [NewJournalImage]?
-    let userID: Int
-}
-
 struct UpdatedJournal: Codable {
     let id: Int
     let journalText: String

@@ -2,7 +2,7 @@ const express = require('express');
 const { Journal, JournalImage } = require('../Models/index');
 const router = express.Router();
 const upload = require('./uploadImage');
-
+const fetchAndSaveAIResponse = require('./main');
 
 // 일기 생성
 router.post('/save', upload.array('journalImageString', 4), async (req, res) => {
@@ -20,6 +20,8 @@ router.post('/save', upload.array('journalImageString', 4), async (req, res) => 
       }));
       await JournalImage.bulkCreate(images);
     }
+
+    await fetchAndSaveAIResponse(result.id);
 
     res.json({ success: true, documents: [result], message: '일기 생성 완료' });
   } catch (error) {

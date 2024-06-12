@@ -12,11 +12,6 @@ struct JournalListView: View {
     @StateObject var journalViewModel = JournalViewModel()
     @StateObject var albumViewModel = AlbumImageViewModel()
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
