@@ -15,6 +15,7 @@ class JournalViewModel: ObservableObject {
     @Published var todoListViewModel = TemplateViewModel<TodoTemplateModel>()
     @Published var dailyLogViewModel = TemplateViewModel<DailyTemplateModel>()
     
+    private var aiResponse = "랩"
     var journalTitle: String = ""
     var journalText: String = ""
     var journalImage: [String] = []
@@ -67,7 +68,11 @@ class JournalViewModel: ObservableObject {
                 }
             }
             
-            let journal = JournalRequest(journalTitle: journalTitle, journalText: journalText, journalImageStringArray: journalImage)
+            if UserDefaults.standard.string(forKey: "aiResponse") != nil {
+                aiResponse = UserDefaults.standard.string(forKey: "aiResponse")!
+            }
+            
+            let journal = JournalRequest(journalTitle: journalTitle, journalText: journalText, journalImageStringArray: journalImage, aiResponse: aiResponse)
             
             JournalService.shared.saveJournal(journal)
                 .sink { completion in
