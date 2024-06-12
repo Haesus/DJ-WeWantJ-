@@ -49,8 +49,8 @@ struct JournalDetailView: View {
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: screenWidth * 0.9 / CGFloat(photoCount))
+                                    .aspectRatio(1.0, contentMode: .fit)
+                                    .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
                                     .clipped()
                                     .onTapGesture {
                                         if isEditing {
@@ -63,8 +63,8 @@ struct JournalDetailView: View {
                                 AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
                                     image
                                         .resizable()
-                                        .scaledToFit()
-                                        .frame(maxWidth: screenWidth * 0.9 / CGFloat(photoCount))
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
                                         .clipped()
                                 } placeholder: {
                                     ProgressView()
