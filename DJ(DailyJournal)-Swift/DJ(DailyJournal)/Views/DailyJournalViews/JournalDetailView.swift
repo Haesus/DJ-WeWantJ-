@@ -50,7 +50,8 @@ struct JournalDetailView: View {
                             if let seletedImage = selectedImages[index] {
                                 Image(uiImage: seletedImage)
                                     .resizable()
-                                    .aspectRatio(1, contentMode: .fit)
+                                    .frame(maxWidth: 150, maxHeight: 150)
+                                    .aspectRatio(1, contentMode: .fill)
                                     .clipped()
                                     .onTapGesture {
                                         if isEditing {
@@ -63,7 +64,8 @@ struct JournalDetailView: View {
                                 AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
                                     image
                                         .resizable()
-                                        .aspectRatio(1, contentMode: .fit)
+                                        .frame(maxWidth: 150, maxHeight: 150)
+                                        .aspectRatio(1, contentMode: .fill)
                                         .clipped()
                                 } placeholder: {
                                     ProgressView()
@@ -102,6 +104,18 @@ struct JournalDetailView: View {
                 }
             }
             .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    if isEditing {
+//                        Button(action: {
+//                            cancelEditing()
+//                        }) {
+//                            Image(systemName: "x.circle.fill")
+//                                .resizable()
+//                                .foregroundColor(Color.ivory.opacity(0.5))
+//                                .frame(width: 15, height: 15)
+//                        }
+//                    }
+//                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if isEditing {
                         Button("저장") {
@@ -110,13 +124,6 @@ struct JournalDetailView: View {
                     } else {
                         Button("수정") {
                             isEditing.toggle()
-                        }
-                    }
-                }
-                if isEditing {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("취소") {
-                            cancelEditing()
                         }
                     }
                 }
