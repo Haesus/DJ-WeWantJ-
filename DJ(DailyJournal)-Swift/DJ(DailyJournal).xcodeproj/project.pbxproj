@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
-		328D37502C186EE40028E005 /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D374F2C186EE40028E005 /* SettingRowView.swift */; };
-		328D37522C1873C00028E005 /* SettingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D37512C1873C00028E005 /* SettingDetailView.swift */; };
 		328D37542C1874070028E005 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D37532C1874060028E005 /* SettingView.swift */; };
 		329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */; };
 		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
@@ -19,8 +17,8 @@
 		329625F22C10B24A005B68D3 /* JournalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F12C10B24A005B68D3 /* JournalService.swift */; };
 		329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F42C118558005B68D3 /* JournalListViewModel.swift */; };
 		329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F62C11878C005B68D3 /* JournalViewModel.swift */; };
+		32D147B32C1972F8000F8431 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32D147B22C1972F8000F8431 /* Alamofire */; };
 		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
-		32F5D63D2C186ADB00C8D96C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32F5D63C2C186ADB00C8D96C /* Alamofire */; };
 		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
 		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
 		4E119EE32C1933C300E33D10 /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E119EE22C1933C300E33D10 /* SummaryModel.swift */; };
@@ -60,8 +58,6 @@
 
 /* Begin PBXFileReference section */
 		321EDA782C0EE84900BF39E4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = "DJ(DailyJournal)/ColorExtension.swift"; sourceTree = SOURCE_ROOT; };
-		328D374F2C186EE40028E005 /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
-		328D37512C1873C00028E005 /* SettingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailView.swift; sourceTree = "<group>"; };
 		328D37532C1874060028E005 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogRowView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogRowView.swift"; sourceTree = SOURCE_ROOT; };
 		329625E02C0F0E66005B68D3 /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogView.swift"; sourceTree = SOURCE_ROOT; };
@@ -117,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F5D63D2C186ADB00C8D96C /* Alamofire in Frameworks */,
+				32D147B32C1972F8000F8431 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				328D37532C1874060028E005 /* SettingView.swift */,
-				328D374F2C186EE40028E005 /* SettingRowView.swift */,
-				328D37512C1873C00028E005 /* SettingDetailView.swift */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -318,7 +312,7 @@
 			);
 			name = "DJ(DailyJournal)";
 			packageProductDependencies = (
-				32F5D63C2C186ADB00C8D96C /* Alamofire */,
+				32D147B22C1972F8000F8431 /* Alamofire */,
 			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
@@ -412,12 +406,10 @@
 				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
 				4E6D0DDD2C167CDF0024576E /* UpdateJournalViewModel.swift in Sources */,
 				FAC5CDA02C129731001D5862 /* TemplateViewModel.swift in Sources */,
-				328D37522C1873C00028E005 /* SettingDetailView.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
 				32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */,
 				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
 				FADBCB902C15CA8E00B8CFDE /* CalendarsTestView.swift in Sources */,
-				328D37502C186EE40028E005 /* SettingRowView.swift in Sources */,
 				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
 				32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */,
 				4E3CBAD02C128C83007C6817 /* JournalListRowView.swift in Sources */,
@@ -649,7 +641,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		32F5D63C2C186ADB00C8D96C /* Alamofire */ = {
+		32D147B22C1972F8000F8431 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
