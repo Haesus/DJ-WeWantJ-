@@ -26,16 +26,6 @@ struct JournalListView: View {
                     }
                     .listRowBackground(Color.clear)
                 }
-              
-                Button(action: {
-                    journalViewModel.saveJournal { result in
-                        if result {
-                            print("성공")
-                        }
-                    }
-                }, label: {
-                    Text("Button")
-                })
             }
             .onAppear(perform: {
                 journalListViewModel.fetchJournals()
