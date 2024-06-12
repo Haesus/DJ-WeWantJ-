@@ -11,18 +11,16 @@ import Combine
 
 class UpdateJournalViewModel: ObservableObject {
     @Published var id: Int = 0
-    @Published var journalTitle: String = ""
     @Published var journalText: String = ""
-    @Published var journalImages: [UIImage?] = Array(repeating: nil, count: 4)
-    private var imageData: [Data]?
+    @Published var journalImages: [UIImage?]?
+    private var imageDataArray: [Data]?
     
     private var cancellables = Set<AnyCancellable>()
     
     func updateJournal() {
-        // TODO: - Nil 사진 값 처리
-        imageData = journalImages.compactMap { $0!.jpegData(compressionQuality: 0.7) }
+        imageDataArray = journalImages?.compactMap { $0!.jpegData(compressionQuality: 0.3) }
         
-        let journal = UpdatedJournal(id: id, journalTitle: journalTitle, journalText: journalText, imageData: imageData?[0])
+        let journal = UpdatedJournal(id: id, journalText: journalText, imageDataArray: imageDataArray)
         
         JournalService.shared.updateJournal(journal)
             .sink { completion in
