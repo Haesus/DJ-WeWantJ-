@@ -53,7 +53,6 @@
 		FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB892C12E94300B8CFDE /* ImageTestView.swift */; };
 		FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */; };
 		FADBCB902C15CA8E00B8CFDE /* CalendarsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */; };
-		FADBCB922C168C8000B8CFDE /* BackgroundFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB912C168C8000B8CFDE /* BackgroundFunc.swift */; };
 		FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */; };
 		FADBCB962C16A57100B8CFDE /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB952C16A57100B8CFDE /* NotificationViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -107,7 +106,6 @@
 		FADBCB892C12E94300B8CFDE /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
 		FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsTestView.swift; sourceTree = "<group>"; };
-		FADBCB912C168C8000B8CFDE /* BackgroundFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFunc.swift; sourceTree = "<group>"; };
 		FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsViewModel.swift; sourceTree = "<group>"; };
 		FADBCB952C16A57100B8CFDE /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,7 +228,6 @@
 			children = (
 				FAC5CD8E2C106720001D5862 /* SignService.swift */,
 				329625F12C10B24A005B68D3 /* JournalService.swift */,
-				FADBCB912C168C8000B8CFDE /* BackgroundFunc.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -385,7 +382,6 @@
 				FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */,
 				4E119EE32C1933C300E33D10 /* SummaryModel.swift in Sources */,
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
-				FADBCB922C168C8000B8CFDE /* BackgroundFunc.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
 				FADBCB962C16A57100B8CFDE /* NotificationViewModel.swift in Sources */,
 				4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */,
