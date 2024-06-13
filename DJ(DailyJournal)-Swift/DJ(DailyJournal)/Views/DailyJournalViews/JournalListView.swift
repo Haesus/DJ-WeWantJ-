@@ -15,7 +15,7 @@ struct JournalListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(journalListViewModel.journals, id: \.id) { journal in
+                List(journalListViewModel.journals.sorted(by: { $0.id > $1.id }), id: \.id) { journal in
                     NavigationLink(destination: JournalDetailView(journal: journal)
                         .environmentObject(journalListViewModel)) {
                             JournalListRowView(journal: journal)
