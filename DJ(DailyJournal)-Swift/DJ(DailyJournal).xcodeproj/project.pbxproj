@@ -35,6 +35,7 @@
 		FAB2C4722C1849780022388C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 89FF35452C181E610033243C /* Config.xcconfig */; };
 		FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */; };
 		FAB2C4792C1949820022388C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4782C1949820022388C /* ViewExtension.swift */; };
+		FAB2C47B2C1A6D370022388C /* SummarySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */; };
 		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
 		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
 		FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
@@ -83,6 +84,7 @@
 		FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAB2C4702C1810250022388C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = "DJ(DailyJournal)/NotificationDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		FAB2C4782C1949820022388C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySettingView.swift; sourceTree = "<group>"; };
 		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				328D37532C1874060028E005 /* SettingView.swift */,
+				FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			files = (
 				329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */,
 				FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */,
+				FAB2C47B2C1A6D370022388C /* SummarySettingView.swift in Sources */,
 				4E119EE32C1933C300E33D10 /* SummaryModel.swift in Sources */,
 				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
 				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
