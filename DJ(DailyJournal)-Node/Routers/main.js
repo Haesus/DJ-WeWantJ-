@@ -5,20 +5,30 @@ require("dotenv").config();
 const endpoint = process.env["AZURE_OPENAI_ENDPOINT"];
 const azureApiKey = process.env["AZURE_OPENAI_KEY"];
 
-async function fetchAndSaveAIResponse(journalID, aiResponse) {
-  console.log("== 3줄 요약 일기 ==");
-  console.log(journalID)
+async function fetchAndSaveAIResponse(journalID, aiResponse, iaResults) {
+  console.log("== Open Ai 요약 일기 ==");
+  console.log(`journalID: ${journalID}`);
+
+  const iaResultsString = iaResults.map(result => {
+    let resultString = '';
+
+    resultString += `${result}\n`;
+
+    return resultString;
+  });
+
+  console.log(`이미지 설명란: ${iaResultsString}`);
 
   const journal = await Journal.findByPk(journalID);
   if (!journal) {
     throw new Error("Journal not found");
   }
- console.log(journal.dataValues.journalText)
+
   const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
   const deploymentId = "gpt-journal";
   const result = await client.getChatCompletions(deploymentId, [
-    { role: "system", content: "You are an AI assistant that summarizes or changes the content I send to the format I want." },
-    { role: "user", content: `${journal.dataValues.journalText} 앞의 내용은 내가 오늘 진행한 일과야 위 내용을 ${aiResponse}(으)로 정리해서 알려줘` }
+    { role: "system", content: "You are an AI assistant that summarizes or changes the content I send to the format I want. And since I am Korean, I would like you to respond in Korean." },
+    { role: "user", content: `${iaResultsString}은 오늘 찍은 사진의 주요 내용이고 ${journal.dataValues.journalText}은 오늘 내가 한 일들과 일정들을 요약해둔거야, 앞의 내용들을 ${aiResponse}처럼 바꿔서 알려주면 좋겠어.` }
   ]);
 
   for (const choice of result.choices) {

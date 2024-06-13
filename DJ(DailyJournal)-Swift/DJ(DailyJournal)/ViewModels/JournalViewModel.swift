@@ -42,6 +42,8 @@ class JournalViewModel: ObservableObject {
             journalText += "오늘의 일정\n"
             if !eventStoreManager.events.isEmpty {
                 for event in eventStoreManager.events {
+                    journalText += event.startDate.todayDateWithTime() + "~"
+                    journalText += event.endDate.todayDateWithTime() + " "
                     journalText += event.title + "\n"
                 }
                 journalTitle = Date().todyaDate()
@@ -71,6 +73,8 @@ class JournalViewModel: ObservableObject {
             if UserDefaults.standard.string(forKey: "aiResponse") != nil {
                 aiResponse = UserDefaults.standard.string(forKey: "aiResponse")!
             }
+            
+            print("aiResponse: \(aiResponse)")
             
             let journal = JournalRequest(journalTitle: journalTitle, journalText: journalText, journalImageStringArray: journalImage, aiResponse: aiResponse)
             

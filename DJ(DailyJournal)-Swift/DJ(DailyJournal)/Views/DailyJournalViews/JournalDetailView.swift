@@ -111,6 +111,10 @@ struct JournalDetailView: View {
                         }
                     }
                 }
+                .refreshable {
+                    journalListViewModel.fetchJournals()
+                    journalListViewModel.fetchSummary(journal.id)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
