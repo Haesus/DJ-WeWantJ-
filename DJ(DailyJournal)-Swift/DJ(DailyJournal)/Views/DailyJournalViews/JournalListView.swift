@@ -23,6 +23,9 @@ struct JournalListView: View {
                         }
                         .listRowBackground(Color.clear)
                 }
+                .refreshable {
+                    journalListViewModel.fetchJournals()
+                }
                 .navigationBarTitle("Journals", displayMode: .large)
                 .onAppear {
                     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "Ivory") ?? UIColor.white]

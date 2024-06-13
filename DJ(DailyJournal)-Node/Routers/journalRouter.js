@@ -3,13 +3,14 @@ const { Journal, JournalImage } = require('../Models/index');
 const router = express.Router();
 const upload = require('./uploadImage');
 const fetchAndSaveAIResponse = require('./main');
+const analyzeImageFromUrl = require('./analyzeImageFromUrl');
 
 // 일기 생성
 router.post('/save', upload.array('journalImageString', 4), async (req, res) => {
-  console.log(`req.files: ${req.files}`);
   const { aiResponse, ...newJournal } = req.body;
-  // const newJournal = req.body;
   newJournal.userID = req.id;
+
+  let iaResults = [];
 
   try {
     const result = await Journal.create(newJournal);
@@ -19,12 +20,15 @@ router.post('/save', upload.array('journalImageString', 4), async (req, res) => 
         journalID: result.id,
         journalImageString: file.blobName,
       }));
+
       await JournalImage.bulkCreate(images);
+      
+      const journalImageStrings = images.map(image => image.journalImageString);
+
+      iaResults = await analyzeImageFromUrl(journalImageStrings);
     }
 
-    console.log(`Extra Data: ${aiResponse}`);
-
-    await fetchAndSaveAIResponse(result.id, aiResponse);
+    await fetchAndSaveAIResponse(result.id, aiResponse, iaResults);
 
     res.json({ success: true, documents: [result], message: '일기 생성 완료' });
   } catch (error) {

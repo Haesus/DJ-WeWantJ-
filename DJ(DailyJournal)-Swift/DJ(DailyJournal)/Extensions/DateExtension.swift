@@ -18,4 +18,10 @@ extension Date {
         dateFormatter.dateFormat = "yyyy년-MM월-dd일"
         return dateFormatter.string(from: Date())
     }
+    
+    func todayDateWithTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: Date())
+    }
 }

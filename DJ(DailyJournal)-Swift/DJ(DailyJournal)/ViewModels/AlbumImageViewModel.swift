@@ -23,7 +23,12 @@ class AlbumImageViewModel: ObservableObject {
                     let todayDate = Date()
                     if creationDate.isSameDay(as: todayDate) {
                         group.enter()
-                        self.requestImage(from: asset, thumnailSize: CGSize()) { image in
+//                        self.requestImageData(from: asset) { image in
+//                            if let image = image {
+//                                fetchedImagesArray.append(image)
+//                            }
+//                        }
+                        self.requestImage(from: asset) { image in
                             if let image = image {
                                 fetchedImagesArray.append(image)
                             }
@@ -62,9 +67,37 @@ class AlbumImageViewModel: ObservableObject {
         return PHAsset.fetchAssets(with: fetchOption)
     }
     
-    private func requestImage(from asset: PHAsset, thumnailSize: CGSize, completion: @escaping (UIImage?) -> Void) {
+    private func requestImage(from asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
         let imageManager = PHImageManager()
-        imageManager.requestImage(for: asset, targetSize: thumnailSize, contentMode: .aspectFill, options: nil) { image, info in
+        imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: nil) { image, info in
+            completion(image)
+        }
+    }
+    
+    private func requestImageData(from asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
+        let imageManager = PHImageManager()
+        imageManager.requestImageDataAndOrientation(for: asset, options: nil) { data, _, _, _ in
+            if let data = data, let image = UIImage(data: data) {
+                print(image)
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    private func requestOriginalImageData(from asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
+        let imageManager = PHImageManager()
+        let options = PHImageRequestOptions()
+        options.deliveryMode = .highQualityFormat
+        options.isNetworkAccessAllowed = true // iCloud 이미지 가져오기 허용
+
+        imageManager.requestImageDataAndOrientation(for: asset, options: options) { (data, _, _, _) in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
             completion(image)
         }
     }

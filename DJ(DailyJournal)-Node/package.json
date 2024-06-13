@@ -4,6 +4,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@azure-rest/ai-vision-image-analysis": "^1.0.0-beta.2",
+    "@azure/core-auth": "^1.7.2",
     "@azure/openai": "^1.0.0-beta.12",
     "@azure/storage-blob": "^12.23.0",
     "bcrypt": "^5.1.1",
