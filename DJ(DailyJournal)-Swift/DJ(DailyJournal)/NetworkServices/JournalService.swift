@@ -26,9 +26,10 @@ class JournalService {
         let header: HTTPHeaders = ["Authorization":"Bearer \(token)"]
         
         return AF.upload(multipartFormData: { multipartFormData in
-            if let journalTitle = journal.journalTitle, let journalText = journal.journalText {
+            if let journalTitle = journal.journalTitle, let journalText = journal.journalText, let aiResponse = journal.aiResponse {
                 multipartFormData.append(journalTitle.data(using: .utf8)!, withName: "journalTitle")
                 multipartFormData.append(journalText.data(using: .utf8)!, withName: "journalText")
+                multipartFormData.append(aiResponse.data(using: .utf8)!, withName: "aiResponse")
             }
             if let journalImageString = journal.journalImageStringArray {
                 for image in journalImageString {
@@ -106,7 +107,7 @@ class JournalService {
         .eraseToAnyPublisher()
     }
     
-    func fetchSummary(_ id: Int) -> AnyPublisher<Summary, AFError> {
+    func fetchSummary(_ id: Int) -> AnyPublisher<SummaryResponse, AFError> {
         guard let hostKey = Bundle.main.hostKey else {
             return Fail(error: AFError.explicitlyCancelled).eraseToAnyPublisher()
         }
@@ -118,14 +119,20 @@ class JournalService {
         let url = "https://\(hostKey)/ai/load/\(id)"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
-        return AF.request(url, method: .get, headers: headers)
-            .publishDecodable(type: SummaryResponse.self)
+        return AF.request(url, method: .get, headers: headers).publishDecodable(type: SummaryResponse.self)
             .value()
-            .map {
-                print(id)
-                print($0)
-                return $0.summaries[0]
-            }
             .eraseToAnyPublisher()
     }
 }
+
+//        return AF.request(url, method: .get, headers: headers)
+//            .publishDecodable(type: SummaryResponse.self)
+//            .value()
+//            .map {
+//                print(id)
+//                print($0)
+//                return $0.summaries[0]
+//            }
+//            .eraseToAnyPublisher()
+//    }
+//}

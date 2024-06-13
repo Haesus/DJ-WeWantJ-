@@ -47,8 +47,11 @@ class JournalListViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             } receiveValue: { summary in
-                self.summary = summary.summary
-                print(self.summary)
+                if !summary.summaries.isEmpty {
+                    self.summary = summary.summaries[0].summary
+                } else {
+                    self.summary = "아직 요약이 완성되지 않았어요."
+                }
             }.store(in: &cancellables)
     }
     

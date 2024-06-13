@@ -11,6 +11,7 @@ struct JournalRequest: Codable {
     let journalTitle: String?
     let journalText: String?
     let journalImageStringArray: [String]?
+    let aiResponse: String?
 }
 
 struct JournalResponse: Codable {

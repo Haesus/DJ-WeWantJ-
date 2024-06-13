@@ -29,6 +29,12 @@ struct SettingView: View {
                 Color.backgroundColor
                     .ignoresSafeArea()
                 List {
+                    NavigationLink {
+                        SummarySettingView()
+                    } label: {
+                        Text("Summary 설정")
+                    }
+
                     NavigationLink(destination: SafariView(url: URL(string: "https://tagplayground.notion.site/70ca9d78786f4f529e3803c7bf59228e")!)) {
                         Text("개인정보 정책 및 서비스 이용약관")
                     }

@@ -44,16 +44,34 @@ struct JournalDetailView: View {
                 }
                 .padding(.top, 10)
                 
-                HStack {
-                    if let hostKey = Bundle.main.hostKey,
-                       let journalImages = journal.journalImages {
-                        ForEach(0..<photoCount) { index in
-                            if let seletedImage = selectedImages[index] {
-                                Image(uiImage: seletedImage)
-                                    .resizable()
-                                    .aspectRatio(1.0, contentMode: .fit)
-                                    .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
-                                    .clipped()
+                ScrollView {
+                    HStack {
+                        if let hostKey = Bundle.main.hostKey,
+                           let journalImages = journal.journalImages {
+                            ForEach(0..<photoCount) { index in
+                                if let seletedImage = selectedImages[index] {
+                                    Image(uiImage: seletedImage)
+                                        .resizable()
+                                        .aspectRatio(1.0, contentMode: .fit)
+                                        .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
+                                        .clipped()
+                                        .onTapGesture {
+                                            if isEditing {
+                                                isPickerPresented = true
+                                                isPhotoChanged = true
+                                                photoIndex = index
+                                            }
+                                        }
+                                } else {
+                                    AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
+                                            .clipped()
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
                                     .onTapGesture {
                                         if isEditing {
                                             isPickerPresented = true
@@ -61,52 +79,36 @@ struct JournalDetailView: View {
                                             photoIndex = index
                                         }
                                     }
-                            } else {
-                                AsyncImage(url: URL(string: "https://\(hostKey)/images/\(journalImages[index].journalImageString)")) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(1, contentMode: .fit)
-                                        .frame(width: screenWidth * 0.9 / CGFloat(photoCount))
-                                        .clipped()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .onTapGesture {
-                                    if isEditing {
-                                        isPickerPresented = true
-                                        isPhotoChanged = true
-                                        photoIndex = index
-                                    }
                                 }
                             }
                         }
                     }
-                }
-                
-                VStack(alignment: .leading) {
-                    Image(systemName: "lightbulb.max.fill")
-                        .padding(.vertical, 5)
-                    Text(journalListViewModel.summary)
-                        .onAppear {
-                            journalListViewModel.fetchSummary(journal.id)
+                    
+                    VStack(alignment: .leading) {
+                        Image(systemName: "lightbulb.max.fill")
+                            .padding(.vertical, 5)
+                        Text(journalListViewModel.summary)
+                            .onAppear {
+                                journalListViewModel.fetchSummary(journal.id)
+                            }
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Image(systemName: "note.text")
+                            .padding(.top, 5)
+                        if isEditing {
+                            TextEditor(text: $updateJournalViewModel.journalText)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                .lineSpacing(0)
+                                .scrollContentBackground(.hidden)
+                            
+                        } else {
+                            Text(editedContent)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 5)
+                                .lineSpacing(0)
                         }
-                }
-                
-                VStack(alignment: .leading) {
-                    Image(systemName: "note.text")
-                        .padding(.top, 5)
-                    if isEditing {
-                        TextEditor(text: $updateJournalViewModel.journalText)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                            .lineSpacing(0)
-                            .scrollContentBackground(.hidden)
-                        
-                    } else {
-                        Text(editedContent)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 5)
-                            .lineSpacing(0)
                     }
                 }
             }

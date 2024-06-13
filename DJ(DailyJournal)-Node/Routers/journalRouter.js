@@ -7,7 +7,8 @@ const fetchAndSaveAIResponse = require('./main');
 // 일기 생성
 router.post('/save', upload.array('journalImageString', 4), async (req, res) => {
   console.log(`req.files: ${req.files}`);
-  const newJournal = req.body;
+  const { aiResponse, ...newJournal } = req.body;
+  // const newJournal = req.body;
   newJournal.userID = req.id;
 
   try {
@@ -21,7 +22,9 @@ router.post('/save', upload.array('journalImageString', 4), async (req, res) => 
       await JournalImage.bulkCreate(images);
     }
 
-    await fetchAndSaveAIResponse(result.id);
+    console.log(`Extra Data: ${aiResponse}`);
+
+    await fetchAndSaveAIResponse(result.id, aiResponse);
 
     res.json({ success: true, documents: [result], message: '일기 생성 완료' });
   } catch (error) {
