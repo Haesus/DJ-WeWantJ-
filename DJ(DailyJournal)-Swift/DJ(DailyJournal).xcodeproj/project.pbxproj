@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
+		3263795C2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */; };
+		3281661A2C1AD1F90039FB0B /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 328166192C1AD1F90039FB0B /* SwiftyGif */; };
+		3281661D2C1AD33C0039FB0B /* GIFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281661C2C1AD33C0039FB0B /* GIFImageView.swift */; };
+		3281661F2C1AD3D40039FB0B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */; };
 		328D37542C1874070028E005 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D37532C1874060028E005 /* SettingView.swift */; };
 		329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */; };
 		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
@@ -57,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		321EDA782C0EE84900BF39E4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = "DJ(DailyJournal)/ColorExtension.swift"; sourceTree = SOURCE_ROOT; };
+		3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LaunchScreenGIF.gif; sourceTree = "<group>"; };
+		3281661C2C1AD33C0039FB0B /* GIFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImageView.swift; sourceTree = "<group>"; };
+		3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		328D37532C1874060028E005 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogRowView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogRowView.swift"; sourceTree = SOURCE_ROOT; };
 		329625E02C0F0E66005B68D3 /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogView.swift"; sourceTree = SOURCE_ROOT; };
@@ -112,12 +119,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D147B32C1972F8000F8431 /* Alamofire in Frameworks */,
+				3281661A2C1AD1F90039FB0B /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3281661B2C1AD2F80039FB0B /* LaunchScreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */,
+				3281661C2C1AD33C0039FB0B /* GIFImageView.swift */,
+				3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreenViews;
+			sourceTree = "<group>";
+		};
 		328D37552C1874130028E005 /* SettingViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +226,7 @@
 				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
 				FAC5CD9D2C128B76001D5862 /* MainView.swift */,
 				FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */,
+				3281661B2C1AD2F80039FB0B /* LaunchScreenViews */,
 				328D37552C1874130028E005 /* SettingViews */,
 				FAC5CD772C0EE659001D5862 /* SignViews */,
 				4E3CBAD32C128D28007C6817 /* DailyJournalViews */,
@@ -310,6 +329,7 @@
 			name = "DJ(DailyJournal)";
 			packageProductDependencies = (
 				32D147B22C1972F8000F8431 /* Alamofire */,
+				328166192C1AD1F90039FB0B /* SwiftyGif */,
 			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
@@ -341,6 +361,7 @@
 			mainGroup = FA7CEB0A2C0C42F2008504F6;
 			packageReferences = (
 				FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = FA7CEB142C0C42F2008504F6 /* Products */;
 			projectDirPath = "";
@@ -361,6 +382,7 @@
 				FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */,
 				32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */,
 				FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */,
+				3263795C2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif in Resources */,
 				FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +402,9 @@
 				FADBCB962C16A57100B8CFDE /* NotificationViewModel.swift in Sources */,
 				4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */,
 				4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */,
+				3281661D2C1AD33C0039FB0B /* GIFImageView.swift in Sources */,
 				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
+				3281661F2C1AD3D40039FB0B /* LaunchScreenView.swift in Sources */,
 				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
 				FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */,
 				FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */,
@@ -626,6 +650,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.5;
+			};
+		};
 		FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -637,6 +669,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		328166192C1AD1F90039FB0B /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
 		32D147B22C1972F8000F8431 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
