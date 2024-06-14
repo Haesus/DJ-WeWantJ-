@@ -32,7 +32,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         journalViewModel.saveJournal { _ in
-            
+            print("저장 성공")
         }
         completionHandler()
     }

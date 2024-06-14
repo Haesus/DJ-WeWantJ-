@@ -12,6 +12,8 @@ struct JournalListView: View {
     @StateObject var journalListViewModel = JournalListViewModel()
     @StateObject var journalViewModel = JournalViewModel()
     @StateObject var albumViewModel = AlbumImageViewModel()
+    @StateObject var albumImageViewModel = AlbumImageViewModel()
+    @StateObject var eventStoreManager = EventStoreManager()
     
     var body: some View {
         NavigationView {
@@ -33,6 +35,10 @@ struct JournalListView: View {
                 }
             }
             .onAppear(perform: {
+                Task {
+                    await albumImageViewModel.setPhotoLibraryImage()
+                    await eventStoreManager.requestAccess()
+                }
                 journalListViewModel.fetchJournals()
                 LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 23, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
             })
