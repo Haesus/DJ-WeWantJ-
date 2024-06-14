@@ -32,7 +32,7 @@ struct SettingView: View {
                 NavigationLink {
                     SummarySettingView()
                 } label: {
-                    Text("Summary 설정")
+                    Text("요약 형태 설정")
                 }
                 
                 NavigationLink(destination: SafariView(url: URL(string: "https://tagplayground.notion.site/70ca9d78786f4f529e3803c7bf59228e")!)) {

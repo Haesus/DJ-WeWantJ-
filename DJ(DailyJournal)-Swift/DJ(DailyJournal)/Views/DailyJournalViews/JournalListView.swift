@@ -39,6 +39,9 @@ struct JournalListView: View {
                     await albumImageViewModel.setPhotoLibraryImage()
                     await eventStoreManager.requestAccess()
                 }
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+//                    LocalNotificationHelper.shared.pushNotification(title: "일기 작성 시간", body: "일기를 작성할 시간이에요. DJ가 대신 써드리겠습니다.", seconds: 2, identifier: "PUSH_TEST")
+//                }
                 journalListViewModel.fetchJournals()
                 LocalNotificationHelper.shared.pushNotification(title: "일기를 작성할 시간이에요.", body: "지금 앱으로 들어가세요!!", hour: 23, minute: 00, identifier: "JOURNAL_TIME_NOTIFICATION")
             })
@@ -46,6 +49,11 @@ struct JournalListView: View {
             .scrollContentBackground(.hidden)
             .background(Color.backgroundColor)
             .toolbar {
+                Button(action: {
+                    LocalNotificationHelper.shared.pushNotification(title: "일기 작성 시간", body: "일기를 작성할 시간이에요. DJ가 대신 써드리겠습니다.", seconds: 2, identifier: "PUSH_TEST")
+                }, label: {
+                    Text("     ")
+                })
                 NavigationLink {
                     SettingView()
                         .environmentObject(signViewModel)
@@ -53,11 +61,6 @@ struct JournalListView: View {
                     Image(systemName: "gear")
                 }
 
-                Button(action: {
-                    LocalNotificationHelper.shared.pushNotification(title: "알림", body: "알리미", seconds: 2, identifier: "PUSH_TEST")
-                }, label: {
-                    Text("알림")
-                })
             }
         }
     }
