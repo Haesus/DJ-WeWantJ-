@@ -7,18 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321EDA782C0EE84900BF39E4 /* ColorExtension.swift */; };
+		3263795C2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */; };
+		3281661A2C1AD1F90039FB0B /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 328166192C1AD1F90039FB0B /* SwiftyGif */; };
+		3281661D2C1AD33C0039FB0B /* GIFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281661C2C1AD33C0039FB0B /* GIFImageView.swift */; };
+		3281661F2C1AD3D40039FB0B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */; };
+		328D37542C1874070028E005 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D37532C1874060028E005 /* SettingView.swift */; };
+		329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */; };
+		329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E02C0F0E66005B68D3 /* DailyLogView.swift */; };
+		329625E52C1028C2005B68D3 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625E42C1028C2005B68D3 /* TestModel.swift */; };
+		329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625EC2C104AF1005B68D3 /* TitleExtension.swift */; };
+		329625F02C10B204005B68D3 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625EF2C10B204005B68D3 /* JournalModel.swift */; };
+		329625F22C10B24A005B68D3 /* JournalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F12C10B24A005B68D3 /* JournalService.swift */; };
+		329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F42C118558005B68D3 /* JournalListViewModel.swift */; };
+		329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329625F62C11878C005B68D3 /* JournalViewModel.swift */; };
+		32D147B32C1972F8000F8431 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 32D147B22C1972F8000F8431 /* Alamofire */; };
+		32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 32DDA11D2C13A57C0075335A /* DailyTemplate.json */; };
+		32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */; };
+		32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCA5612C13586800E2CD39 /* SignUpView.swift */; };
+		4E119EE32C1933C300E33D10 /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E119EE22C1933C300E33D10 /* SummaryModel.swift */; };
+		4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACD2C128C7B007C6817 /* JournalListView.swift */; };
+		4E3CBAD02C128C83007C6817 /* JournalListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */; };
+		4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */; };
+		4E6D0DDB2C167B6D0024576E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D0DDA2C167B6D0024576E /* ImagePicker.swift */; };
+		4E6D0DDD2C167CDF0024576E /* UpdateJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D0DDC2C167CDF0024576E /* UpdateJournalViewModel.swift */; };
 		FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */; };
 		FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CEB182C0C42F2008504F6 /* ContentView.swift */; };
 		FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */; };
 		FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */; };
+		FAB2C4712C1810250022388C /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4702C1810250022388C /* NotificationDelegate.swift */; };
+		FAB2C4722C1849780022388C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 89FF35452C181E610033243C /* Config.xcconfig */; };
+		FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */; };
+		FAB2C4792C1949820022388C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C4782C1949820022388C /* ViewExtension.swift */; };
+		FAB2C47B2C1A6D370022388C /* SummarySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */; };
+		FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */; };
+		FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD842C103D09001D5862 /* TodoListView.swift */; };
+		FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD862C103D2B001D5862 /* SignInView.swift */; };
+		FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD8C2C106697001D5862 /* UserModel.swift */; };
+		FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD8E2C106720001D5862 /* SignService.swift */; };
+		FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD902C106730001D5862 /* SignViewModel.swift */; };
+		FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD992C107A60001D5862 /* BundleExtension.swift */; };
+		FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD9D2C128B76001D5862 /* MainView.swift */; };
+		FAC5CDA02C129731001D5862 /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */; };
+		FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */; };
+		FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = FAC5CDA12C129A92001D5862 /* TodoTemplate.json */; };
+		FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */; };
+		FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */; };
+		FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB892C12E94300B8CFDE /* ImageTestView.swift */; };
+		FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */; };
+		FADBCB902C15CA8E00B8CFDE /* CalendarsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */; };
+		FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */; };
+		FADBCB962C16A57100B8CFDE /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBCB952C16A57100B8CFDE /* NotificationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321EDA782C0EE84900BF39E4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = "DJ(DailyJournal)/ColorExtension.swift"; sourceTree = SOURCE_ROOT; };
+		3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LaunchScreenGIF.gif; sourceTree = "<group>"; };
+		3281661C2C1AD33C0039FB0B /* GIFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImageView.swift; sourceTree = "<group>"; };
+		3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		328D37532C1874060028E005 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogRowView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogRowView.swift"; sourceTree = SOURCE_ROOT; };
+		329625E02C0F0E66005B68D3 /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyLogView.swift; path = "DJ(DailyJournal)/Views/DailyLogViews/DailyLogView.swift"; sourceTree = SOURCE_ROOT; };
+		329625E42C1028C2005B68D3 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = "DJ(DailyJournal)/TestModeling/TestModel.swift"; sourceTree = SOURCE_ROOT; };
+		329625EC2C104AF1005B68D3 /* TitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleExtension.swift; path = "DJ(DailyJournal)/Views/TodoListViews/TitleExtension.swift"; sourceTree = SOURCE_ROOT; };
+		329625EF2C10B204005B68D3 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		329625F12C10B24A005B68D3 /* JournalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalService.swift; sourceTree = "<group>"; };
+		329625F42C118558005B68D3 /* JournalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewModel.swift; sourceTree = "<group>"; };
+		329625F62C11878C005B68D3 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		32DDA11D2C13A57C0075335A /* DailyTemplate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DailyTemplate.json; sourceTree = "<group>"; };
+		32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogTemplateModel.swift; sourceTree = "<group>"; };
+		32FCA5612C13586800E2CD39 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4E119EE22C1933C300E33D10 /* SummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
+		4E3CBACD2C128C7B007C6817 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalListView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalListView.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalListRowView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalListRowView.swift"; sourceTree = SOURCE_ROOT; };
+		4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalDetailView.swift; path = "DJ(DailyJournal)/Views/DailyJournalViews/JournalDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		4E6D0DDA2C167B6D0024576E /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4E6D0DDC2C167CDF0024576E /* UpdateJournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateJournalViewModel.swift; sourceTree = "<group>"; };
+		89FF35452C181E610033243C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DJ(DailyJournal).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJ_DailyJournal_App.swift; sourceTree = "<group>"; };
 		FA7CEB182C0C42F2008504F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAB2C4702C1810250022388C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = "DJ(DailyJournal)/NotificationDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		FAB2C4782C1949820022388C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySettingView.swift; sourceTree = "<group>"; };
+		FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FAC5CD842C103D09001D5862 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		FAC5CD862C103D2B001D5862 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		FAC5CD8C2C106697001D5862 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FAC5CD8E2C106720001D5862 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		FAC5CD902C106730001D5862 /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DJ-DailyJournal--Info.plist"; sourceTree = SOURCE_ROOT; };
+		FAC5CD992C107A60001D5862 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		FAC5CD9D2C128B76001D5862 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
+		FAC5CDA12C129A92001D5862 /* TodoTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TodoTemplate.json; sourceTree = "<group>"; };
+		FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTemplateModel.swift; sourceTree = "<group>"; };
+		FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRowView.swift; sourceTree = "<group>"; };
+		FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageViewModel.swift; sourceTree = "<group>"; };
+		FADBCB892C12E94300B8CFDE /* ImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestView.swift; sourceTree = "<group>"; };
+		FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsTestView.swift; sourceTree = "<group>"; };
+		FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsViewModel.swift; sourceTree = "<group>"; };
+		FADBCB952C16A57100B8CFDE /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +120,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D147B32C1972F8000F8431 /* Alamofire in Frameworks */,
+				3281661A2C1AD1F90039FB0B /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3281661B2C1AD2F80039FB0B /* LaunchScreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				3263795B2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif */,
+				3281661C2C1AD33C0039FB0B /* GIFImageView.swift */,
+				3281661E2C1AD3D40039FB0B /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreenViews;
+			sourceTree = "<group>";
+		};
+		328D37552C1874130028E005 /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				328D37532C1874060028E005 /* SettingView.swift */,
+				FAB2C47A2C1A6D370022388C /* SummarySettingView.swift */,
+			);
+			path = SettingViews;
+			sourceTree = "<group>";
+		};
+		4E3CBAC52C1289B8007C6817 /* DailyLogViews */ = {
+			isa = PBXGroup;
+			children = (
+				329625E02C0F0E66005B68D3 /* DailyLogView.swift */,
+				329625DE2C0F0E38005B68D3 /* DailyLogRowView.swift */,
+			);
+			path = DailyLogViews;
+			sourceTree = "<group>";
+		};
+		4E3CBAC62C128A66007C6817 /* TestModeling */ = {
+			isa = PBXGroup;
+			children = (
+				329625E42C1028C2005B68D3 /* TestModel.swift */,
+				FADBCB892C12E94300B8CFDE /* ImageTestView.swift */,
+				FADBCB8F2C15CA8E00B8CFDE /* CalendarsTestView.swift */,
+			);
+			path = TestModeling;
+			sourceTree = "<group>";
+		};
+		4E3CBAD32C128D28007C6817 /* DailyJournalViews */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CBACD2C128C7B007C6817 /* JournalListView.swift */,
+				4E3CBACF2C128C83007C6817 /* JournalListRowView.swift */,
+				4E6D0DDA2C167B6D0024576E /* ImagePicker.swift */,
+				4E3CBAD12C128C98007C6817 /* JournalDetailView.swift */,
+			);
+			path = DailyJournalViews;
+			sourceTree = "<group>";
+		};
 		FA7CEB0A2C0C42F2008504F6 = {
 			isa = PBXGroup;
 			children = (
 				FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */,
 				FA7CEB142C0C42F2008504F6 /* Products */,
+				FAC5CD822C103C39001D5862 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +197,20 @@
 		FA7CEB152C0C42F2008504F6 /* DJ(DailyJournal) */ = {
 			isa = PBXGroup;
 			children = (
+				89FF35452C181E610033243C /* Config.xcconfig */,
+				FAC5CD982C1079A5001D5862 /* DJ-DailyJournal--Info.plist */,
+				FAC5CDA12C129A92001D5862 /* TodoTemplate.json */,
+				32DDA11D2C13A57C0075335A /* DailyTemplate.json */,
 				FA7CEB162C0C42F2008504F6 /* DJ_DailyJournal_App.swift */,
-				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
-				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
+				FAB2C4702C1810250022388C /* NotificationDelegate.swift */,
+				FAC5CD7A2C0EE67C001D5862 /* Extensions */,
+				FAC5CD792C0EE673001D5862 /* Models */,
+				FAC5CD732C0EE626001D5862 /* NetworkServices */,
+				FAC5CD782C0EE66C001D5862 /* ViewModels */,
+				FAC5CD712C0EE61C001D5862 /* Views */,
+				4E3CBAC62C128A66007C6817 /* TestModeling */,
 				FA7CEB1C2C0C42F3008504F6 /* Preview Content */,
+				FA7CEB1A2C0C42F3008504F6 /* Assets.xcassets */,
 			);
 			path = "DJ(DailyJournal)";
 			sourceTree = "<group>";
@@ -65,6 +221,97 @@
 				FA7CEB1D2C0C42F3008504F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FAC5CD712C0EE61C001D5862 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA7CEB182C0C42F2008504F6 /* ContentView.swift */,
+				FAC5CD9D2C128B76001D5862 /* MainView.swift */,
+				FAC5CD7F2C100BF0001D5862 /* TabBarView.swift */,
+				3281661B2C1AD2F80039FB0B /* LaunchScreenViews */,
+				328D37552C1874130028E005 /* SettingViews */,
+				FAC5CD772C0EE659001D5862 /* SignViews */,
+				4E3CBAD32C128D28007C6817 /* DailyJournalViews */,
+				FAC5CD752C0EE62A001D5862 /* TodoListViews */,
+				4E3CBAC52C1289B8007C6817 /* DailyLogViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAC5CD732C0EE626001D5862 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD8E2C106720001D5862 /* SignService.swift */,
+				329625F12C10B24A005B68D3 /* JournalService.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		FAC5CD752C0EE62A001D5862 /* TodoListViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD842C103D09001D5862 /* TodoListView.swift */,
+				FAC5CDA52C12A6CA001D5862 /* TodoListRowView.swift */,
+			);
+			path = TodoListViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD772C0EE659001D5862 /* SignViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD862C103D2B001D5862 /* SignInView.swift */,
+				32FCA5612C13586800E2CD39 /* SignUpView.swift */,
+			);
+			path = SignViews;
+			sourceTree = "<group>";
+		};
+		FAC5CD782C0EE66C001D5862 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD902C106730001D5862 /* SignViewModel.swift */,
+				329625F62C11878C005B68D3 /* JournalViewModel.swift */,
+				329625F42C118558005B68D3 /* JournalListViewModel.swift */,
+				FAC5CD9F2C129731001D5862 /* TemplateViewModel.swift */,
+				4E6D0DDC2C167CDF0024576E /* UpdateJournalViewModel.swift */,
+				FADBCB872C12E56500B8CFDE /* AlbumImageViewModel.swift */,
+				FADBCB932C16982F00B8CFDE /* CalendarsViewModel.swift */,
+				FADBCB952C16A57100B8CFDE /* NotificationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAC5CD792C0EE673001D5862 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD8C2C106697001D5862 /* UserModel.swift */,
+				329625EF2C10B204005B68D3 /* JournalModel.swift */,
+				FAC5CDA22C129BDF001D5862 /* TodoTemplateModel.swift */,
+				32FCA55F2C12E79900E2CD39 /* DailyLogTemplateModel.swift */,
+				4E119EE22C1933C300E33D10 /* SummaryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAC5CD7A2C0EE67C001D5862 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD992C107A60001D5862 /* BundleExtension.swift */,
+				321EDA782C0EE84900BF39E4 /* ColorExtension.swift */,
+				329625EC2C104AF1005B68D3 /* TitleExtension.swift */,
+				FADBCB8B2C157F8A00B8CFDE /* DateExtension.swift */,
+				FAB2C4782C1949820022388C /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAC5CD822C103C39001D5862 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5CD7D2C0EE8D5001D5862 /* SignInView.swift */,
+				FAC5CD7B2C0EE8B4001D5862 /* TodoListView.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +330,10 @@
 			dependencies = (
 			);
 			name = "DJ(DailyJournal)";
+			packageProductDependencies = (
+				32D147B22C1972F8000F8431 /* Alamofire */,
+				328166192C1AD1F90039FB0B /* SwiftyGif */,
+			);
 			productName = "DJ(DailyJournal)";
 			productReference = FA7CEB132C0C42F2008504F6 /* DJ(DailyJournal).app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +362,10 @@
 				Base,
 			);
 			mainGroup = FA7CEB0A2C0C42F2008504F6;
+			packageReferences = (
+				FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+			);
 			productRefGroup = FA7CEB142C0C42F2008504F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,7 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB2C4732C18497D0022388C /* DJ-DailyJournal--Info.plist in Resources */,
+				FAB2C4722C1849780022388C /* Config.xcconfig in Resources */,
+				FAC5CDA42C12A2C0001D5862 /* TodoTemplate.json in Resources */,
+				32DDA11E2C13A57C0075335A /* DailyTemplate.json in Resources */,
 				FA7CEB1E2C0C42F3008504F6 /* Preview Assets.xcassets in Resources */,
+				3263795C2C1ADE6E00C9CF55 /* LaunchScreenGIF.gif in Resources */,
 				FA7CEB1B2C0C42F3008504F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +397,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329625F72C11878C005B68D3 /* JournalViewModel.swift in Sources */,
+				FAC5CDA32C129BDF001D5862 /* TodoTemplateModel.swift in Sources */,
+				FAB2C47B2C1A6D370022388C /* SummarySettingView.swift in Sources */,
+				4E119EE32C1933C300E33D10 /* SummaryModel.swift in Sources */,
+				FAC5CD8B2C10567E001D5862 /* SignInView.swift in Sources */,
+				FAC5CD9A2C107A60001D5862 /* BundleExtension.swift in Sources */,
+				FADBCB962C16A57100B8CFDE /* NotificationViewModel.swift in Sources */,
+				4E3CBAD22C128C98007C6817 /* JournalDetailView.swift in Sources */,
+				4E3CBACE2C128C7B007C6817 /* JournalListView.swift in Sources */,
+				3281661D2C1AD33C0039FB0B /* GIFImageView.swift in Sources */,
+				FAC5CD852C103D09001D5862 /* TodoListView.swift in Sources */,
+				3281661F2C1AD3D40039FB0B /* LaunchScreenView.swift in Sources */,
+				329625F02C10B204005B68D3 /* JournalModel.swift in Sources */,
+				FADBCB942C16982F00B8CFDE /* CalendarsViewModel.swift in Sources */,
+				FADBCB8A2C12E94300B8CFDE /* ImageTestView.swift in Sources */,
+				329625E12C0F0E66005B68D3 /* DailyLogView.swift in Sources */,
+				329625DF2C0F0E38005B68D3 /* DailyLogRowView.swift in Sources */,
+				329625F52C118558005B68D3 /* JournalListViewModel.swift in Sources */,
+				321EDA792C0EE84900BF39E4 /* ColorExtension.swift in Sources */,
+				FAC5CDA62C12A6CA001D5862 /* TodoListRowView.swift in Sources */,
+				FADBCB882C12E56500B8CFDE /* AlbumImageViewModel.swift in Sources */,
+				FADBCB8C2C157F8A00B8CFDE /* DateExtension.swift in Sources */,
+				329625E52C1028C2005B68D3 /* TestModel.swift in Sources */,
+				FAC5CD912C106730001D5862 /* SignViewModel.swift in Sources */,
+				328D37542C1874070028E005 /* SettingView.swift in Sources */,
+				329625ED2C104AF1005B68D3 /* TitleExtension.swift in Sources */,
+				FAB2C4792C1949820022388C /* ViewExtension.swift in Sources */,
+				FAB2C4712C1810250022388C /* NotificationDelegate.swift in Sources */,
 				FA7CEB192C0C42F2008504F6 /* ContentView.swift in Sources */,
+				4E6D0DDB2C167B6D0024576E /* ImagePicker.swift in Sources */,
+				329625F22C10B24A005B68D3 /* JournalService.swift in Sources */,
+				4E6D0DDD2C167CDF0024576E /* UpdateJournalViewModel.swift in Sources */,
+				FAC5CDA02C129731001D5862 /* TemplateViewModel.swift in Sources */,
 				FA7CEB172C0C42F2008504F6 /* DJ_DailyJournal_App.swift in Sources */,
+				32FCA5602C12E79900E2CD39 /* DailyLogTemplateModel.swift in Sources */,
+				FAC5CD802C100BF0001D5862 /* TabBarView.swift in Sources */,
+				FADBCB902C15CA8E00B8CFDE /* CalendarsTestView.swift in Sources */,
+				FAC5CD8F2C106720001D5862 /* SignService.swift in Sources */,
+				32FCA5622C13586800E2CD39 /* SignUpView.swift in Sources */,
+				4E3CBAD02C128C83007C6817 /* JournalListRowView.swift in Sources */,
+				FAC5CD9E2C128B76001D5862 /* MainView.swift in Sources */,
+				FAC5CD8D2C106697001D5862 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +566,19 @@
 		};
 		FA7CEB222C0C42F3008504F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FF35452C181E610033243C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = 3TGR3P459K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "당신의 앨범을 확인할게요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,14 +599,19 @@
 		};
 		FA7CEB232C0C42F3008504F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FF35452C181E610033243C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJ(DailyJournal)/Preview Content\"";
+				DEVELOPMENT_TEAM = 3TGR3P459K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DJ-DailyJournal--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "당신의 앨범을 확인할게요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +652,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.5;
+			};
+		};
+		FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		328166192C1AD1F90039FB0B /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 328166182C1AD1F90039FB0B /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
+		32D147B22C1972F8000F8431 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAC5CD922C106866001D5862 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA7CEB0B2C0C42F2008504F6 /* Project object */;
 }

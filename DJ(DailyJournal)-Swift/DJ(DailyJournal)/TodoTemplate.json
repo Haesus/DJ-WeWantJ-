@@ -1,0 +1,16 @@
+{
+    "todoList": [
+        {
+            "isTodo": false,
+            "todoText": "당신의 Todo를"
+        },
+        {
+            "isTodo": false,
+            "todoText": "작성해보세요."
+        },
+        {
+            "isTodo": false,
+            "todoText": "응원합니다."
+        }
+    ]
+}
