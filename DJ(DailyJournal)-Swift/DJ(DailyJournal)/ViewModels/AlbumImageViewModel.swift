@@ -23,11 +23,6 @@ class AlbumImageViewModel: ObservableObject {
                     let todayDate = Date()
                     if creationDate.isSameDay(as: todayDate) {
                         group.enter()
-//                        self.requestImageData(from: asset) { image in
-//                            if let image = image {
-//                                fetchedImagesArray.append(image)
-//                            }
-//                        }
                         self.requestImage(from: asset) { image in
                             if let image = image {
                                 fetchedImagesArray.append(image)
